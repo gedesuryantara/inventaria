@@ -71,13 +71,14 @@
     border: none;
     outline: none;
     height: 45px;
-    border-radius: 20px; 
+    border-radius: 20px;
+    transition: .4s; 
     font-weight: bold;
     background-image: linear-gradient(to right, #00C2FF, #1547C8);
     color: white;
 }
 .submit:hover {
-    background: rgba(37, 95, 156, 0.9);
+    background: rgba (37, 95, 156, 0.9);
     color: #fff;
 }
 .signin {
