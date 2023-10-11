@@ -1,11 +1,11 @@
 <?php 
 
 class Login extends Controller{
+
     
     public function index()
     {
         $data['judul'] = 'Login';
-
         $this->view('tamplates/header', $data);
         $this->view('login/index', $data);
         $this->view('tamplates/footer');
@@ -25,6 +25,8 @@ class Login extends Controller{
                 $passwordDb = $data['password'];
 
                 if( password_verify($password, $passwordDb) ) {
+
+                    $_SESSION['userLogin'] = 'userLogin';
 
                     header('Location: ' . BASEURL . '/dashboard');
 
