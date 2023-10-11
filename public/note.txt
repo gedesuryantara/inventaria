@@ -1,7 +1,0 @@
-RewriteRule  ^(.*)$ index.php?url=$1 [L]
-
-^  -> mengambil string dari url pertama seperti contoh setelah 'public/'
-(.*)$ -> ambil apapun dari url lalu ambil satu persatu karakter sampai karakternya selesai kecuali enter 
-index.php? -> file index yang mengirimkan url 
-url=1$ -> placeholder (isi dari url akan disimpan di '$')
-[L] -> kalau ada rule yang sudah terpenuhi jangan jalankan rule lain setelah ini
