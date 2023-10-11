@@ -1,0 +1,147 @@
+
+
+.body-design {
+    overflow-x: hidden;
+    overflow-y: visible;
+    width: 99.2%;
+}
+
+.sidebar-design {
+    background-color: #010094;
+    height: 100vh;
+}
+
+.logo img {
+    width: 60%;
+    height: auto;
+    margin-top: 20px;
+}
+
+.dasboard {
+    color: white;
+    text-decoration: none;
+    transition: ease 0.5s;
+}
+
+.dasboard:hover {
+    color: #00C2FF;
+    text-decoration: none;
+}
+
+.dasboard-design {
+    color: white;
+    box-sizing: 10px;
+    transition: ease 0.5s;
+    margin-top: 15px;
+}
+
+.dasboard-design:hover {
+    color: #00C2FF;
+}
+
+.manage-user {
+    color: white;
+    text-decoration: none;
+    transition: ease 0.5s;
+}
+
+.manage-user:hover {
+    color: #00C2FF;
+    text-decoration: none;
+}
+
+.container-sm {
+    width: 70%;
+}
+
+
+.navbar-design {
+    height: 100px;
+    background-color: white;
+    /* box-shadow: 10px, 10px, 10px, 10px, black; */
+}
+
+.body-design .col-2 {
+    padding: 0rem;
+}
+
+.body-design .col-10 {
+    padding: 0rem;
+}
+
+.search-layout {
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+.profile-layout {
+    margin-top: 5.7%;
+}
+
+.profile-layout .fa-circle-user {
+    color: #010094;
+    width: 40px;
+    height: 40px;
+    margin-top: -1%;
+    margin-left: 2%;
+    margin-right: 5%;
+}
+
+.col-6 {
+    padding: 0rem;
+}
+
+
+/* Desain Card-Item */
+.user-card-design {
+    margin-top: 3%;
+    margin-left: 5%;
+    margin-right: 5%;
+
+}
+
+.card-body h5 {
+    font-size: 25px;
+    margin-top: 15px;
+}
+
+.tombol .btn {
+    width: 70px;
+    height: 50px;
+}
+
+.fa-pen-to-square {
+    height: 25px;
+}
+.fa-trash-can {
+    height: 25px;
+}
+
+
+/* css add data */
+.btn-add {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-left: 10%;
+    margin-top: 10%;
+
+}
+
+.accordion-button{
+    background-color: #ffffff;
+}
+.accordion-button a:hover{
+    background-color: #010094;
+}
+
+.fa-plus {
+    width: 70%;
+    height: 100%;
+}
+.btn-add{
+    width: 70px;
+    height: 60px;   
+    margin-bottom: 4%;
+    margin-right: 6%;
+}

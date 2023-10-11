@@ -97,6 +97,33 @@ span a:hover {
     color: #000;
 }
 
+/* css add data */
+.btn-add {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-left: 10%;
+    margin-top: 10%;
+
+}
+
+.accordion-button{
+    background-color: #ffffff;
+}
+.accordion-button a:hover{
+    background-color: #010094;
+}
+
+.fa-plus {
+    width: 70%;
+    height: 100%;
+}
+.btn-add{
+    width: 70px;
+    height: 60px;   
+    margin-bottom: 4%;
+    margin-right: 6%;
+}
 
 /* Responsive */
 

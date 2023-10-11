@@ -4,11 +4,21 @@ class Login extends Controller{
     
     public function index()
     {
-        $data['judul'] = 'Login';
+        if( !isset($_SESSION['userLogin']) ) {
 
-        $this->view('tamplates/header', $data);
-        $this->view('login/index', $data);
-        $this->view('tamplates/footer');
+            $data['judul'] = 'Login';
+    
+            $this->view('tamplates/header', $data);
+            $this->view('login/index', $data);
+            $this->view('tamplates/footer');
+
+        } else {
+            $data['judul'] = 'Dashboard';
+    
+            $this->view('tamplates/header', $data);
+            $this->view('dashboard/index', $data);
+            $this->view('tamplates/footer');   
+        }
     }
 
     public function user()
@@ -25,6 +35,8 @@ class Login extends Controller{
                 $passwordDb = $data['password'];
 
                 if( password_verify($password, $passwordDb) ) {
+
+                    $_SESSION['userLogin'] = true;
 
                     header('Location: ' . BASEURL . '/dashboard');
 
