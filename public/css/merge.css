@@ -372,3 +372,7 @@
 .nav-layout .header-text {
     margin-top: 0.3%;
 }
+
+.card-btn a {
+    text-align: center;
+}
