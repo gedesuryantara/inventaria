@@ -74,8 +74,8 @@
                                     <div class="card-footer">
                                         <div class="float-end">
                                             <div class="tombol">
-                                            <button class="btn btn-warning"><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></button>
-                                            <button class="btn btn-danger"><i class="fa-solid fa-trash-can fa-shake" style="color: #ffffff;"></i></button>
+                                            <a href="<?= BASEURL ?>" class="btn btn-warning"><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></a>
+                                            <a href="<?= BASEURL ?>/dashboard/hapusDataBarang/<?= $rowBarang['id_barang']?>" class="btn btn-danger"><i class="fa-solid fa-trash-can fa-shake" style="color: #ffffff;" onclick="return confirm('yakin?');"></i></a>
                                             </div>
                                         </div>
                                     </div>

@@ -12,6 +12,7 @@ class Dashboard extends Controller{
         $this->view('dashboard/index', $data);
         $this->view('tamplates/footer');
     }
+
     public function tambahRak(){
         if ($this->model('Addrak_model')->tambahRak($_POST) > 0){
             header('Location: '. BASEURL.'/dashboard');
@@ -34,6 +35,13 @@ class Dashboard extends Controller{
 
             echo 'gagal';
 
+        }
+    }
+
+    public function hapusDataBarang($id)
+    {
+        if( $this->model('Barang_model')->hapusBarang($id) > 0 ) {
+            header('Location: ' . BASEURL . '/dashboard');
         }
     }
 }
