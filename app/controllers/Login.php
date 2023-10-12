@@ -4,7 +4,7 @@ class Login extends Controller{
     
     public function index()
     {
-        if( !isset($_SESSION['userLogin']) ) {
+        // if( !isset($_SESSION['userLogin']) ) {
 
             $data['judul'] = 'Login';
     
@@ -12,13 +12,13 @@ class Login extends Controller{
             $this->view('login/index', $data);
             $this->view('tamplates/footer');
 
-        } else {
-            $data['judul'] = 'Dashboard';
+        // } else if (isset($_SESSION['userLogin'])){
+            // $data['judul'] = 'Dashboard';
     
-            $this->view('tamplates/header', $data);
-            $this->view('dashboard/index', $data);
-            $this->view('tamplates/footer');   
-        }
+            // $this->view('tamplates/header', $data);
+            // $this->view('dashboard/index', $data);
+            // $this->view('tamplates/footer');   
+        // }
     }
 
     public function user()
