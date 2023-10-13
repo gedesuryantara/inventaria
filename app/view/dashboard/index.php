@@ -1,4 +1,4 @@
-        <!-- Body Design -->
+<!-- Body Design -->
         <div class="body-design">
             <div class="row">
 
@@ -99,9 +99,9 @@
                                 <span aria-hidden="true">&laquo;</span>
                                 </a>
                             </li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <?php for ($i = 1; $i <= $data['jumlah_halaman'] ; $i++) : ?>
+                            <li class="page-item"><a class="page-link" href="<?= BASEURL ?>/dashboard/page/<?= $i ?>"><?= $i; ?></a></li>
+                            <?php endfor; ?>
                             <li class="page-item">
                                 <a class="page-link" href="#" aria-label="Next">
                                 <span aria-hidden="true">&raquo;</span>
