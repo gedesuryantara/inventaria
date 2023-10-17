@@ -207,7 +207,7 @@
                         </button>
                     </h2>
                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
+                        <form class="accordion-body form-control">
                             <div class="mb-3 row">
                                 <label for="inputPassword" class="col-sm-4 col-form-label">Nama Barang :</label>
                                 <div class="col-sm-7">
@@ -224,10 +224,9 @@
                                 <label for="inputPassword" class="col-sm-4 col-form-label">Rak :</label>
                                 <div class="col-sm-7">
                                     <select class="form-select" aria-label="Default select example">
-                                        <option selected>1</option>
-                                        <option value="1">2</option>
-                                        <option value="2">3</option>
-                                        <option value="3">4</option>
+                                        <?php foreach ( $data['rak'] as $jumlahRak ) : ?>
+                                        <option value="<?= $jumlahRak['id_rak'] ?>"><?= $jumlahRak['nama_rak'] ?></option>
+                                        <?php endforeach; ?>
                                     </select>
                                 </div>
                             </div>
@@ -246,7 +245,7 @@
                             <div class="mb-3 row col-md-3 save-button">
                                 <button type="button" class="btn btn-primary">Save</button>
                             </div>
-                        </div>
+                        </form>
                     </div>
                     </div>
             </div>

@@ -1,6 +1,6 @@
 <?php
 
-class Addrak_model {
+class Rak_model {
     private $db;
 
     public function __construct()
@@ -18,5 +18,10 @@ class Addrak_model {
         $this->db->execute();
 
         return $this->db->rowCount();
+    }
+    public function ambilRak(){
+        $query = "SELECT * FROM rak";
+        $this->db->query($query);
+        return $this->db->resultSet();
     }
 }
