@@ -13,13 +13,22 @@ class Dashboard extends Controller{
         $data['judul'] = 'Dashboard';
         $data['barang'] = $this->model('Barang_model')->getAllBarang();
         $data['rakData'] = $this->model('Rak_model')->queryRak();
-        $data['jumlahKolom'] = $this->model('Rak_model')->getJumlahKolomRak();
+        // $data['jumlahKolom'] = $this->model('Rak_model')->getJumlahKolomRak();
         $data['activeItem'] = 'active-item';
 
         $this->view('tamplates/header', $data);
         $this->view('dashboard/index', $data);
         $this->view('tamplates/footer');
     }
+
+    public function tambahRak(){
+        var_dump($_POST);
+        if ($this->model('Rak_model')->tambahRak($_POST) > 0){
+            header('location: '. BASEURL.'/dashboard');
+            exit;
+        }
+    }
+
     public function editbarang()
     {
         $data['judul'] = 'Edit Barang';

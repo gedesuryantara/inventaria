@@ -8,6 +8,18 @@ class Rak_model {
     {
         $this->db = new Database;
     }
+    
+    public function tambahRak($data){
+        $query = "INSERT INTO rak VALUES ('',:nama_rak,:jumlah_kolom) ";
+
+        $this->db->query($query);
+        $this->db->bind('nama_rak',$data['namarak']);
+        $this->db->bind('jumlah_kolom',$data['jumlahkolom']);
+
+        $this->db->execute();
+
+        return $this->db->rowCount();
+    }
 
     public function queryRak() 
     {

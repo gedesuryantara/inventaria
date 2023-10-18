@@ -117,23 +117,23 @@
                     </button>
                   </h2>
                   <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
+                    <form class="accordion-body form-control" action="<?=BASEURL?>/dashboard/tambahRak" method="POST">
                         <div class="mb-3 row">
                             <label for="inputRak" class="col-sm-4 col-form-label">Nama Rak :</label>
                             <div class="col-sm-7">
-                              <input type="text" class="form-control" id="inputRak">
+                              <input type="text" name="namarak" class="form-control" id="inputRak">
                             </div>
                         </div>
                         <div class="mb-3 row">
                             <label for="inputJmlKolom" class="col-sm-4 col-form-label">Jumlah kolom :</label>
                             <div class="col-sm-7">
-                              <input type="text" class="form-control" id="inputJmlKolom">
+                              <input type="text" name="jumlahkolom"class="form-control" id="inputJmlKolom">
                             </div>
                         </div>
                         <div class="mb-3 row col-md-3 save-button">
-                            <button type="button" class="btn btn-primary">Save</button>
+                            <button type="submit" class="btn btn-primary">Save</button>
                         </div>
-                    </div>
+                    </form>
                   </div>
                 </div>
                 <br>
