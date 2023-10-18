@@ -68,6 +68,7 @@
                 <!-- End Navbar Design -->
 
                 <!-- Users Card Design -->
+                <?php foreach( $data['UserName'] as $usr ) : ?>
                 <div class="user-card-design">
                     <div class="row row-cols-1 row-cols-md-2 g-4">
                         <div class="col">
@@ -78,7 +79,7 @@
                                   </div>
                                   <div class="col-md-8">
                                     <div class="card-body">
-                                        <h5 class="card-title text-center">User</h5>
+                                        <h5 class="card-title text-center"><?= $usr['username']; ?> </h5>
                                         <hr>
                                         <div class="d-flex card-btn justify-content-center mt-4">
                                             <a class="btn btn-warning me-2 text-center" href="<?= BASEURL ?>/admindashboard/useredit" role="button">
@@ -94,84 +95,8 @@
                                   </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col">
-                            <div class="card mb-3 shadow">
-                                <div class="row g-0">
-                                  <div class="col-md-4">
-                                    <img src="<?= BASEURL ?>/img/user_icon.png" class="img-fluid rounded-start" alt="...">
-                                  </div>
-                                  <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-center">User</h5>
-                                        <hr>
-                                        <div class="d-flex card-btn justify-content-center mt-4">
-                                            <a class="btn btn-warning me-2 text-center" href="<?= BASEURL ?>/admindashboard/useredit" role="button">
-                                                <i class="fa-solid fa-pen-to-square"></i>
-                                                Edit
-                                            </a>
-                                            <a class="btn btn-danger ms-2 text-center" href="#" role="button">
-                                                <i class="fa-solid fa-trash-can"></i>
-                                                Hapus
-                                            </a>
-                                        </div>
-                                    </div>
-                                  </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card mb-3 shadow">
-                                <div class="row g-0">
-                                  <div class="col-md-4">
-                                    <img src="<?= BASEURL ?>/img/user_icon.png" class="img-fluid rounded-start" alt="...">
-                                  </div>
-                                  <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-center">User</h5>
-                                        <hr>
-                                        <div class="d-flex card-btn justify-content-center mt-4">
-                                            <a class="btn btn-warning me-2 text-center" href="<?= BASEURL ?>/admindashboard/useredit" role="button">
-                                                <i class="fa-solid fa-pen-to-square"></i>
-                                                Edit
-                                            </a>
-                                            <a class="btn btn-danger ms-2 text-center" href="#" role="button">
-                                                <i class="fa-solid fa-trash-can"></i>
-                                                Hapus
-                                            </a>
-                                        </div>
-                                    </div>
-                                  </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card mb-3 shadow">
-                                <div class="row g-0">
-                                  <div class="col-md-4">
-                                    <img src="<?= BASEURL ?>/img/user_icon.png" class="img-fluid rounded-start" alt="...">
-                                  </div>
-                                  <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-center">User</h5>
-                                        <hr>
-                                        <div class="d-flex card-btn justify-content-center mt-4">
-                                            <a class="btn btn-warning me-2 text-center" href="<?= BASEURL ?>/admindashboard/useredit" role="button">
-                                                <i class="fa-solid fa-pen-to-square"></i>
-                                                Edit
-                                            </a>
-                                            <a class="btn btn-danger ms-2 text-center" href="#" role="button">
-                                                <i class="fa-solid fa-trash-can"></i>
-                                                Hapus
-                                            </a>
-                                        </div>
-                                    </div>
-                                  </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                </div>
+                    <?php endforeach; ?>
                 <!-- End Users Card Design -->
 
                 <!-- Paginations Design -->
