@@ -23,7 +23,7 @@
                         <div class="col-6">
                             <div class="input-group search-layout">
                                 <input type="text" class="form-control" placeholder="Search..." aria-label="Recipient's username" aria-describedby="button-addon2">
-                                <button class=" btn-search btn btn-primary" type="button" id="button-addon2">
+                                <button class="btn-search btn btn-primary" type="button" id="button-addon2">
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </button>
                             </div>
