@@ -10,3 +10,33 @@
       <!-- <link rel="stylesheet" href="/css/style.css"> -->
     </head>
     <body>
+
+     <!-- Body Design -->
+     <div class="body-design">
+            <div class="row">
+
+                <!-- Sidebar Design -->
+                <div class="col-2">
+                    <div class="sidebar-design">
+                        <div class="logo d-flex justify-content-center">
+                            <img src="<?= BASEURL ?>/img/Logo_inventaria.svg" alt="Inventaria Logo" srcset="">
+                        </div>
+                        <div class="container-sm">
+                            <div class="menu-design d-flex flex-column">
+                                <div class="dasboard-design">
+                                    <hr class="line-fill">
+                                    <a href="<?= BASEURL ?>/dashboard" class="dasboard <?= $data['activeItem'] ?>">
+                                        <i class="fa-solid fa-gauge"></i>
+                                        Dashboard
+                                    </a>
+                                    <hr class="line-fill">
+                                </div>
+                                <a href="<?= BASEURL ?>/manageuser" class="manage-user <?= $data['activeItem'] ?>">
+                                    <i class="fa-solid fa-circle-user"></i>
+                                    Manage Users
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Sidebar Design -->

@@ -14,35 +14,6 @@
 <body> -->
 
     <!-- Body Design -->
-    <div class="body-design">
-        <div class="row">
-
-            <!-- Sidebar Design -->
-            <div class="col-2">
-                <div class="sidebar-design">
-                    <div class="logo d-flex justify-content-center">
-                        <img src="<?= BASEURL ?>/img/logo-inventaria.png" alt="Inventaria Logo" srcset="">
-                    </div>
-                    <div class="container-sm">
-                        <div class="menu-design d-flex flex-column">
-                            <div class="dasboard-design">
-                                <hr class="line-fill">
-                                <a href="#" class="dasboard">
-                                    <i class="fa-solid fa-gauge"></i>
-                                    Dashboard
-                                </a>
-                                <hr class="line-fill">
-                            </div>
-                            <a href="" class="manage-user active-items">
-                                <i class="fa-solid fa-circle-user"></i>
-                                Manage Users
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Sidebar Design -->
-
 
             <div class="col-10">
 

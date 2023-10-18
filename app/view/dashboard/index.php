@@ -1,35 +1,4 @@
 
-        <!-- Body Design -->
-        <div class="body-design">
-            <div class="row">
-
-                <!-- Sidebar Design -->
-                <div class="col-2">
-                    <div class="sidebar-design">
-                        <div class="logo d-flex justify-content-center">
-                            <img src="<?= BASEURL ?>/img/Logo_inventaria.svg" alt="Inventaria Logo" srcset="">
-                        </div>
-                        <div class="container-sm">
-                            <div class="menu-design d-flex flex-column">
-                                <div class="dasboard-design">
-                                    <hr class="line-fill">
-                                    <a href="#" class="dasboard active-items">
-                                        <i class="fa-solid fa-gauge"></i>
-                                        Dashboard
-                                    </a>
-                                    <hr class="line-fill">
-                                </div>
-                                <a href="" class="manage-user">
-                                    <i class="fa-solid fa-circle-user"></i>
-                                    Manage Users
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Sidebar Design -->
-
-
                 <div class="col-10">
 
                     <!-- Navbar Design -->
@@ -58,76 +27,30 @@
                     <div class="item-barang ">
 
                         <div class="row row-cols-1 row-cols-md-3 g-4">
-                        <div class="col p-4">
-                            <div class="card h-100">
-                                <img src="<?= BASEURL ?>/img/ice-tea-with-mint 1.jpg" alt="Item">
-                                <div class="card-body">
-                                <h5 class="card-title text-center mb-5">Es Teh Hangat</h5>
-                                <p class="card-text">Rak : </p>
-                                <p class="card-text">Kategori : </p>
-                                <p class="card-text">Kolom : </p>
-                                <p class="card-text">Stok : </p>    
-                                </div>
-
-                                <div class="card-footer">
-                                    <div class="float-start">
-                                        <div class="tombol">
-                                        <a href="<?= BASEURL ?>/dashboard/editbarang" class="btn btn-warning justify-content-center"><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></a>
-                                        <a href="#" class="btn btn-danger"><i class="fa-solid fa-trash-can" style="color: #ffffff;"></i></a>
+                            <?php foreach ( $data['barang'] as $rowBarang ) : ?>
+                                <div class="col p-4">
+                                    <div class="card h-100">
+                                        <img src="<?= BASEURL ?>/img/ice-tea-with-mint 1.jpg" alt="Item">
+                                        <div class="card-body">
+                                        <h5 class="card-title text-center mb-2"><?= $rowBarang['nama_barang'] ?> </h5>
+                                        <p class="card-text">Rak : <?= $rowBarang['nama_rak'] ?> </p>
+                                        <p class="card-text">Keterangan : <?= $rowBarang['keterangan'] ?> </p>
+                                        <p class="card-text">Kolom : <?= $rowBarang['kolom'] ?> </p>
+                                        <p class="card-text">Stok : <?= $rowBarang['stok'] ?> </p>    
+                                        </div>
+        
+                                        <div class="card-footer">
+                                            <div class="float-start">
+                                                <div class="tombol">
+                                                <a href="<?= BASEURL ?>/dashboard/editbarang" class="btn btn-warning justify-content-center"><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></a>
+                                                <a href="<?= BASEURL ?>/dashboard/deleteBarang/<?= $rowBarang['id_barang'] ?>"  onclick="return confirm('Yakin Barang Ingin Dihapus?')" class="btn btn-danger"><i class="fa-solid fa-trash-can" style="color: #ffffff;"></i></a>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-
-                            </div>
-                            </div>
-
-
-                            <div class="col p-4">
-                            <div class="card h-100">
-                                <img src="<?= BASEURL ?>/img/ice-tea-with-mint 1.jpg" class="card-header p-0" alt="Item">
-                                <div class="card-body">
-                                <h5 class="card-title text-center mb-5">Es Teh Hangat</h5>
-                                <p class="card-text">Rak : </p>
-                                <p class="card-text">Kategori : </p>
-                                <p class="card-text">Kolom : </p>
-                                <p class="card-text">Stok : </p>    
-                                </div>
-
-                                <div class="card-footer">
-                                    <div class="float-start">
-                                        <div class="tombol ">
-                                        <a href="<?= BASEURL ?>/dashboard/editbarang" class="btn btn-warning justify-content-center"><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></a>
-                                        <a href="#" class="btn btn-danger"><i class="fa-solid fa-trash-can" style="color: #ffffff;"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            </div>
-
-
-                            <div class="col p-4">
-                            <div class="card h-100">
-                                <img src="<?= BASEURL ?>/img/ice-tea-with-mint 1.jpg" class="card-header p-0" alt="Item">
-                                <div class="card-body">
-                                <h5 class="card-title text-center mb-5">Es Teh Hangat</h5>
-                                <p class="card-text">Rak : </p>
-                                <p class="card-text">Kategori : </p>
-                                <p class="card-text">Kolom : </p>
-                                <p class="card-text">Stok : </p>    
-                                </div>
-
-                                <div class="card-footer">
-                                    <div class="float-start">
-                                        <div class="tombol">
-                                        <a href="<?= BASEURL ?>/dashboard/editbarang" class="btn btn-warning justify-content-center"><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></a>
-                                        <a href="#" class="btn btn-danger"><i class="fa-solid fa-trash-can" style="color: #ffffff;"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            </div>
+                            <?php endforeach; ?>
+                            
                         </div>
                     </div>
                     <!-- End Item Card Design -->
@@ -142,19 +65,29 @@
                     <div class="pagination d-flex justify-content-center">
                         <nav aria-label="Page navigation example">
                             <ul class="pagination">
+                            <?php if ( $data['halaman_aktif'] > 1) : ?>
+                              <li class="page-item">
+                                  <a class="page-link" href="<?= BASEURL ?>/dashboard/page/<?= $data['halaman_aktif'] - 1 ?>" aria-label="Previous">
+                                  <span aria-hidden="true">&laquo;</span>
+                                  </a>
+                              </li>
+                            <?php endif; ?>
+
+                            <?php for ( $i = 1; $i <= $data['jumlah_halaman'] ; $i++ ) : ?>
+                              <?php if( $i == $data['halaman_aktif'] ) : ?>
+                                <li class="page-item"><a class="page-link active" href="<?= BASEURL ?>/dashboard/page/<?= $i ?>"><?= $i ?></a></li>
+                              <?php else : ?>
+                                <li class="page-item"><a class="page-link" href="<?= BASEURL ?>/dashboard/page/<?= $i ?>"><?= $i ?></a></li>
+                              <?php endif; ?>
+                            <?php endfor; ?>
+
+                            <?php if( $data['halaman_aktif'] < $data['jumlah_halaman']) : ?>
                             <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                                </a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Next">
+                                <a class="page-link" href="<?= BASEURL ?>/dashboard/page/<?= $data['halaman_aktif'] + 1 ?>" aria-label="Next">
                                 <span aria-hidden="true">&raquo;</span>
                                 </a>
                             </li>
+                            <?php endif; ?>
                             </ul>
                         </nav>
                     </div>
@@ -204,66 +137,68 @@
                   </div>
                 </div>
                 <br>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingTwo">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                      Barang
-                    </button>
-                  </h2>
-                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <div class="mb-3 row">
-                            <label for="inputBrg" class="col-sm-4 col-form-label">Nama Barang :</label>
-                            <div class="col-sm-7">
-                              <input type="text" class="form-control" id="inputBrg">
-                            </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="inputKet" class="col-sm-4 col-form-label">Keterangan :</label>
-                            <div class="col-sm-7">
-                              <input type="text" class="form-control" id="inputKet">
-                            </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="inputRak" class="col-sm-4 col-form-label">Rak :</label>
-                            <div class="col-sm-7">
-                                <select class="form-select" aria-label="Default select example" id="inputRak">
-                                    <option selected>1</option>
-                                    <option value="1">2</option>
-                                    <option value="2">3</option>
-                                    <option value="3">4</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="inputKolom" class="col-sm-4 col-form-label">Kolom :</label>
-                            <div class="col-sm-7">
-                              <select class="form-select" aria-label="Default select example" id="inputKolom">
-                                  <option selected>1</option>
-                                  <option value="1">2</option>
-                                  <option value="2">3</option>
-                                  <option value="3">4</option>
-                              </select>
-                            </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="inputStok" class="col-sm-4 col-form-label">Stock :</label>
-                            <div class="col-sm-7">
-                              <input type="text" class="form-control" id="inputStok">
-                            </div>
-                        </div>
-                        <div class="mb-3 row">
-                          <label for="inputGambar" class="col-sm-4 col-form-label">Gambar :</label>
-                          <div class="col-sm-7">
-                            <input class="form-control" type="file" id="inputGambar">
+                <form action="<?= BASEURL ?>/dashboard/tambahBarang" method="post">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                        Barang
+                      </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                          <div class="mb-3 row">
+                              <label for="inputBrg" class="col-sm-4 col-form-label">Nama Barang :</label>
+                              <div class="col-sm-7">
+                                <input type="text" class="form-control" id="inputBrg" name="namaBarang">
+                              </div>
                           </div>
-                        </div>
-                        <div class="mb-3 row col-md-3 save-button">
-                            <button type="button" class="btn btn-primary">Save</button>
-                        </div>
+                          <div class="mb-3 row">
+                              <label for="inputKet" class="col-sm-4 col-form-label">Keterangan :</label>
+                              <div class="col-sm-7">
+                                <input type="text" class="form-control" id="inputKet" name="keterangan">
+                              </div>
+                          </div>
+                          <div class="mb-3 row">
+                              <label for="inputRak" class="col-sm-4 col-form-label">Rak :</label>
+                              <div class="col-sm-7">
+                                  <select name="idRak" class="form-select" aria-label="Default select example" id="inputRak">
+                                    <?php foreach ( $data['rakData'] as $rowRak) : ?>
+                                      <option value="<?= $rowRak['id_rak'] ?>" ><?= $rowRak['nama_rak'] ?></option>
+                                    <?php endforeach; ?>
+                                  </select>
+                              </div>
+                          </div>
+                          <div class="mb-3 row">
+                              <label for="inputKolom" class="col-sm-4 col-form-label">Kolom :</label>
+                              <div class="col-sm-7">
+                                <select class="form-select" aria-label="Default select example" id="inputKolom" name="jumlahKolom">
+                                    <option selected>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                              </div>
+                          </div>
+                          <div class="mb-3 row">
+                              <label for="inputStok" class="col-sm-4 col-form-label">Stock :</label>
+                              <div class="col-sm-7">
+                                <input type="text" class="form-control" id="inputStok" name="stok">
+                              </div>
+                          </div>
+                          <div class="mb-3 row">
+                            <label for="inputGambar" class="col-sm-4 col-form-label">Gambar :</label>
+                            <div class="col-sm-7">
+                              <input class="form-control" type="file" id="inputGambar" name="gambarBarang">
+                            </div>
+                          </div>
+                          <div class="mb-3 row col-md-3 save-button">
+                              <button type="submit" class="btn btn-primary">Save</button>
+                          </div>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </form>
         </div>
         <div class="modal-footer">
           <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
