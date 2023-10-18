@@ -14,7 +14,7 @@
                 <div class="container-brg container-sm shadow-lg">
                     <div class="row">
                         <div class="col-md-5">
-                            <img class="img-brg " src="../../../public/img/ice-tea-with-mint 2.png" alt="">
+                            <img class="img-brg " src="<?= BASEURL ?>/img/ice-tea-with-mint 1.jpg" alt="">
                             <div class="file-form mb-3">
                                 <label for="choose" class="btn btn-primary">
                                     <i class="fa-solid fa-camera"></i>
@@ -25,33 +25,31 @@
                         <div class="col-md-7">
                             <div class="container-sm form-edit">
                                 <div class="mb-3">
-                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Nama Barang">
+                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Nama Barang" name="namaBarang" value="<?= $data['barang']['nama_barang'] ?>" >
                                 </div>
                             </div>
                             <div class="container-sm form-edit2">
-                                <select class="form-select mb-3" aria-label="Default select example">
-                                    <option selected>1</option>
-                                    <option value="1">2</option>
-                                    <option value="2">3</option>
-                                    <option value="3">4</option>
+                                <select class="form-select mb-3" aria-label="Default select example" name="namaRak">
+                                    <option value="<?= $data['barang']['id_rak'] ?>"><?= $data['barang']['nama_rak'] ?></option>
                                 </select>
                             </div>
                             <div class="container-sm form-edit2">
                                 <div class="mb-3">
-                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Category">
+                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="keterangan" name="keterangan" value="<?= $data['barang']['keterangan'] ?>">
                                 </div>
                             </div>
                             <div class="container-sm form-edit2">
-                                <select class="form-select mb-3" aria-label="Default select example">
-                                    <option selected>1</option>
-                                    <option value="1">2</option>
-                                    <option value="2">3</option>
-                                    <option value="3">4</option>
+                                <select class="form-select mb-3" aria-label="Default select example" name="kolom" value="<?= $data['barang']['kolom'] ?>">
+                                    <option value="1" selected>1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
                                 </select>
                             </div>
                             <div class="container-sm form-edit2">
                                 <div class="mb-3">
-                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Stock">
+                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Stock" value="<?= $data['barang']['stok'] ?>">
                                 </div>
                             </div>
                             <div class="row">

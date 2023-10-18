@@ -25,6 +25,13 @@ class Barang_model {
 
     }
 
+    public function getDataBarang($idBarang)
+    {
+        $this->db->query("SELECT * FROM " . $this->tabel . " INNER JOIN rak ON " . $this->tabel . ".id_rak = rak.id_rak WHERE id_barang=:id_barang");
+        $this->db->bind('id_barang', $idBarang);
+        return $this->db->singel();
+    }
+
     public function getAllBarangPage($halamanAwal, $batasHalaman)
     {
         $this->db->query("SELECT * FROM " . $this->tabel . " INNER JOIN rak ON " . $this->tabel . ".id_rak = rak.id_rak LIMIT " . $batasHalaman . " OFFSET " . $halamanAwal);

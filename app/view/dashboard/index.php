@@ -34,15 +34,15 @@
                                         <div class="card-body">
                                         <h5 class="card-title text-center mb-2"><?= $rowBarang['nama_barang'] ?> </h5>
                                         <p class="card-text">Rak : <?= $rowBarang['nama_rak'] ?> </p>
-                                        <p class="card-text">Keterangan : <?= $rowBarang['keterangan'] ?> </p>
                                         <p class="card-text">Kolom : <?= $rowBarang['kolom'] ?> </p>
                                         <p class="card-text">Stok : <?= $rowBarang['stok'] ?> </p>    
+                                        <p class="card-text">Keterangan : <?= $rowBarang['keterangan'] ?> </p>
                                         </div>
         
                                         <div class="card-footer">
                                             <div class="float-start">
                                                 <div class="tombol">
-                                                <a href="<?= BASEURL ?>/dashboard/editbarang" class="btn btn-warning justify-content-center"><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></a>
+                                                <a href="<?= BASEURL ?>/dashboard/editbarang/<?= $rowBarang['id_barang'] ?>" class="btn btn-warning justify-content-center"><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></a>
                                                 <a href="<?= BASEURL ?>/dashboard/deleteBarang/<?= $rowBarang['id_barang'] ?>"  onclick="return confirm('Yakin Barang Ingin Dihapus?')" class="btn btn-danger"><i class="fa-solid fa-trash-can" style="color: #ffffff;"></i></a>
                                                 </div>
                                             </div>
@@ -172,11 +172,11 @@
                               <label for="inputKolom" class="col-sm-4 col-form-label">Kolom :</label>
                               <div class="col-sm-7">
                                 <select class="form-select" aria-label="Default select example" id="inputKolom" name="jumlahKolom">
-                                    <option selected>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
+                                  <option selected >1</option>
+                                  <option >2</option>
+                                  <option >3</option>
+                                  <option >4</option>
+                                  <option >5</option>
                                 </select>
                               </div>
                           </div>

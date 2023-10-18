@@ -13,21 +13,25 @@ class Dashboard extends Controller{
         $data['judul'] = 'Dashboard';
         $data['barang'] = $this->model('Barang_model')->getAllBarang();
         $data['rakData'] = $this->model('Rak_model')->queryRak();
-        $data['jumlahKolom'] = $this->model('Rak_model')->getJumlahKolomRak();
+//        $data['jumlahKolom'] = $this->model('Rak_model')->getJumlahKolomRak();
         $data['activeItem'] = 'active-item';
 
         $this->view('tamplates/header', $data);
         $this->view('dashboard/index', $data);
         $this->view('tamplates/footer');
     }
-    public function editbarang()
+    public function editbarang($idBarang)
     {
         $data['judul'] = 'Edit Barang';
         $data['activeItem'] = 'active-item';
+        $data['barang'] = $this->model('Barang_model')->getDataBarang($idBarang);
+        $data['rakData'] = $this->model('Rak_model')->queryRak();
 
-        $this->view('tamplates/header', $data);
-        $this->view('dashboard/editbarang', $data);
-        $this->view('tamplates/footer');
+        // if( $this->model('Barang_model')->editDataBarang() > 0 ) {
+            $this->view('tamplates/header', $data);
+            $this->view('dashboard/editbarang', $data);
+            $this->view('tamplates/footer');
+        // }
     }
 
     public function tambahBarang()
@@ -61,7 +65,7 @@ class Dashboard extends Controller{
 
     public function deleteBarang($id)
     {
-        if( $this->model('Barang_model')->deleteDataBarang($id) ){
+        if( $this->model('Barang_model')->deleteDataBarang($id) > 0 ){
             header('Location: ' . BASEURL . '/dashboard');
         }
     }
