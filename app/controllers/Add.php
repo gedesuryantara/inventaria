@@ -1,13 +1,13 @@
 <?php 
 
 
-class Dashboard extends Controller{
-    public function index()
+class Add extends Controller{
+    public function addbarang()
     {
-        $data['judul'] = 'Dashboard';
+        $data['judul'] = 'Manage User';
 
         $this->view('tamplates/header', $data);
-        $this->view('dashboard/index');
+        $this->view('add/addbarang');
         $this->view('tamplates/footer');
     }
     public function editbarang()
@@ -15,7 +15,7 @@ class Dashboard extends Controller{
         $data['judul'] = 'Manage User';
 
         $this->view('tamplates/header', $data);
-        $this->view('dashboard/editbarang');
+        $this->view('add/editbarang');
         $this->view('tamplates/footer');
     }
 }
