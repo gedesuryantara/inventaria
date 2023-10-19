@@ -122,8 +122,17 @@
 .accordion-button{
     background-color: #ffffff;
 }
-.accordion-button a:hover{
+
+.accordion-button:not(.collapsed) {
     background-color: #010094;
+    color: white;
+}
+
+.accordion-button:not(.collapsed)::after {
+    color: white;
+    background-color: white;
+    border-radius: 100%;
+    padding: 10px;
 }
 
 .fa-plus {
