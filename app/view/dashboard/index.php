@@ -30,7 +30,7 @@
                             <?php foreach ( $data['barang'] as $rowBarang ) : ?>
                                 <div class="col p-4">
                                     <div class="card h-100">
-                                        <img src="<?= BASEURL ?>/img/image_upload/<?= $rowBarang['gambar'] ?>" alt="Item">
+                                        <img src="<?= BASEURL ?>/img/image_upload/<?= $rowBarang['gambar'] ?>" alt="Item" class="">
                                         <div class="card-body">
                                         <h5 class="card-title text-center mb-2"><?= $rowBarang['nama_barang'] ?> </h5>
                                         <p class="card-text">Rak : <?= $rowBarang['nama_rak'] ?> </p>

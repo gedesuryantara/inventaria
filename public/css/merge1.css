@@ -254,7 +254,7 @@
 }
 
 .card img {
-    height: 100%;
+    max-height: 200px;
 }
 
 .btn-search {
