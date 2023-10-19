@@ -1,11 +1,11 @@
 <?php 
-class Admindashboard extends Controller{
+class ManageUser extends Controller{
     public function index()
     {
         $data['judul'] = 'Manage User';
         $data['UserName'] = $this->model('ManageUser_model')->getAllUser();
         $this->view('tamplates/header', $data);
-        $this->view('Admindashboard/index',$data);
+        $this->view('manageuser/index',$data);
         $this->view('tamplates/footer');
     }
     public function useredit()
@@ -13,7 +13,7 @@ class Admindashboard extends Controller{
         $data['judul'] = 'Manage User';
         $data['activeItem'] = 'active-item';
 
-        $this->view('tampla tes/header', $data);
+        $this->view('tamplates/header', $data);
         $this->view('manageuser/useredit', $data);
         $this->view('tamplates/footer');
     }
@@ -22,7 +22,7 @@ class Admindashboard extends Controller{
         $data['judul'] = 'Manage User';
 
         $this->view('tamplates/header', $data);
-        $this->view('Admindashboard/index');
+        $this->view('manageuser/index');
         $this->view('tamplates/footer');
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Handle form submission
@@ -37,7 +37,7 @@ class Admindashboard extends Controller{
                 // User added successfully, you can redirect or show a success message here
                 echo "<script>
                 alert('User added successfully!');
-                window.location.href = 'Admindashboard/index';
+                window.location.href = 'manageuser/index';
                 </script>
                 ";
             } else {
