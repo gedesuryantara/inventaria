@@ -8,7 +8,7 @@ class Rak_model {
     {
         $this->db = new Database;
     }
-    
+
     public function tambahRak($data){
         $query = "INSERT INTO rak VALUES ('',:nama_rak,:jumlah_kolom) ";
 

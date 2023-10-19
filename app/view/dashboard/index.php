@@ -161,7 +161,7 @@
                           <div class="mb-3 row">
                               <label for="inputRak" class="col-sm-4 col-form-label">Rak :</label>
                               <div class="col-sm-7">
-                                  <select name="idRak" class="form-select" aria-label="Default select example" id="inputRak">
+                                  <select name="idRak" class="form-select" aria-label="Default select example" id="inputRakbarang">
                                     <?php foreach ( $data['rakData'] as $rowRak) : ?>
                                       <option value="<?= $rowRak['id_rak'] ?>" ><?= $rowRak['nama_rak'] ?></option>
                                     <?php endforeach; ?>
@@ -171,12 +171,8 @@
                           <div class="mb-3 row">
                               <label for="inputKolom" class="col-sm-4 col-form-label">Kolom :</label>
                               <div class="col-sm-7">
-                                <select class="form-select" aria-label="Default select example" id="inputKolom" name="jumlahKolom">
-                                    <option selected>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
+                                <select class="form-select" aria-label="Default select example" id="inputKolombarang" name="jumlahKolom">
+                                    <option value="">Pilih Rak</option>
                                 </select>
                               </div>
                           </div>

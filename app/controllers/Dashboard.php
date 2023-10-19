@@ -13,12 +13,17 @@ class Dashboard extends Controller{
         $data['judul'] = 'Dashboard';
         $data['barang'] = $this->model('Barang_model')->getAllBarang();
         $data['rakData'] = $this->model('Rak_model')->queryRak();
+
+        // Percobaan kolom
+
+        // json_encode(array('rak' => $data['rak']['nama_rak']));
+
         // $data['jumlahKolom'] = $this->model('Rak_model')->getJumlahKolomRak();
         $data['activeItem'] = 'active-item';
 
         $this->view('tamplates/header', $data);
         $this->view('dashboard/index', $data);
-        $this->view('tamplates/footer');
+        $this->view('tamplates/footer1');
     }
 
     public function tambahRak(){
@@ -74,5 +79,7 @@ class Dashboard extends Controller{
             header('Location: ' . BASEURL . '/dashboard');
         }
     }
+
+    
 
 }
