@@ -16,7 +16,7 @@ class ManageUser extends Controller{
         $data['judul'] = 'Manage User';
         $data['activeItem'] = 'active-item';
 
-        $this->view('tampla tes/header', $data);
+        $this->view('tamplates/header', $data);
         $this->view('manageuser/useredit', $data);
         $this->view('tamplates/footer');
     }
