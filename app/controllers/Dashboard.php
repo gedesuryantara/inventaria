@@ -5,15 +5,15 @@ class Dashboard extends Controller{
 
     public function __construct()
     {
-        if($_SESSION['userLogin'] != "success") {
-            header('Location: ' . BASEURL . '/login');
-        } else {
-            if($_SESSION['trueUser'] = true){
-                header('Location: ' . BASEURL . '/dashboard');
-            } else {
-                header('Location: ' . BASEURL . '/test');
-            }
-        }
+        // if($_SESSION['userLogin'] != "success") {
+        //     header('Location: ' . BASEURL . '/login');
+        // } else {
+        //     if($_SESSION['trueUser'] = true){
+        //         header('Location: ' . BASEURL . '/dashboard');
+        //     } else {
+        //         header('Location: ' . BASEURL . '/test');
+        //     }
+        // }
     }
 
     public function index()
@@ -22,19 +22,19 @@ class Dashboard extends Controller{
 
         session_start();
 
-        if (!empty($_SESSION['status'])){
+        // if (!empty($_SESSION['status'])){
 
-            // if($_SESSION['status'] == 1){
-            //     header('location: '. BASEURL . '/manageuser');
+        //     if($_SESSION['status'] == 1){
+        //         header('location: '. BASEURL . '/manageuser');
 
-            // }else if($_SESSION['status'] == 2){
-            //     header('location: '. BASEURL . '/manageuser/useredit');
+        //     }else if($_SESSION['status'] == 2){
+        //         header('location: '. BASEURL . '/manageuser/useredit');
 
-            // }
-        } 
-        else {
-            header('location: '. BASEURL . '/login');
-        }
+        //     }
+        // } 
+        // else {
+        //     header('location: '. BASEURL . '/login');
+        // }
 
         // pagination
         $batasHalaman = 3;

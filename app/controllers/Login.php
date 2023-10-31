@@ -1,5 +1,5 @@
 <?php 
-
+error_reporting(E_WARNING);
 class Login extends Controller{
     
     public function index()
@@ -54,18 +54,19 @@ class Login extends Controller{
                     
                     $_SESSION['status'] = $data['status'];
                     // var_dump($_SESSION['status']);
+                    $level = strval($_SESSION['status']);
 
-                    if($_SESSION['status'] == 1){
+                    if($level == "1"){
                         header('location: '. BASEURL . '/manageuser');
 
-                    }else if($_SESSION['status'] == 2){
-                        header('location: '. BASEURL . '/dashboard');
+                    }else if($level == "0"){
+                        // header('location: '. BASEURL . '/dashboard');
+                        header('location: '. BASEURL .'/dashboard');
 
                     }
                     else {
                         header('location: '. BASEURL . '/login');
                     }
-
 
                 } else {
                     echo 'password salah';
