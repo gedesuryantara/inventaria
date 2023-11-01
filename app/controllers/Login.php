@@ -44,8 +44,6 @@ class Login extends Controller{
 
                 if( password_verify($password, $passwordDb) ) {
 
-                    $_SESSION['userLogin'] = "success";
-
                     if( $data['status'] != 0 ) {
                         $_SESSION['userTrue'] = true;
                         $location = "dashboard";
