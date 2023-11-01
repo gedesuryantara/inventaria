@@ -6,10 +6,35 @@ class Login extends Controller{
     {
         $data['judul'] = 'Login';
 
+        $_SESSION['status'] = [];
+
+        session_start();
+
+        if (!empty($_SESSION['status'])){
+
+            if($_SESSION['status'] == 1){
+                header('location: '. BASEURL . '/manageuser');
+
+            }else if($_SESSION['status'] == 2){
+                header('location: '. BASEURL . '/manageuser/useredit');
+
+            }
+        }   
+        // var_dump($_SESSION['status']);
+
         $this->view('tamplates/headerlogin', $data);
         $this->view('login/index', $data);
         $this->view('tamplates/footer');
     }
+
+    public function logout(){
+        session_start();
+        $_SESSION = [];
+        session_unset();
+        session_destroy();
+
+        header('location: '. BASEURL . '/login');
+    }   
 
     public function user()
     {
@@ -25,8 +50,21 @@ class Login extends Controller{
                 $passwordDb = $data['password'];
 
                 if( password_verify($password, $passwordDb) ) {
+                    session_start();
+                    
+                    $_SESSION['status'] = $data['status'];
+                    // var_dump($_SESSION['status']);
 
-                    header('Location: ' . BASEURL . '/dashboard');
+                    if($_SESSION['status'] == 1){
+                        header('location: '. BASEURL . '/manageuser');
+
+                    }else if($_SESSION['status'] == 2){
+                        header('location: '. BASEURL . '/manageuser/useredit');
+
+                    }
+                    else {
+                        header('location: '. BASEURL . '/login');
+                    }
 
                 } else {
                     echo 'password salah';

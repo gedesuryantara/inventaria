@@ -4,6 +4,24 @@
 class Dashboard extends Controller{
     public function index()
     {
+        $_SESSION['status'] = [];
+
+        session_start();
+
+        if (!empty($_SESSION['status'])){
+
+            // if($_SESSION['status'] == 1){
+            //     header('location: '. BASEURL . '/manageuser');
+
+            // }else if($_SESSION['status'] == 2){
+            //     header('location: '. BASEURL . '/manageuser/useredit');
+
+            // }
+        } 
+        else {
+            header('location: '. BASEURL . '/login');
+        }
+
         // pagination
         $batasHalaman = 3;
         $jumlah_data = count($this->model('Barang_model')->queryData());
@@ -13,6 +31,11 @@ class Dashboard extends Controller{
         $data['judul'] = 'Dashboard';
         $data['barang'] = $this->model('Barang_model')->getAllBarang();
         $data['rakData'] = $this->model('Rak_model')->queryRak();
+
+        // Percobaan kolom
+
+        // json_encode(array('rak' => $data['rak']['nama_rak']));
+
         // $data['jumlahKolom'] = $this->model('Rak_model')->getJumlahKolomRak();
         $data['activeItem'] = 'active-item';
 
@@ -74,5 +97,11 @@ class Dashboard extends Controller{
             header('Location: ' . BASEURL . '/dashboard');
         }
     }
+
+    public function selectbertingkat(){
+        $this->model('Rak_model')->queryselectbertingkat();
+    }
+
+    
 
 }

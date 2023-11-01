@@ -35,6 +35,11 @@
                                     <i class="fa-solid fa-circle-user"></i>
                                     Manage Users
                                 </a>
+                                <hr class="line-fill">
+                                <a href="<?= BASEURL ?>/login/logout" class="manage-user <?= $data['activeItem'] ?>">
+                                    <i class="fa-solid fa-circle-user"></i>
+                                    Logout
+                                </a>
                             </div>
                         </div>
                     </div>
