@@ -1,0 +1,381 @@
+.body-design {
+    overflow-x: hidden;
+    overflow-y: visible;
+    width: 100%;
+}
+
+.blue{
+    background: blue !important;
+}
+.sidebar-design {
+    background-color: #010094;
+    height: 100vh;
+}
+
+.logo img {
+    width: 60%;
+    height: auto;
+    margin-top: 20px;
+}
+
+.dasboard {
+    color: white;
+    text-decoration: none;
+    transition: ease 0.5s;
+}
+
+.dasboard:hover {
+    color: #00C2FF;
+    text-decoration: none;
+}
+
+.dasboard-design {
+    color: white;
+    box-sizing: 10px;
+    transition: ease 0.5s;
+    margin-top: 15px;
+}
+
+.dasboard-design:hover {
+    color: #00C2FF;
+}
+
+.manage-user {
+    color: white;
+    text-decoration: none;
+    transition: ease 0.5s;
+}
+
+.manage-user:hover {
+    color: #00C2FF;
+}
+
+.active-items {
+    color: #00C2FF;
+    transition: linear 0.5s;
+}
+
+.container-sm {
+    width: 70%;
+}
+
+.navbar-design {
+    height: 100px;
+    background-color: white;
+    /* box-shadow: 10px, 10px, 10px, 10px, black; */
+}
+
+.body-design .col-2 {
+    padding: 0rem;
+}
+
+.body-design .col-10 {
+    padding: 0rem;
+}
+
+.search-layout {
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+.search-layout button {
+    background-image: linear-gradient(145deg, #00C2FF, blue);
+}
+
+.profile-layout {
+    margin-top: 5.7%;
+}
+
+.profile-layout .fa-circle-user {
+    color: #010094;
+    width: 40px;
+    height: 40px;
+    margin-top: -1%;
+    margin-left: 2%;
+    margin-right: 5%;
+}
+
+.col-6 {
+    padding: 0rem;
+}
+
+
+/* CSS Rama & Putra */
+
+.btn-add {
+    border-radius: 50%;
+    width: 70px;
+    height: 60px;
+    margin-left: 10%;
+    margin-top: 10%;
+    margin-bottom: 4%;
+    margin-right: 6%;
+}
+
+.btn-add button {
+    background-image: linear-gradient(145deg, #00C2FF, blue);
+}
+
+.accordion-button{
+    background-color: #ffffff;
+}
+.accordion-button a:hover{
+    background-color: #010094;
+}
+
+.fa-plus {
+    width: 70%;
+    height: 100%;
+}
+
+
+/* Design Putra */
+.save-button button {
+    background-image: linear-gradient(145deg, #00C2FF, blue);
+}
+.inputGambar input[type = 'file'] {
+    display: none;
+}
+
+.save-button {
+    margin-left: 66%;
+}
+
+/* kelola barang */
+.manage-text {
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 30px;
+}
+
+.container-brg {
+    height: 70%;
+    width: 80%;
+    margin-top: 4%;
+}
+
+.manage .fa-box {
+    width: 50px;
+    height: 40px;
+    margin-top: 30px;
+    margin-left: 25px;
+}
+
+.img-brg {
+    width: 70%;
+    height: 60%;
+    margin-top: 15%;
+    margin-left: 10%;
+}
+.form-edit {
+    margin-top: 50px;
+    margin-left: 20px;
+}
+.form-edit2 {
+    margin-left: 20px;
+}
+
+.file-form {
+    margin-left: 38%;
+    z-index: -1;
+    margin-top: -9%;
+}
+.file-form input[type="file"] {
+    display: none;
+}
+
+.file-form label {
+    cursor: pointer;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    background-image: linear-gradient(145deg, #00C2FF, blue);
+}
+.fa-camera {
+    width: 20px;
+    height: 20px;
+    margin-top: 8px;
+}
+.save-buttonedit{
+    margin-left: 57%;
+}
+
+.save-buttonedit button{
+    background-image: linear-gradient(145deg, #00C2FF, blue);
+}
+
+.cancel-buttonedit {
+    margin-left: 40%;
+    margin-top: -10.7%;
+}
+
+
+/* Design Rama */
+
+/* Desain Card-Item */
+.item-barang {
+    margin-top: 3%;
+    margin-left: 5%;
+    margin-right: 5%;
+
+}
+
+.card-body h5 {
+    font-size: 25px;
+    margin-top: 15px;
+}
+
+.tombol .btn {
+    width: 70px;
+    height: 50px;
+}
+
+.fa-pen-to-square {
+    height: 25px;
+}
+.fa-trash-can {
+    height: 25px;
+}
+
+
+
+/* Design Gde Adi */
+
+.user-card-design {
+    margin-left: 5%;
+    margin-top: 7%;
+}
+
+.card {
+    max-width: 540px;
+}
+
+.card img {
+    height: 100%;
+}
+
+.btn-search {
+    background: linear-gradient(145deg, #00C2FF, blue);
+    transition: linear 0.3s;
+}
+
+.btn-search:hover {
+    background: linear-gradient(-45deg, #00C2FF, blue);
+    scale: 1.1;
+}
+
+.save-btn {
+    background: linear-gradient(145deg, #00C2FF, blue);
+    transition: all 0.6s;
+}
+
+.save-btn:hover {
+    background: linear-gradient(-45deg, #00C2FF, blue);
+}
+
+.cancel-btn {
+    background: linear-gradient(145deg, #ff5252, red);
+}
+
+.cancel-btn:hover {
+    background: linear-gradient(-45deg, #ff5252, red);
+}
+
+.col {
+    padding: 0;
+}
+
+.user-add-btn {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background-image: linear-gradient(145deg, #00C2FF, blue);
+    display: sticky;
+    transition: all 0.3s;
+}
+
+.user-add-btn:hover {
+    background-image: linear-gradient(-45deg, #00C2FF, blue);
+    scale: 1.1;
+}
+
+.fa-plus {
+    width: 70%;
+    height: 100%;
+}
+
+.card-title {
+    font-size: 35px;
+}
+
+.bottom-0 {
+    margin-bottom: 3%;
+}
+
+.end-0 {
+    margin-right: 3%;
+}
+
+.btn-warning {
+    color: white;
+}
+
+.card-body .btn-warning:hover {
+    color: #1547C8;
+    background-color: white;
+    scale: 1.2;
+    border: solid 1px #1547C8;
+}
+
+.card-body .btn-danger:hover {
+    color: #1547C8;
+    background-color: white;
+    scale: 1.2;
+    border: solid 1px #1547C8;
+}
+
+.card-body hr {
+    width: 90%;
+}
+
+.close-btn {
+    color: red;
+}
+
+.close-btn:hover {
+    color: rgb(132, 0, 0);
+}
+
+.fa-circle-xmark {
+    width: 30px;
+    height: 30px;
+}
+
+
+/*  */
+
+.edit-container {
+    padding: 3%;
+    margin-top: 3%;
+    height: auto;
+}
+
+.nav-layout {
+    margin-top: 1.5%;
+}
+
+.nav-layout .fa-user {
+    color: #010094;
+    width: 60px;
+    height: 60px;
+    margin-left: 2%;
+    margin-right: 1%;
+}
+
+.nav-layout .header-text {
+    margin-top: 0.3%;
+}
+
+.card-btn a {
+    text-align: center;
+}
