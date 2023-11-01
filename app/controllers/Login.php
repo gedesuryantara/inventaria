@@ -50,7 +50,13 @@ class Login extends Controller{
 
                 if( password_verify($password, $passwordDb) ) {
 
-                    $_SESSION['userLogin'] = "success";
+                    session_start();
+                    
+                    $_SESSION['status'] = $data['status'];
+                    // var_dump($_SESSION['status']);
+
+                    if($_SESSION['status'] == 1){
+                        header('location: '. BASEURL . '/manageuser');
 
                     }else if($_SESSION['status'] == 2){
                         header('location: '. BASEURL . '/dashboard');
