@@ -52,7 +52,7 @@
                                         <h5 class="card-title text-center">User</h5>
                                         <hr>
                                         <div class="d-flex card-btn justify-content-center mt-4">
-                                            <a class="btn btn-warning me-2 text-center" href="<?= BASEURL ?>/admindashboard/useredit" role="button">
+                                            <a class="btn btn-warning me-2 text-center" href="<?= BASEURL ?>/manageuser/useredit" role="button">
                                                 <i class="fa-solid fa-pen-to-square"></i>
                                                 Edit
                                             </a>
@@ -77,7 +77,7 @@
                                         <h5 class="card-title text-center">User</h5>
                                         <hr>
                                         <div class="d-flex card-btn justify-content-center mt-4">
-                                            <a class="btn btn-warning me-2 text-center" href="<?= BASEURL ?>/admindashboard/useredit" role="button">
+                                            <a class="btn btn-warning me-2 text-center" href="<?= BASEURL ?>/manageuser/useredit" role="button">
                                                 <i class="fa-solid fa-pen-to-square"></i>
                                                 Edit
                                             </a>
@@ -102,7 +102,7 @@
                                         <h5 class="card-title text-center">User</h5>
                                         <hr>
                                         <div class="d-flex card-btn justify-content-center mt-4">
-                                            <a class="btn btn-warning me-2 text-center" href="<?= BASEURL ?>/admindashboard/useredit" role="button">
+                                            <a class="btn btn-warning me-2 text-center" href="<?= BASEURL ?>/manageuser/useredit" role="button">
                                                 <i class="fa-solid fa-pen-to-square"></i>
                                                 Edit
                                             </a>
@@ -127,7 +127,7 @@
                                         <h5 class="card-title text-center">User</h5>
                                         <hr>
                                         <div class="d-flex card-btn justify-content-center mt-4">
-                                            <a class="btn btn-warning me-2 text-center" href="<?= BASEURL ?>/admindashboard/useredit" role="button">
+                                            <a class="btn btn-warning me-2 text-center" href="<?= BASEURL ?>/manageuser/useredit" role="button">
                                                 <i class="fa-solid fa-pen-to-square"></i>
                                                 Edit
                                             </a>
