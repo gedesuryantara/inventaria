@@ -7,6 +7,12 @@ class Dashboard extends Controller{
     {
         if($_SESSION['userLogin'] != "success") {
             header('Location: ' . BASEURL . '/login');
+        } else {
+            if($_SESSION['trueUser'] = true){
+                header('Location: ' . BASEURL . '/dashboard');
+            } else {
+                header('Location: ' . BASEURL . '/test');
+            }
         }
     }
 
