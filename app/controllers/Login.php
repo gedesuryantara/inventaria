@@ -4,21 +4,9 @@ class Login extends Controller{
     
     public function index()
     {
-        $_SESSION['status'] = [];
-
-        session_start();
-
-        if (!empty($_SESSION['status'])){
-
-            if($_SESSION['status'] == 1){
-                header('location: '. BASEURL . '/manageuser');
-
-            }else if($_SESSION['status'] == 2){
-                header('location: '. BASEURL . '/dashboard');
-
-            }
-        }   
         $data['judul'] = 'Login';
+
+        var_dump($_SESSION);
 
         // var_dump($_SESSION['status']);
 
@@ -28,10 +16,9 @@ class Login extends Controller{
     }
 
     public function logout(){
-        session_start();
-        $_SESSION = [];
-        session_unset();
         session_destroy();
+        session_unset();
+        $_SESSION = [];
 
         header('location: '. BASEURL . '/login');
     }   
@@ -50,22 +37,16 @@ class Login extends Controller{
                 $passwordDb = $data['password'];
 
                 if( password_verify($password, $passwordDb) ) {
-                    session_start();
-                    
-                    $_SESSION['status'] = $data['status'];
-                    // var_dump($_SESSION['status']);
 
-                    if($_SESSION['status'] == 1){
-                        header('location: '. BASEURL . '/manageuser');
+                    $_SESSION['userLogin'] = "success";
 
-                    }else if($_SESSION['status'] == 2){
-                        header('location: '. BASEURL . '/dashboard');
-
+                    if( $data['status'] != 0 ) {
+                        $_SESSION['userTrue'] = true ;
+                        header('Location: ' . BASEURL . '/dashboard');
+                    } else {
+                        $_SESSION['userTrue'] = false ;
+                        header('Location: ' . BASEURL . '/test');
                     }
-                    else {
-                        header('location: '. BASEURL . '/login');
-                    }
-
 
                 } else {
                     echo 'password salah';
