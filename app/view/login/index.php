@@ -1,10 +1,4 @@
 
-<?php 
-
-
-
-?>
-
 <div class="wrapper">
             <div class="container main">
                 <div class="row">
