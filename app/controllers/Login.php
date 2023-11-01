@@ -4,11 +4,17 @@ class Login extends Controller{
     
     public function index()
     {
+        if ( @$_SESSION['userLogin'] ){
+            if( $_SESSION['userTrue'] != true) {
+                $location = 'test';
+            } else {
+                $location = 'dashboard';
+            }
+            header('Location: ' . BASEURL . '/' . $location);
+        }
+
+
         $data['judul'] = 'Login';
-
-        var_dump($_SESSION);
-
-        // var_dump($_SESSION['status']);
 
         $this->view('tamplates/headerlogin', $data);
         $this->view('login/index', $data);
@@ -41,11 +47,11 @@ class Login extends Controller{
                     $_SESSION['userLogin'] = "success";
 
                     if( $data['status'] != 0 ) {
-                        $_SESSION['userTrue'] = true ;
-                        header('Location: ' . BASEURL . '/dashboard');
+                        $_SESSION['userTrue'] = true;
+                        $location = "dashboard";
                     } else {
-                        $_SESSION['userTrue'] = false ;
-                        header('Location: ' . BASEURL . '/test');
+                        $_SESSION['userTrue'] = false;
+                        $location = "test";
                     }
 
                 } else {
@@ -59,6 +65,9 @@ class Login extends Controller{
         } else {
             echo 'isikan data terlebih dahulu';
         }
+
+        header('Location: ' . BASEURL . '/' . $location);
+        exit;
         
     }
 

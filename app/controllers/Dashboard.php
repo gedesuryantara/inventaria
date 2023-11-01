@@ -5,21 +5,21 @@ class Dashboard extends Controller{
 
     public function __construct()
     {
-        if($_SESSION['userLogin'] != "success") {
-            header('Location: ' . BASEURL . '/login');
-        } else {
-            if( $_SESSION['userTrue'] == true ) {
-                header('Location: ' . BASEURL . '/dashboard');
-            } else {
-                header('Location: ' . BASEURL . '/test');
-            }
+        $location = 0;
+
+        if( !@$_SESSION['userLogin'] ){
+            $location = 'login';
+        } elseif( $_SESSION['userTrue'] != true) {
+            $location = 'login';
+        }
+        if($location) {
+            header('Location: ' . BASEURL . '/' . $location);
+            exit;
         }
     }
 
     public function index()
     {
-
-        var_dump($_SESSION);
         // pagination
         $batasHalaman = 3;
         $jumlah_data = count($this->model('Barang_model')->queryData());

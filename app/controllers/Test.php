@@ -4,24 +4,26 @@ class Test extends Controller {
 
     public function __construct()
     {
-        if($_SESSION['userLogin'] != "success") {
-            header('Location: ' . BASEURL . '/login');
-        } else {
-            if( $_SESSION['userTrue'] == true ) {
-                header('Location: ' . BASEURL . '/dashboard');
-            } else {
-                header('Location: ' . BASEURL . '/test');
-            }
+        $location = 0;
+        if( $_SESSION['userLogin'] != 'success' ){
+            $location = 'login';
+        } elseif( $_SESSION['userTrue'] === true) {
+            $location = 'login';
         }
-        
+        if($location) {
+            header('Location: ' . BASEURL . '/' . $location);
+            exit;
+        }
     }
 
 
     public function index()
     {
-        var_dump($_SESSION);
 
-        $this->view('tamplates/header');
+        $data['judul'] = 'User';
+        $data['activeItem'] = 'active';
+
+        $this->view('tamplates/header', $data);
         $this->view('test/index');
         $this->view('tamplates/footer');
     }
