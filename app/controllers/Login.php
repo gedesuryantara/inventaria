@@ -11,6 +11,13 @@ class Login extends Controller{
         $this->view('tamplates/footer');
     }
 
+    public function logout()
+    {
+        $_SESSION = [];
+        session_destroy();
+        session_unset();
+    }
+
     public function user()
     {
 
@@ -26,9 +33,16 @@ class Login extends Controller{
 
                 if( password_verify($password, $passwordDb) ) {
 
-                    $_SESSION['userLogin'] = 'userLogin';
+                    if( $data['status'] != 0  ) {
+                        $_SESSION['userLogin'] = "success";
+                        $_SESSION['trueUser'] = true;
+                        header('Location: ' . BASEURL . '/dashboard');
+                    } else {
+                        $_SESSION['userLogin'] = "success";
+                        $_SESSION['trueUser'] = false;
+                        header('Location: ' . BASEURL . '/test');
+                    }
 
-                    header('Location: ' . BASEURL . '/dashboard');
 
                 } else {
                     echo 'password salah';
