@@ -4,8 +4,6 @@ class Login extends Controller{
     
     public function index()
     {
-        $data['judul'] = 'Login';
-
         $_SESSION['status'] = [];
 
         session_start();
@@ -16,10 +14,12 @@ class Login extends Controller{
                 header('location: '. BASEURL . '/manageuser');
 
             }else if($_SESSION['status'] == 2){
-                header('location: '. BASEURL . '/manageuser/useredit');
+                header('location: '. BASEURL . '/dashboard');
 
             }
         }   
+        $data['judul'] = 'Login';
+
         // var_dump($_SESSION['status']);
 
         $this->view('tamplates/headerlogin', $data);
@@ -59,7 +59,7 @@ class Login extends Controller{
                         header('location: '. BASEURL . '/manageuser');
 
                     }else if($_SESSION['status'] == 2){
-                        header('location: '. BASEURL . '/manageuser/useredit');
+                        header('location: '. BASEURL . '/dashboard');
 
                     }
                     else {
