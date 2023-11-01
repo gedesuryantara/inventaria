@@ -1,21 +1,6 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage User's</title> -->
+<!-- Body Design -->
 
-    <!-- CSS LINK -->
-    <!-- <link rel="stylesheet" href="../../../public/bootstraps/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../../public/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="../../../public/css/merge.css">
-
-</head>
-<body> -->
-
-    <!-- Body Design -->
-
-            <div class="col-10">
+    <div class="col-10">
 
                 <!-- Navbar Design -->
                 <div class="navbar-design shadow">
@@ -155,10 +140,4 @@
             </div>
         </div>
     </div>
-    <!-- End Body Design -->
-
-    <!-- JAVA SCRIPT LINK -->
-    <!-- <script src="../../../public/bootstraps/js/bootstrap.bundle.min.js"></script>
-    <script src="../../../public/fontawesome/js/all.min.js"></script>
-</body>
-</html> -->
+<!-- End Body Design -->
