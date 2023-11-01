@@ -66,6 +66,7 @@ class Login extends Controller{
                         header('location: '. BASEURL . '/login');
                     }
 
+
                 } else {
                     echo 'password salah';
                 }
