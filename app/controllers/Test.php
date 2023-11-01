@@ -5,9 +5,10 @@ class Test extends Controller {
     public function __construct()
     {
         $location = 0;
-        if( $_SESSION['userLogin'] != 'success' ){
+
+        if( !@$_SESSION['userLogin'] ){
             $location = 'login';
-        } elseif( $_SESSION['userTrue'] === true) {
+        } elseif( $_SESSION['userTrue'] != false) {
             $location = 'login';
         }
         if($location) {
