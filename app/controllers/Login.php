@@ -17,9 +17,11 @@ class Login extends Controller{
 
             }else if($_SESSION['status'] == 2){
                 header('location: '. BASEURL . '/manageuser/useredit');
-
             }
-        }   
+        } 
+            // else {
+            //     header('location: '. BASEURL . '/login');
+            // }
         // var_dump($_SESSION['status']);
 
         $this->view('tamplates/headerlogin', $data);

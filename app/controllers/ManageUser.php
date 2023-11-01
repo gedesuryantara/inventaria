@@ -15,19 +15,23 @@ class ManageUser extends Controller{
 
         session_start();
 
-        if (!empty($_SESSION['status'])){
-
-            // if($_SESSION['status'] == 1){
-            //     header('location: '. BASEURL . '/manageuser');
-
-            // }else if($_SESSION['status'] == 2){
-            //     header('location: '. BASEURL . '/manageuser/useredit');
-
-            // }
-        } 
-        else {
+        if (empty($_SESSION['status'])){
             header('location: '. BASEURL . '/login');
-        } 
+        }
+
+        // if (!empty($_SESSION['status'])){
+
+        //     if($_SESSION['status'] == 1){
+        //         header('location: '. BASEURL . '/manageuser');
+
+        //     }else if($_SESSION['status'] == 2){
+        //         header('location: '. BASEURL . '/manageuser/useredit');
+
+        //     }
+        // } 
+        // else {
+        //     header('location: '. BASEURL . '/login');
+        // } 
     }
     public function useredit()
     {
