@@ -14,7 +14,7 @@
                 <div class="container-brg container-sm shadow-lg">
                     <div class="row">
                         <div class="col-md-5">
-                            <img class="img-brg " src="../../../public/img/ice-tea-with-mint 2.png" alt="">
+                            <img class="img-brg rounded" src="<?= BASEURL ?>/img/ice-tea-with-mint 1.jpg" alt="">
                             <div class="file-form mb-3">
                                 <label for="choose" class="btn btn-primary">
                                     <i class="fa-solid fa-camera"></i>

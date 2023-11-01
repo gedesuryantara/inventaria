@@ -23,7 +23,7 @@
                         <div class="col-6">
                             <div class="input-group search-layout">
                                 <input type="text" class="form-control" placeholder="Search..." aria-label="Recipient's username" aria-describedby="button-addon2">
-                                <button class=" btn-search btn btn-primary" type="button" id="button-addon2">
+                                <button class="btn-search btn btn-primary" type="button" id="button-addon2">
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </button>
                             </div>
@@ -188,14 +188,20 @@
                         </div>
                         <div class="modal-body">
                             <div class="mb-3 row">
-                                <label for="Username" class="col-sm-2 col-form-label">Username</label>
-                                <div class="col-sm-10">
+                                <label for="Username" class="col-sm-3 col-form-label">Username</label>
+                                <div class="col-sm-9">
                                     <input type="text" class="form-control" id="Username">
                                 </div>
-                              </div>
-                              <div class="mb-3 row">
-                                <label for="Password" class="col-sm-2 col-form-label">Password</label>
-                                <div class="col-sm-10">
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="Password" class="col-sm-3 col-form-label">Password</label>
+                                <div class="col-sm-9">
+                                    <input type="password" class="form-control" id="Password">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="Password" class="col-sm-3 col-form-label">Re-Password</label>
+                                <div class="col-sm-9">
                                     <input type="password" class="form-control" id="Password">
                                 </div>
                             </div>

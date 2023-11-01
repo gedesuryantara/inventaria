@@ -3,13 +3,13 @@
 
 class Dashboard extends Controller{
     public function index()
-    {
+    { 
         // pagination
         $batasHalaman = 3;
         $jumlah_data = count($this->model('Barang_model')->queryData());
         $data['halaman_aktif'] = (isset($idPages)) ? (int)$idPages : 1 ;
         $data['jumlah_halaman'] = ceil($jumlah_data / $batasHalaman);
-
+        
         $data['judul'] = 'Dashboard';
         $data['barang'] = $this->model('Barang_model')->getAllBarang();
         $data['rakData'] = $this->model('Rak_model')->queryRak();
@@ -20,14 +20,13 @@ class Dashboard extends Controller{
 
         // $data['jumlahKolom'] = $this->model('Rak_model')->getJumlahKolomRak();
         $data['activeItem'] = 'active-item';
-
+        
         $this->view('tamplates/header', $data);
         $this->view('dashboard/index', $data);
-        $this->view('tamplates/footer1');
+        $this->view('tamplates/footer');
     }
 
     public function tambahRak(){
-        var_dump($_POST);
         if ($this->model('Rak_model')->tambahRak($_POST) > 0){
             header('location: '. BASEURL.'/dashboard');
             exit;
@@ -46,7 +45,7 @@ class Dashboard extends Controller{
 
     public function tambahBarang()
     {
-        if( $this->model('Barang_model')->tambahDataBarang($_POST) ) {
+        if( $this->model('Barang_model')->tambahDataBarang($_POST) > 0 ) {
             header('Location: ' . BASEURL . '/dashboard');
             exit;
         } else {
