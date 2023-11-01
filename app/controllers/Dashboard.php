@@ -2,26 +2,24 @@
 
 
 class Dashboard extends Controller{
+
+    public function __construct()
+    {
+        if($_SESSION['userLogin'] != "success") {
+            header('Location: ' . BASEURL . '/login');
+        } else {
+            if( $_SESSION['userTrue'] == true ) {
+                header('Location: ' . BASEURL . '/dashboard');
+            } else {
+                header('Location: ' . BASEURL . '/test');
+            }
+        }
+    }
+
     public function index()
     {
-        $_SESSION['status'] = [];
 
-        session_start();
-
-        if (!empty($_SESSION['status'])){
-
-            // if($_SESSION['status'] == 1){
-            //     header('location: '. BASEURL . '/manageuser');
-
-            // }else if($_SESSION['status'] == 2){
-            //     header('location: '. BASEURL . '/manageuser/useredit');
-
-            // }
-        } 
-        else {
-            header('location: '. BASEURL . '/login');
-        }
-
+        var_dump($_SESSION);
         // pagination
         $batasHalaman = 3;
         $jumlah_data = count($this->model('Barang_model')->queryData());

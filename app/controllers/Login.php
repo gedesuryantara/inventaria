@@ -28,10 +28,9 @@ class Login extends Controller{
     }
 
     public function logout(){
-        session_start();
-        $_SESSION = [];
-        session_unset();
         session_destroy();
+        session_unset();
+        $_SESSION = [];
 
         header('location: '. BASEURL . '/login');
     }   
@@ -50,13 +49,8 @@ class Login extends Controller{
                 $passwordDb = $data['password'];
 
                 if( password_verify($password, $passwordDb) ) {
-                    session_start();
-                    
-                    $_SESSION['status'] = $data['status'];
-                    // var_dump($_SESSION['status']);
 
-                    if($_SESSION['status'] == 1){
-                        header('location: '. BASEURL . '/manageuser');
+                    $_SESSION['userLogin'] = "success";
 
                     }else if($_SESSION['status'] == 2){
                         header('location: '. BASEURL . '/dashboard');
