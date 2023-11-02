@@ -1,4 +1,5 @@
 
+<<<<<<< adduser-be
     
     <!-- Body Design -->
     <div class="body-design">
@@ -31,6 +32,8 @@
             <!-- End Sidebar Design -->
 
 
+=======
+>>>>>>> surya-pwpb
             <div class="col-10">
 
                 <!-- Navbar Design -->

@@ -3,6 +3,9 @@
     overflow-y: visible;
     width: 99%;
 }
+.blue{
+    background-color: blue !important;
+}
 
 .sidebar-design {
     background-color: #010094;
