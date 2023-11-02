@@ -19,9 +19,6 @@ class Login extends Controller{
             }
         }   
         $data['judul'] = 'Login';
-
-        // var_dump($_SESSION['status']);
-
         $this->view('tamplates/headerlogin', $data);
         $this->view('login/index', $data);
         $this->view('tamplates/footer');
@@ -58,7 +55,6 @@ class Login extends Controller{
 
                     if($level == "1"){
                         header('location: '. BASEURL . '/manageuser');
-
                     }else if($level == "0"){
                         // header('location: '. BASEURL . '/dashboard');
                         header('location: '. BASEURL .'/dashboard');

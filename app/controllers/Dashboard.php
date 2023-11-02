@@ -104,7 +104,6 @@ class Dashboard extends Controller{
         $this->view('dashboard/index', $data);
         $this->view('tamplates/footer');
     }
-
     public function deleteBarang($id)
     {
         if( $this->model('Barang_model')->deleteDataBarang($id) ){
@@ -115,7 +114,5 @@ class Dashboard extends Controller{
     public function selectbertingkat(){
         $this->model('Rak_model')->queryselectbertingkat();
     }
-
-    
 
 }
