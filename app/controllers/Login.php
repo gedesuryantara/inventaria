@@ -6,26 +6,6 @@ class Login extends Controller{
     {
         $data['judul'] = 'Login';
 
-        $_SESSION['status'] = [];
-
-        session_start();
-
-        if (!empty($_SESSION['status'])){
-
-            if($_SESSION['status'] == 1){
-                header('location: '. BASEURL . '/manageuser');
-
-            }else {
-                header('location: '. BASEURL . '/manageuser/useredit');
-
-            }
-            // else {
-            //     header('location: '. BASEURL . '/login');
-            // }
-
-        } 
-        // var_dump($_SESSION['status']);
-
         $this->view('tamplates/headerlogin', $data);
         $this->view('login/index', $data);
         $this->view('tamplates/footer');
@@ -55,32 +35,32 @@ class Login extends Controller{
 
                 if( password_verify($password, $passwordDb) ) {
                     session_start();
-                    
-                    $_SESSION['status'] = $data['status'];
-                    // var_dump($_SESSION['status']);
 
-                    if($_SESSION['status'] == 1){
-                        header('location: '. BASEURL . '/manageuser');
-
+                    if($_SESSION['status'] != 0){
+                        $location = 'dashboard';
                     }else{
-                        header('location: '. BASEURL . '/manageuser/useredit');
-
+                        $location = 'manageuser';
                     }
                     // else {
                     //     header('location: '. BASEURL . '/login');
                     // }
 
                 } else {
-                    echo 'password salah';
+                    $location = 'login';
+                    Flasher::setFlasherMassage('masuk', 'Gagal', 'danger', 'password salah');
                 }
 
             } else {
-                echo 'gagal menemukan user';
+                $location = 'login';
+                Flasher::setFlasherMassage('masuk', 'Gagal', 'danger', 'account user tidak ditemukan');
             }
 
         } else {
-            echo 'isikan data terlebih dahulu';
+            $location = 'login';
+            Flasher::setFlasherMassage('masuk', 'Gagal', 'danger', 'lengkapi data terlebih dahulu');
         }
+
+        header('location: '. BASEURL . '/' . $location);
         
     }
 
