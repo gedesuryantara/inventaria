@@ -79,6 +79,13 @@ class Dashboard extends Controller{
         }
     }
 
+    public function queryJumlahRak($idRak)
+    {
+        header('Content-Type: application/json');
+        $data = $this->model('Rak_model')->getQueryJumlahRak($idRak);
+        echo json_encode($data);
+    }
+
     
 
 }

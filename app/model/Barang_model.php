@@ -2,7 +2,7 @@
 
 class Barang_model {
     private $tabel = "barang";
-    private $db;
+    private $db; 
 
 
     public function __construct()

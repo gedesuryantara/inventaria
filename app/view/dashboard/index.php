@@ -161,7 +161,8 @@
                                           <div class="mb-3 row">
                                               <label for="inputRak" class="col-sm-4 col-form-label">Rak :</label>
                                               <div class="col-sm-7">
-                                                  <select name="idRak" class="form-select" aria-label="Default select example" id="inputRak">
+                                                  <select name="idRak" class="form-select" aria-label="Default select example" id="inputRakBarang">
+                                                    <option selected value="0">Pilih Nama Rak</option>
                                                     <?php foreach ( $data['rakData'] as $rowRak) : ?>
                                                       <option value="<?= $rowRak['id_rak'] ?>" ><?= $rowRak['nama_rak'] ?></option>
                                                     <?php endforeach; ?>
@@ -171,12 +172,8 @@
                                           <div class="mb-3 row">
                                               <label for="inputKolom" class="col-sm-4 col-form-label">Kolom :</label>
                                               <div class="col-sm-7">
-                                                <select class="form-select" aria-label="Default select example" id="inputKolom" name="jumlahKolom">
-                                                    <option selected>1</option>
-                                                    <option>2</option>
-                                                    <option>3</option>
-                                                    <option>4</option>
-                                                    <option>5</option>
+                                                <select class="form-select" aria-label="Default select example" id="inputKolomRak" name="jumlahKolom">
+                                                  <option selected >Pilih Kolom Rak</option>
                                                 </select>
                                               </div>
                                           </div>
@@ -199,78 +196,15 @@
                                     </div>
                                   </div>
                                 </form>
-                        </div>
-                        <div class="modal-footer">
-                          <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
-                        </div>
-                    </form>
-                  </div>
-                </div>
-                <br>
-                <form action="<?= BASEURL ?>/dashboard/tambahBarang" method="post">
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingTwo">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                        Barang
-                      </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                      <div class="accordion-body">
-                          <div class="mb-3 row">
-                              <label for="inputBrg" class="col-sm-4 col-form-label">Nama Barang :</label>
-                              <div class="col-sm-7">
-                                <input type="text" class="form-control" id="inputBrg" name="namaBarang">
                               </div>
-                          </div>
-                          <div class="mb-3 row">
-                              <label for="inputKet" class="col-sm-4 col-form-label">Keterangan :</label>
-                              <div class="col-sm-7">
-                                <input type="text" class="form-control" id="inputKet" name="keterangan">
+                              <div class="modal-footer">
+                                <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
                               </div>
-                          </div>
-                          <div class="mb-3 row">
-                              <label for="inputRak" class="col-sm-4 col-form-label">Rak :</label>
-                              <div class="col-sm-7">
-                                  <select name="idRak" class="form-select" aria-label="Default select example" id="inputRakbarang">
-                                    <?php foreach ( $data['rakData'] as $rowRak) : ?>
-                                      <option value="<?= $rowRak['id_rak'] ?>" ><?= $rowRak['nama_rak'] ?></option>
-                                    <?php endforeach; ?>
-                                  </select>
-                              </div>
-                          </div>
-                          <div class="mb-3 row">
-                              <label for="inputKolom" class="col-sm-4 col-form-label">Kolom :</label>
-                              <div class="col-sm-7">
-                                <select class="form-select" aria-label="Default select example" id="inputKolombarang" name="jumlahKolom">
-                                    <option value="">Pilih Rak</option>
-                                </select>
-                              </div>
-                          </div>
-                          <div class="mb-3 row">
-                              <label for="inputStok" class="col-sm-4 col-form-label">Stock :</label>
-                              <div class="col-sm-7">
-                                <input type="text" class="form-control" id="inputStok" name="stok">
-                              </div>
-                          </div>
-                          <div class="mb-3 row">
-                            <label for="inputGambar" class="col-sm-4 col-form-label">Gambar :</label>
-                            <div class="col-sm-7">
-                              <input class="form-control" type="file" id="inputGambar" name="gambarBarang">
                             </div>
                           </div>
-                          <div class="mb-3 row col-md-3 save-button">
-                              <button type="submit" class="btn btn-primary">Save</button>
                           </div>
                       </div>
-                    </div>
                   </div>
-                  </div>
-
-
-                      
-                </div>
-            </div>
-        </div>
 
         <!-- JAVA SCRIPT LINK -->
          <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
