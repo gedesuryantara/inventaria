@@ -44,14 +44,16 @@
                                         <p class="card-text">Stok : <?= $rowBarang['stok'] ?> </p>    
                                         </div>
         
+                                        <?php if( $_SESSION['level'] == "admin" ) : ?>
                                         <div class="card-footer">
-                                            <div class="float-start">
-                                                <div class="tombol">
-                                                <a href="<?= BASEURL ?>/dashboard/editbarang/<?= $rowBarang['id_barang']; ?>" class="btn btn-warning justify-content-center"><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></a>
-                                                <a href="<?= BASEURL ?>/dashboard/deleteBarang/<?= $rowBarang['id_barang'] ?>"  onclick="return confirm('Yakin Barang Ingin Dihapus?')" class="btn btn-danger"><i class="fa-solid fa-trash-can" style="color: #ffffff;"></i></a>
-                                                </div>
-                                            </div>
+                                          <div class="float-start">
+                                              <div class="tombol">
+                                              <a href="<?= BASEURL ?>/dashboard/editbarang/<?= $rowBarang['id_barang']; ?>" class="btn btn-warning justify-content-center"><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></a>
+                                              <a href="<?= BASEURL ?>/dashboard/deleteBarang/<?= $rowBarang['id_barang'] ?>"  onclick="return confirm('Yakin Barang Ingin Dihapus?')" class="btn btn-danger"><i class="fa-solid fa-trash-can" style="color: #ffffff;"></i></a>
+                                              </div>
+                                          </div>
                                         </div>
+                                        <?php endif; ?>
                                     </div>
                                 </div>
                             <?php endforeach; ?>
@@ -149,11 +151,13 @@
                     <?php endif; ?>
 
                     <!-- Button trigger modal -->
+                    <?php if( $_SESSION['level'] == "admin" ) : ?>
                     <div class="d-flex justify-content-end btn-add position-absolute bottom-0 end-0">
                         <button type="button" class="btn btn-add btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             <i class="fa-solid fa-plus"></i>
                         </button>
                     </div>
+                    <?php endif; ?>
                     
                     <!-- Modal -->
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
