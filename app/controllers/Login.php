@@ -1,87 +1,36 @@
-<?php 
+public function user()
+{
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
-class Login extends Controller{
-    
-    public function index()
-    {
-        $data['judul'] = 'Login';
+    if (!empty($username) || !empty($password)) {
 
-        $_SESSION['status'] = [];
+        if ($this->model('Login_model')->cekUserTrue($username) > 0) {
 
-        session_start();
+            $data = $this->model('Login_model')->ambilDataUser($username);
+            $passwordDb = $data['password'];
 
-        if (!empty($_SESSION['status'])){
+            if (password_verify($password, $passwordDb)) {
+                session_start();
 
-            if($_SESSION['status'] == 1){
-                header('location: '. BASEURL . '/manageuser');
+                $_SESSION['status'] = $data['status'];
 
-            }else {
-                header('location: '. BASEURL . '/manageuser/useredit');
-
-            }
-            // else {
-            //     header('location: '. BASEURL . '/login');
-            // }
-
-        } 
-        // var_dump($_SESSION['status']);
-
-        $this->view('tamplates/headerlogin', $data);
-        $this->view('login/index', $data);
-        $this->view('tamplates/footer');
-    }
-
-    public function logout(){
-        session_start();
-        $_SESSION = [];
-        session_unset();
-        session_destroy();
-
-        header('location: '. BASEURL . '/login');
-    }   
-
-    public function user()
-    {
-
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-
-        if( !empty($username) || !empty($password) ) {
-
-            if( $this->model('Login_model')->cekUserTrue($username) > 0 ) {
-
-                $data = $this->model('Login_model')->ambilDataUser($username);
-                $passwordDb = $data['password'];
-
-                if( password_verify($password, $passwordDb) ) {
-                    session_start();
-                    
-                    $_SESSION['status'] = $data['status'];
-                    // var_dump($_SESSION['status']);
-
-                    if($_SESSION['status'] == 1){
-                        header('location: '. BASEURL . '/manageuser');
-
-                    }else{
-                        header('location: '. BASEURL . '/manageuser/useredit');
-
-                    }
-                    // else {
-                    //     header('location: '. BASEURL . '/login');
-                    // }
-
+                if ($_SESSION['status'] == 1) {
+                    header('location: ' . BASEURL . '/manageuser');
                 } else {
-                    echo 'password salah';
+                    header('location: ' . BASEURL . '/manageuser/useredit');
                 }
-
             } else {
-                echo 'gagal menemukan user';
+                echo 'password salah';
             }
 
         } else {
-            echo 'isikan data terlebih dahulu';
+            echo 'gagal menemukan user';
         }
-        
+
+    } else {
+        echo 'isikan data terlebih dahulu';
     }
 
+    exit;
 }

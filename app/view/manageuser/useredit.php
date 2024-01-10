@@ -1,17 +1,16 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage User's</title> -->
+    <title>Manage User's</title>
 
     <!-- CSS LINK -->
-    <!-- <link rel="stylesheet" href="../../../public/bootstraps/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../public/bootstraps/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../../public/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="../../../public/css/merge.css">
-
 </head>
-<body> -->
+<body>
     
     <!-- Body Design -->
     <div class="body-design">
@@ -93,8 +92,7 @@
     <!-- End Body Design -->
 
     <!-- JAVA SCRIPT LINK -->
-<!-- JAVA SCRIPT LINK -->
-    <!-- <script src="../../../public/bootstraps/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../public/bootstraps/js/bootstrap.bundle.min.js"></script>
     <script src="../../../public/fontawesome/js/all.min.js"></script>
 </body>
-</html> -->
+</html>
