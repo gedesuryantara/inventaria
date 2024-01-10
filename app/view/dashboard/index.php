@@ -52,7 +52,7 @@
                     <!-- Sidebar Responsive Design -->
                     <div id="sidebar">
                       <div class="d-flex flex-column">
-                        <div class="logo ">
+                        <div class="logo">
                               <img src="<?= BASEURL ?>/img/Logo_inventaria.svg" alt="Inventaria Logo" srcset="">
                           </div>
                           <div class="profile-layout d-flex">

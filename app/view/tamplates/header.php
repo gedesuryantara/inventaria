@@ -31,7 +31,7 @@
                                     </a>
                                     <?php if( $_SESSION['level'] == "admin" ) : ?>
                                     <hr class="line-fill">
-                                    <a href="<?= BASEURL ?>/manageuser" class="manage-user">
+                                    <a href="<?= BASEURL ?>/Admindashboard" class="manage-user">
                                         <i class="fa-solid fa-circle-user"></i>
                                         Manage Users
                                     </a>
