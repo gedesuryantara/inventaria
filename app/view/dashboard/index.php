@@ -5,14 +5,14 @@
                     <div class="navbar-design shadow">
                         <div class="d-flex justify-content-between">
                             <div class="col-6">
-                              <form action="<?= BASEURL; ?>/dashboard/cari" method="post">
-                                <div class="input-group search-layout">
-                                    <input type="text" class="form-control" placeholder="Search..." aria-label="Recipient's username" aria-describedby="button-addon2" name="keyword">
-                                    <button class="btn-search btn btn-primary" type="submit" id="button-addon2">
-                                        <i class="fa-solid fa-magnifying-glass"></i>
-                                    </button>
+                            <div class="searchbar">
+                                    <Form class="input-group search-layout" action="<?= BASEURL ?>/dashboard/cari" method="post">
+                                        <input type="text" class="form-control" placeholder="Search..." aria-label="Recipient's username" name="keyword" aria-describedby="button-addon2">
+                                        <button class=" btn-search btn btn-warning" type="submit" id="button-addon2">
+                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                        </button>
+                                    </Form>
                                 </div>
-                              </form>
                             </div>
                             <div class="col-6">
                                 <div class="d-flex justify-content-end profile-layout">
@@ -21,9 +21,22 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="menu"><i class="fa-solid fa-bars"></i></div>
+
                     </div>
                     <!-- End Navbar Design -->
 
+                    <!-- Searchbar Responsive Design -->
+                    <div class="searchbar-responsive">
+                        <Form class="input-group search-layout" action="<?= BASEURL ?>/multipage/cari" method="post">
+                            <input type="text" class="form-control" placeholder="Search..." aria-label="Recipient's username" name="keyword" aria-describedby="button-addon2">
+                            <button class=" btn-search btn btn-warning" type="submit" id="button-addon2">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </Form>
+                    </div>
+                    <!-- Searchbar Responsive End -->
 
                     <!-- Item Card Design -->
                     

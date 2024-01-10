@@ -10,7 +10,7 @@ class Rak_model {
     }
 
     public function tambahRak($data){
-        $query = "INSERT INTO rak VALUES ('',:nama_rak,:jumlah_kolom) ";
+        $query = "INSERT INTO rak VALUES (NULL,:nama_rak,:jumlah_kolom) ";
 
         $this->db->query($query);
         $this->db->bind('nama_rak',$data['namarak']);

@@ -103,7 +103,7 @@ class Barang_model {
         if($gambar != NULL) {
             $query = "INSERT INTO barang 
                         VALUES (
-                            '', :namaBarang, :keterangan, :stok, :id_rak, :gambar, :kolom
+                            NULL, :namaBarang, :keterangan, :stok, :id_rak, :gambar, :kolom
                             )";
             $this->db->query($query);
             $this->db->bind('namaBarang', $dataBarang['namaBarang']);

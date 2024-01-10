@@ -130,3 +130,26 @@ if( selectRak != null ) {
     
 }
 // end select bertingkat tambah data
+
+// Sidebar Script Start
+
+const menu = document.querySelector(".menu");
+const sidebar = document.querySelector("#sidebar");
+var nilai = 0;
+
+menu.addEventListener("click", function(){
+    if(nilai == 0){
+        sidebar.style.left = "0%";
+        sidebar.style.boxShadow = "20px 0px 20px rgba(0, 0, 0, 0.3)";
+        sidebar.style.transition = "all ease 1s";
+        nilai = 1;
+    }
+    else{
+        sidebar.style.left = "-50%";
+        sidebar.style.boxShadow = "0px 0px 0px";
+        nilai = 0;
+    }
+});
+window.addEventListener("load", function(){
+    loading.style.display = "none";
+});
