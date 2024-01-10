@@ -21,6 +21,13 @@ class Rak_model {
         return $this->db->rowCount();
     }
 
+    public function getQueryJumlahRak($id_rak)
+    {
+        $this->db->query("SELECT * FROM ". $this->tabel ." WHERE id_rak =:id");
+        $this->db->bind('id', $id_rak);
+        return $this->db->singel();
+    }
+
     public function queryRak() 
     {
         $this->db->query("SELECT * FROM " . $this->tabel);
