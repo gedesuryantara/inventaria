@@ -41,10 +41,7 @@ class Login extends Controller{
                     }else{
                         $location = 'manageuser';
                     }
-                    // else {
-                    //     header('location: '. BASEURL . '/login');
-                    // }
-
+                    
                 } else {
                     $location = 'login';
                     Flasher::setFlasherMassage('masuk', 'Gagal', 'danger', 'password salah');

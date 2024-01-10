@@ -5,16 +5,18 @@
                     <div class="navbar-design shadow">
                         <div class="d-flex justify-content-between">
                             <div class="col-6">
+                              <form action="<?= BASEURL; ?>/dashboard/cari" method="post">
                                 <div class="input-group search-layout">
-                                    <input type="text" class="form-control" placeholder="Search..." aria-label="Recipient's username" aria-describedby="button-addon2">
-                                    <button class="btn-search btn btn-primary" type="button" id="button-addon2">
+                                    <input type="text" class="form-control" placeholder="Search..." aria-label="Recipient's username" aria-describedby="button-addon2" name="keyword">
+                                    <button class="btn-search btn btn-primary" type="submit" id="button-addon2">
                                         <i class="fa-solid fa-magnifying-glass"></i>
                                     </button>
                                 </div>
+                              </form>
                             </div>
                             <div class="col-6">
                                 <div class="d-flex justify-content-end profile-layout">
-                                    <p>User</p>
+                                    <p><?php // $_SESSION['username']; ?></p>
                                     <i class="fa-solid fa-circle-user"></i>
                                 </div>
                             </div>
@@ -24,7 +26,10 @@
 
 
                     <!-- Item Card Design -->
+                    
                     <div class="item-barang ">
+
+                      <?php Flasher::setMassage(); ?>
 
                         <div class="row row-cols-1 row-cols-md-3 g-4">
                             <?php foreach ( $data['barang'] as $rowBarang ) : ?>
@@ -42,7 +47,7 @@
                                         <div class="card-footer">
                                             <div class="float-start">
                                                 <div class="tombol">
-                                                <a href="<?= BASEURL ?>/dashboard/editbarang" class="btn btn-warning justify-content-center"><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></a>
+                                                <a href="<?= BASEURL ?>/dashboard/editbarang/<?= $rowBarang['id_barang']; ?>" class="btn btn-warning justify-content-center"><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></a>
                                                 <a href="<?= BASEURL ?>/dashboard/deleteBarang/<?= $rowBarang['id_barang'] ?>"  onclick="return confirm('Yakin Barang Ingin Dihapus?')" class="btn btn-danger"><i class="fa-solid fa-trash-can" style="color: #ffffff;"></i></a>
                                                 </div>
                                             </div>
@@ -57,10 +62,23 @@
 
 
 
-                    
+                    <?php
+                    $jumlah_pagination = 2; 
+                    if( $data['halaman_aktif'] > $jumlah_pagination ) {
+                      $start_number = $data['halaman_aktif'] - $jumlah_pagination;
+                    } else {
+                      $start_number = 1;
+                    }
+
+                    if( $data['halaman_aktif'] < ( $data['jumlah_halaman'] - $jumlah_pagination ) ) {
+                      $end_number = $data['halaman_aktif'] + $jumlah_pagination;
+                    } else {
+                      $end_number = $data['jumlah_halaman'];
+                    }
+                    ?>
 
 
-
+                    <?php if(!isset($_GET['keyword'])) : ?>
                     <!-- pagination start-->
                     <div class="pagination d-flex justify-content-center">
                         <nav aria-label="Page navigation example">
@@ -73,9 +91,11 @@
                               </li>
                             <?php endif; ?>
 
-                            <?php for ( $i = 1; $i <= $data['jumlah_halaman'] ; $i++ ) : ?>
+                            <?php for ( $i = $start_number; $i <= $end_number ; $i++ ) : ?>
                               <?php if( $i == $data['halaman_aktif'] ) : ?>
+                                <?php if( $i >= $data['halaman_aktif'] - 2 ) : ?>
                                 <li class="page-item"><a class="page-link active" href="<?= BASEURL ?>/dashboard/page/<?= $i ?>"><?= $i ?></a></li>
+                                <?php endif; ?>
                               <?php else : ?>
                                 <li class="page-item"><a class="page-link" href="<?= BASEURL ?>/dashboard/page/<?= $i ?>"><?= $i ?></a></li>
                               <?php endif; ?>
@@ -92,6 +112,41 @@
                         </nav>
                     </div>
                     <!-- Pagination End -->
+                    <?php else : ?>
+                    <!-- pagination start-->
+                    <div class="pagination d-flex justify-content-center">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                            <?php if ( $data['halaman_aktif'] > 1) : ?>
+                              <li class="page-item">
+                                  <a class="page-link" href="<?= BASEURL ?>/dashboard/page/<?= $data['halaman_aktif'] - 1 ?>" aria-label="Previous">
+                                  <span aria-hidden="true">&laquo;</span>
+                                  </a>
+                              </li>
+                            <?php endif; ?>
+
+                            <?php for ( $i = $start_number; $i <= $end_number ; $i++ ) : ?>
+                              <?php if( $i == $data['halaman_aktif'] ) : ?>
+                                <?php if( $i >= $data['halaman_aktif'] - 2 ) : ?>
+                                <li class="page-item"><a class="page-link active" href="<?= BASEURL ?>/dashboard/page/<?= $i ?>"><?= $i ?></a></li>
+                                <?php endif; ?>
+                              <?php else : ?>
+                                <li class="page-item"><a class="page-link" href="<?= BASEURL ?>/dashboard/page/<?= $i ?>"><?= $i ?></a></li>
+                              <?php endif; ?>
+                            <?php endfor; ?>
+
+                            <?php if( $data['halaman_aktif'] < $data['jumlah_halaman']) : ?>
+                            <li class="page-item">
+                                <a class="page-link" href="<?= BASEURL ?>/dashboard/page/<?= $data['halaman_aktif'] + 1 ?>" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                            <?php endif; ?>
+                            </ul>
+                        </nav>
+                    </div>
+                    <!-- Pagination End -->
+                    <?php endif; ?>
 
                     <!-- Button trigger modal -->
                     <div class="d-flex justify-content-end btn-add position-absolute bottom-0 end-0">
@@ -186,7 +241,7 @@
                                           <div class="mb-3 row">
                                             <label for="inputGambar" class="col-sm-4 col-form-label">Gambar :</label>
                                             <div class="col-sm-7">
-                                              <input class="form-control" type="file" id="inputGambar" name="gambarBarang">
+                                              <input class="form-control" type="file" id="inputGambar" name="gambar">
                                             </div>
                                           </div>
                                           <div class="mb-3 row col-md-3 save-button">

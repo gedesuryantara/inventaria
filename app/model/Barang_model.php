@@ -18,6 +18,16 @@ class Barang_model {
 
     }
 
+    public function queryCariData($keyword)
+    {
+        $this->db->query("SELECT * FROM " . $this->tabel . " INNER JOIN rak ON " . $this->tabel . ".id_rak = rak.id_rak" .
+        " WHERE nama_barang LIKE :keyword OR 
+                keterangan LIKE :keyword");
+        $this->db->bind('keyword', "%$keyword%");
+        $this->db->execute();
+        return $this->db->resultSet();
+    }
+
     public function getAllBarang() {
 
         $this->db->query("SELECT * FROM " . $this->tabel . " INNER JOIN rak ON " . $this->tabel . ".id_rak = rak.id_rak LIMIT 3 OFFSET 0");
@@ -25,29 +35,40 @@ class Barang_model {
 
     }
 
+    public function getAllBarangById($idBarang)
+    {
+        $this->db->query("SELECT * FROM " . $this->tabel . " INNER JOIN rak ON " . $this->tabel . ".id_rak = rak.id_rak WHERE id_barang =:id");
+        $this->db->bind('id', $idBarang);
+        return $this->db->singel();
+    }
+
     public function getAllBarangPage($halamanAwal, $batasHalaman)
     {
         $this->db->query("SELECT * FROM " . $this->tabel . " INNER JOIN rak ON " . $this->tabel . ".id_rak = rak.id_rak LIMIT " . $batasHalaman . " OFFSET " . $halamanAwal);
         return $this->db->resultSet();
     }
-
-    public function tambahDataBarang($dataBarang)
+    
+    public function getAllBarangCari($keyword, $halamanAwal, $batasHalaman)
     {
+        $this->db->query("SELECT * FROM " . $this->tabel . " INNER JOIN rak ON " . $this->tabel . ".id_rak = rak.id_rak" .
+                            " WHERE nama_barang LIKE :keyword OR 
+                                    keterangan LIKE :keyword LIMIT " . $batasHalaman . " OFFSET " . $halamanAwal);
+        $this->db->bind('keyword', "%$keyword%");
+        $this->db->execute();
+        return $this->db->resultSet();
+    }
 
-        function uploadGambar()
-        {
-            $namaFile = $_FILES['gambarBarang']['name'];
-            $ukuranFile = $_FILES['gambarBarang']['size'];
-            $errorFile = $_FILES['gambarBarang']['error'];
-            $tmpNameFile = $_FILES['gambarBarang']['tmp_name'];
+    public function uploadGambar()
+    {
+        $namaFile = $_FILES['gambar']['name'];
+        $ukuranFile = $_FILES['gambar']['size'];
+        $errorFile = $_FILES['gambar']['error'];
+        $tmpNameFile = $_FILES['gambar']['tmp_name'];
 
-            // cek apakah gambar diupload atau tidak 
-            if ( $errorFile === 4 ){
-                echo "<script>
-                        alert('Masukan gambar terlebih dahulu!');
-                    </script>";
-                    return false;
-            }
+        // cek apakah gambar diupload atau tidak 
+        if ( $errorFile === 4 ){
+            Flasher::setFlasherMassage('gagal', 'ditambahkan, masukan gambar terlebih dahulu', 'danger');
+        } else {
 
             // cek apakah yang diupload adalah gambar
             $ekstensiGambarValid = ['jpg','png','jpeg'];
@@ -55,18 +76,12 @@ class Barang_model {
             $ekstensiGambar = strtolower(end($ekstensiGambar));
 
             if( !in_array($ekstensiGambar, $ekstensiGambarValid) ) {
-                echo "<script>
-                        alert('Yang anda masukan bukan gambar!');
-                    </script>";
-                    return false;
+                Flasher::setFlasherMassage('gagal', 'ditambahkan, yang anda input bukan gambar', 'danger');
             }
 
             // cek ukuran gambar 
             if( $ukuranFile > 100000000 ) {
-                echo "<script>
-                        alert('Ukuran gambar terlalu besar!');
-                    </script>";
-                    return false;
+                Flasher::setFlasherMassage('gagal', 'ditambahkan, file gambar terlalu besar', 'danger');
             }
 
             // lolos pengechekan, generate nama baru, gambar siap di upload
@@ -78,22 +93,30 @@ class Barang_model {
             return $namaFileBaru;
         }
 
-        $gambar = uploadGambar();
+    }
 
-        $query = "INSERT INTO barang 
-                    VALUES (
-                        '', :namaBarang, :keterangan, :stok, :id_rak, :gambar, :kolom
-                        )";
-        $this->db->query($query);
-        $this->db->bind('namaBarang', $dataBarang['namaBarang']);
-        $this->db->bind('keterangan', $dataBarang['keterangan']);
-        $this->db->bind('stok', $dataBarang['stok']);
-        $this->db->bind('id_rak', $dataBarang['idRak']);
-        $this->db->bind('gambar', $gambar);
-        $this->db->bind('kolom', $dataBarang['jumlahKolom']);
+    public function tambahDataBarang($dataBarang)
+    {
 
-        $this->db->execute();
-        return $this->db->rowCount();
+        $gambar = $this->uploadGambar();
+
+        if($gambar != NULL) {
+            $query = "INSERT INTO barang 
+                        VALUES (
+                            '', :namaBarang, :keterangan, :stok, :id_rak, :gambar, :kolom
+                            )";
+            $this->db->query($query);
+            $this->db->bind('namaBarang', $dataBarang['namaBarang']);
+            $this->db->bind('keterangan', $dataBarang['keterangan']);
+            $this->db->bind('stok', $dataBarang['stok']);
+            $this->db->bind('id_rak', $dataBarang['idRak']);
+            $this->db->bind('gambar', $gambar);
+            $this->db->bind('kolom', $dataBarang['jumlahKolom']);
+    
+            $this->db->execute();
+            return $this->db->rowCount();
+        }
+
     }
 
     public function deleteDataBarang($id)
@@ -103,6 +126,32 @@ class Barang_model {
         $this->db->query($query);
         $this->db->bind('id', $id);
 
+        $this->db->execute();
+        return $this->db->rowCount();
+    }
+
+    public function editDataBarang($dataBarang)
+    {
+
+        $gambar = $this->uploadGambar();
+
+        $this->db->query(" UPDATE " . $this->tabel . " SET 
+                            nama_barang =:namaBarang, 
+                            keterangan =:keterangan, 
+                            stok =:stok, 
+                            id_rak =:id_rak, 
+                            gambar =:gambar, 
+                            kolom =:kolom
+                        WHERE id_barang = :id");
+
+        $this->db->bind('id', $dataBarang['id_barang']);
+        $this->db->bind('namaBarang', $dataBarang['nama_barang']);
+        $this->db->bind('keterangan', $dataBarang['keterangan']);
+        $this->db->bind('stok', $dataBarang['stok']);
+        $this->db->bind('id_rak', $dataBarang['id_rak']);
+        $this->db->bind('gambar', $gambar);
+        $this->db->bind('kolom', $dataBarang['kolom_rak']);
+        
         $this->db->execute();
         return $this->db->rowCount();
     }
