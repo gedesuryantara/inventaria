@@ -1,6 +1,6 @@
 <?php
 class ManageUser_model {
-    private $dbh; //data base handler
+    private $dsn; //data base handler
     private $stmt;
 
     public function __construct() {
@@ -17,7 +17,7 @@ class ManageUser_model {
 
     public function addUser($username, $password) {
         if ($this->isUserExists($username)) {
-            echo "Username Is allrdy in use.";
+            echo "Username Is already in use.";
             return false;
         }
 

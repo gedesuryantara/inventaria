@@ -32,14 +32,17 @@ class Login extends Controller{
 
                 $data = $this->model('Login_model')->ambilDataUser($username);
                 $passwordDb = $data['password'];
+                $_SESSION['status'] = $data['status'];
 
                 if( password_verify($password, $passwordDb) ) {
                     session_start();
 
                     if($_SESSION['status'] != 0){
-                        $location = 'dashboard';
-                    }else{
                         $location = 'manageuser';
+                        $_SESSION['level'] = "admin";
+                    }else{
+                        $location = 'dashboard';
+                        $_SESSION['level'] = "user";
                     }
                     // else {
                     //     header('location: '. BASEURL . '/login');

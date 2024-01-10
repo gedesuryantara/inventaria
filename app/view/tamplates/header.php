@@ -30,11 +30,16 @@
                                         Dashboard
                                     </a>
                                     <hr class="line-fill">
+                                    <a href="<?= BASEURL ?>/manageuser" class="manage-user">
+                                        <i class="fa-solid fa-circle-user"></i>
+                                        Manage Users
+                                    </a>
+                                    <hr class="line-fill">
+                                    <a href="<?= BASEURL ?>/login/logout" class="manage-user">
+                                        <i class="fa-solid fa-circle-user"></i>
+                                        Logout
+                                    </a>
                                 </div>
-                                <a href="<?= BASEURL ?>/manageuser" class="manage-user">
-                                    <i class="fa-solid fa-circle-user"></i>
-                                    Manage Users
-                                </a>
                             </div>
                         </div>
                     </div>
