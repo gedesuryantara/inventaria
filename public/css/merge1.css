@@ -3,7 +3,8 @@
     overflow-y: visible;
     width: 99%;
 }
-.blue{
+
+.blue {
     background-color: blue !important;
 }
 
@@ -32,6 +33,33 @@
 .dasboard-design {
     color: white;
     box-sizing: 10px;
+.btn-add {
+    border-radius: 50%;
+    width: 70px;
+    height: 60px;
+    margin-left: 10%;
+    margin-top: 10%;
+    margin-bottom: 4%;
+    margin-right: 6%;
+}
+
+.btn-add button {
+    background-image: linear-gradient(145deg, #00C2FF, blue);
+}
+
+.accordion-button {
+    background-color: #ffffff;
+}
+
+.accordion-button a:hover {
+    background-color: #010094;
+}
+
+.fa-plus {
+    width: 70%;
+    height: 100%;
+}
+
     transition: ease 0.5s;
     margin-top: 15px;
 }
@@ -116,10 +144,11 @@
     background-image: linear-gradient(145deg, #00C2FF, blue);
 }
 
-.accordion-button{
+.accordion-button {
     background-color: #ffffff;
 }
-.accordion-button a:hover{
+
+.accordion-button a:hover {
     background-color: #010094;
 }
 
@@ -127,7 +156,6 @@
     width: 70%;
     height: 100%;
 }
-
 
 /* Design Putra */
 .save-button button {
@@ -203,12 +231,10 @@
 .save-buttonedit button{
     background-image: linear-gradient(145deg, #00C2FF, blue);
 }
-
 .cancel-buttonedit {
     margin-left: 40%;
     margin-top: -10.7%;
 }
-
 
 /* Design Rama */
 
@@ -217,7 +243,6 @@
     margin-top: 3%;
     margin-left: 5%;
     margin-right: 5%;
-
 }
 
 .card-body h5 {
@@ -237,8 +262,6 @@
     height: 25px;
 }
 
-
-
 /* Design Gde Adi */
 
 .user-card-design {
@@ -253,6 +276,7 @@
 .card img {
     height: 100%;
 }
+
 
 .btn-search {
     background-image: linear-gradient(145deg, #00C2FF, blue);

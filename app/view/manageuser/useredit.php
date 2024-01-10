@@ -1,19 +1,46 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage User's</title> -->
+    <title>Manage User's</title>
 
     <!-- CSS LINK -->
-    <!-- <link rel="stylesheet" href="../../../public/bootstraps/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../public/bootstraps/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../../public/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="../../../public/css/merge.css">
-
 </head>
-<body> -->
+<body>
     
     <!-- Body Design -->
+    <div class="body-design">
+        <div class="row">
+
+            <!-- Sidebar Design -->
+            <div class="col-2">
+                <div class="sidebar-design">
+                    <div class="logo d-flex justify-content-center">
+                        <img src="../../../public/img/logo-inventaria.png" alt="Inventaria Logo" srcset="">
+                    </div>
+                    <div class="container-sm">
+                        <div class="menu-design d-flex flex-column">
+                            <div class="dasboard-design">
+                                <hr class="line-fill">
+                                <a href="#" class="dasboard">
+                                    <i class="fa-solid fa-gauge"></i>
+                                    Dashboard
+                                </a>
+                                <hr class="line-fill">
+                            </div>
+                            <a href="" class="manage-user">
+                                <i class="fa-solid fa-circle-user"></i>
+                                Manage Users
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Sidebar Design -->
 
 
             <div class="col-10">
@@ -65,8 +92,7 @@
     <!-- End Body Design -->
 
     <!-- JAVA SCRIPT LINK -->
-<!-- JAVA SCRIPT LINK -->
-    <!-- <script src="../../../public/bootstraps/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../public/bootstraps/js/bootstrap.bundle.min.js"></script>
     <script src="../../../public/fontawesome/js/all.min.js"></script>
 </body>
-</html> -->
+</html>
