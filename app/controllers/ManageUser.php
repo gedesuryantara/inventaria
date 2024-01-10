@@ -1,5 +1,6 @@
 <?php 
 class ManageUser extends Controller{
+
     public function index()
     {
         $data['judul'] = 'Manage User';

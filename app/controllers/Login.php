@@ -4,11 +4,13 @@ class Login extends Controller{
     
     public function index()
     {
+
         $data['judul'] = 'Login';
 
         $this->view('tamplates/headerlogin', $data);
         $this->view('login/index', $data);
         $this->view('tamplates/footer');
+
     }
 
     public function logout(){
@@ -33,6 +35,7 @@ class Login extends Controller{
                 $data = $this->model('Login_model')->ambilDataUser($username);
                 $passwordDb = $data['password'];
                 $_SESSION['status'] = $data['status'];
+                $_SESSION['userLogin'] = "login";
 
                 if( password_verify($password, $passwordDb) ) {
                     session_start();

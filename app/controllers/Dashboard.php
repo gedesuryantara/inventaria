@@ -2,6 +2,8 @@
 
 
 class Dashboard extends Controller{
+
+
     public function index()
     { 
         // pagination
