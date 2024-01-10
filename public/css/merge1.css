@@ -140,6 +140,10 @@
     display: none;
 }
 
+input[type='file'] {
+    color: rgb(122, 122, 122);
+}
+
 .save-button {
     margin-left: 66%;
 }

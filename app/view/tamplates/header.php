@@ -25,13 +25,13 @@
                             <div class="menu-design d-flex flex-column">
                                 <div class="dasboard-design">
                                     <hr class="line-fill">
-                                    <a href="<?= BASEURL ?>/dashboard" class="dasboard <?= $data['activeItem'] ?>">
+                                    <a href="<?= BASEURL ?>/dashboard" class="dasboard">
                                         <i class="fa-solid fa-gauge"></i>
                                         Dashboard
                                     </a>
                                     <hr class="line-fill">
                                 </div>
-                                <a href="<?= BASEURL ?>/manageuser" class="manage-user <?= $data['activeItem'] ?>">
+                                <a href="<?= BASEURL ?>/manageuser" class="manage-user">
                                     <i class="fa-solid fa-circle-user"></i>
                                     Manage Users
                                 </a>

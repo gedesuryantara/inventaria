@@ -1,21 +1,6 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage User's</title> -->
+<!-- Body Design -->
 
-    <!-- CSS LINK -->
-    <!-- <link rel="stylesheet" href="../../../public/bootstraps/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../../public/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="../../../public/css/merge.css">
-
-</head>
-<body> -->
-
-    <!-- Body Design -->
-
-            <div class="col-10">
+    <div class="col-10">
 
                 <!-- Navbar Design -->
                 <div class="navbar-design shadow">
@@ -41,106 +26,35 @@
                 <!-- Users Card Design -->
                 <div class="user-card-design">
                     <div class="row row-cols-1 row-cols-md-2 g-4">
+
+                        <?php foreach( $data['UserName'] as $usr ) : ?>
                         <div class="col">
                             <div class="card mb-3 shadow">
                                 <div class="row g-0">
-                                  <div class="col-md-4">
-                                    <img src="<?= BASEURL ?>/img/user_icon.png" class="img-fluid rounded-start" alt="...">
-                                  </div>
-                                  <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-center">User</h5>
-                                        <hr>
-                                        <div class="d-flex card-btn justify-content-center mt-4">
-                                            <a class="btn btn-warning me-2 text-center" href="<?= BASEURL ?>/admindashboard/useredit" role="button">
-                                                <i class="fa-solid fa-pen-to-square"></i>
-                                                Edit
-                                            </a>
-                                            <a class="btn btn-danger ms-2 text-center" href="#" role="button">
-                                                <i class="fa-solid fa-trash-can"></i>
-                                                Hapus
-                                            </a>
+                                    <div class="col-md-4">
+                                        <img src="<?= BASEURL ?>/img/user_icon.png" class="img-fluid rounded-start" alt="...">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-center"><?= $usr['username']; ?> </h5>
+                                            <hr>
+                                            <div class="d-flex card-btn justify-content-center mt-4">
+                                                <a class="btn btn-warning me-2 text-center" href="<?= BASEURL ?>/manageuser/useredit" role="button">
+                                                    <i class="fa-solid fa-pen-to-square"></i>
+                                                    Edit
+                                                </a>
+                                                <a class="btn btn-danger ms-2 text-center" href="#" role="button">
+                                                    <i class="fa-solid fa-trash-can"></i>
+                                                    Hapus
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
-                                  </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col">
-                            <div class="card mb-3 shadow">
-                                <div class="row g-0">
-                                  <div class="col-md-4">
-                                    <img src="<?= BASEURL ?>/img/user_icon.png" class="img-fluid rounded-start" alt="...">
-                                  </div>
-                                  <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-center">User</h5>
-                                        <hr>
-                                        <div class="d-flex card-btn justify-content-center mt-4">
-                                            <a class="btn btn-warning me-2 text-center" href="<?= BASEURL ?>/admindashboard/useredit" role="button">
-                                                <i class="fa-solid fa-pen-to-square"></i>
-                                                Edit
-                                            </a>
-                                            <a class="btn btn-danger ms-2 text-center" href="#" role="button">
-                                                <i class="fa-solid fa-trash-can"></i>
-                                                Hapus
-                                            </a>
-                                        </div>
-                                    </div>
-                                  </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card mb-3 shadow">
-                                <div class="row g-0">
-                                  <div class="col-md-4">
-                                    <img src="<?= BASEURL ?>/img/user_icon.png" class="img-fluid rounded-start" alt="...">
-                                  </div>
-                                  <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-center">User</h5>
-                                        <hr>
-                                        <div class="d-flex card-btn justify-content-center mt-4">
-                                            <a class="btn btn-warning me-2 text-center" href="<?= BASEURL ?>/admindashboard/useredit" role="button">
-                                                <i class="fa-solid fa-pen-to-square"></i>
-                                                Edit
-                                            </a>
-                                            <a class="btn btn-danger ms-2 text-center" href="#" role="button">
-                                                <i class="fa-solid fa-trash-can"></i>
-                                                Hapus
-                                            </a>
-                                        </div>
-                                    </div>
-                                  </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card mb-3 shadow">
-                                <div class="row g-0">
-                                  <div class="col-md-4">
-                                    <img src="<?= BASEURL ?>/img/user_icon.png" class="img-fluid rounded-start" alt="...">
-                                  </div>
-                                  <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-center">User</h5>
-                                        <hr>
-                                        <div class="d-flex card-btn justify-content-center mt-4">
-                                            <a class="btn btn-warning me-2 text-center" href="<?= BASEURL ?>/admindashboard/useredit" role="button">
-                                                <i class="fa-solid fa-pen-to-square"></i>
-                                                Edit
-                                            </a>
-                                            <a class="btn btn-danger ms-2 text-center" href="#" role="button">
-                                                <i class="fa-solid fa-trash-can"></i>
-                                                Hapus
-                                            </a>
-                                        </div>
-                                    </div>
-                                  </div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php endforeach; ?>
+                        
                     </div>
                 </div>
                 <!-- End Users Card Design -->
@@ -187,27 +101,35 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <div class="mb-3 row">
-                                <label for="Username" class="col-sm-3 col-form-label">Username</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="Username">
+                            <form action="<?=BASEURL ?>/admindashboard/adduser" method="post">
+                                <div class="mb-3 row">
+                                    <label for="Username" class="col-sm-2 col-form-label">Username</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="Username" name="username">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="mb-3 row">
-                                <label for="Password" class="col-sm-3 col-form-label">Password</label>
-                                <div class="col-sm-9">
-                                    <input type="password" class="form-control" id="Password">
+                                <div class="mb-3 row">
+                                    <label for="Email" class="col-sm-2 col-form-label">Email</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="Email" name="email">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="mb-3 row">
-                                <label for="Password" class="col-sm-3 col-form-label">Re-Password</label>
-                                <div class="col-sm-9">
-                                    <input type="password" class="form-control" id="Password">
+                                <div class="mb-3 row">
+                                    <label for="No. Telp" class="col-sm-2 col-form-label">No. Telp</label>
+                                    <div class="col-sm-10">
+                                        <input type="number" class="form-control" id="No. Telp" name="no_telp">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn save-btn btn-primary">Save</button>
-                            </div>
+                                <div class="mb-3 row">
+                                    <label for="Password" class="col-sm-2 col-form-label">Password</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" class="form-control" id="Password" name="password">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn save-btn btn-primary">Save</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -218,10 +140,4 @@
             </div>
         </div>
     </div>
-    <!-- End Body Design -->
-
-    <!-- JAVA SCRIPT LINK -->
-    <!-- <script src="../../../public/bootstraps/js/bootstrap.bundle.min.js"></script>
-    <script src="../../../public/fontawesome/js/all.min.js"></script>
-</body>
-</html> -->
+<!-- End Body Design -->
