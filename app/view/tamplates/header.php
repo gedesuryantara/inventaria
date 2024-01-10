@@ -29,11 +29,13 @@
                                         <i class="fa-solid fa-gauge"></i>
                                         Dashboard
                                     </a>
+                                    <?php if( $_SESSION['level'] == "admin" ) : ?>
                                     <hr class="line-fill">
                                     <a href="<?= BASEURL ?>/manageuser" class="manage-user">
                                         <i class="fa-solid fa-circle-user"></i>
                                         Manage Users
                                     </a>
+                                    <?php endif; ?>
                                     <hr class="line-fill">
                                     <a href="<?= BASEURL ?>/login/logout" class="manage-user">
                                         <i class="fa-solid fa-circle-user"></i>
