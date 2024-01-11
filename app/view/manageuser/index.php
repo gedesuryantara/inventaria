@@ -15,7 +15,7 @@
                         </div>
                         <div class="col-6">
                             <div class="d-flex justify-content-end profile-layout">
-                                <p>User</p>
+                                <p></p>
                                 <i class="fa-solid fa-circle-user"></i>
                             </div>
                         </div>
