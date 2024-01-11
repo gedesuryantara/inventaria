@@ -41,7 +41,7 @@ class Login extends Controller{
                     session_start();
 
                     if($_SESSION['status'] != 0){
-                        $location = 'manageuser';
+                        $location = 'Admindashboard';
                         $_SESSION['level'] = "admin";
                     }else{
                         $location = 'dashboard';

@@ -1,21 +1,49 @@
 
-            <div class="col-10">
+            <div class="col-9">
 
                 <!-- Navbar Design -->
-                <div class="navbar-design shadow">
+                <div class="navbar-design shadow d-flex">
+                    <div class="menu">
+                        <i class="fa-solid fa-bars"></i>
+                     </div>
                     <div class="manage d-flex">
                         <i class="fa-solid fa-box"></i>
                         <h3 class="manage-text align-self-center">Kelola Barang</h3>
-                    </div>
+                    </div>    
                 </div>
                 <!-- End Navbar Design -->
+
+                <!-- Sidebar Responsive Design -->
+                <div id="sidebar">
+                    <ul>
+                        <li>
+                            <a href="<?= BASEURL ?>/dashboard/admin" class="dasboard <?= $data['activeItem'] ?>">
+                                <i class="fa-solid fa-gauge"></i>
+                                    Dashboard
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?= BASEURL ?>/dashboard/manageuser" class="manage-user <?= $data['activeItem'] ?>">
+                                <i class="fa-solid fa-circle-user"></i>
+                                    Manage Users
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?= BASEURL ?>/login/logout" class="manage-user <?= $data['activeItem'] ?>">
+                                <i class="fa-solid fa-circle-user"></i>
+                                    Logout
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Sidebar Responsive Design End -->
 
                 <!-- Users Card Design -->
                 <?php $dataBarang = $data['barang_edit'] ?>
                 <div class="container-brg container-sm shadow-lg">
                     <form action="<?= BASEURL; ?>/dashboard/barangEdit" method="post" enctype="multipart/form-data">
-                        <div class="row">
-                            <div class="col-md-5">
+                        <div class="row edit-body">
+                            <div class="col-md-5 card-edit">
                                 <div id="imagePreview">
                                     <img class="img-brg rounded" src="<?= BASEURL ?>/img/image_upload/<?= $dataBarang['gambar'];?>" alt="">
                                 </div>
@@ -26,7 +54,7 @@
                                     <input class="form-control form-control-sm" type="file" id="choose" accept="image/*" name="gambar">
                                 </div>
                             </div>
-                            <div class="col-md-7">
+                            <div class="col-md-7 form-view">
                                 <div class="container-sm form-edit">
                                     <div class="mb-3">
                                         <input type="hidden" class="form-control" id="id_barang" name="id_barang" value="<?= $dataBarang['id_barang']; ?>">
@@ -61,10 +89,10 @@
                                 <div class="container-sm form-edit2">
                                     <div class="row d-flex justify-content-end text-center">
                                         
-                                        <div class="col-2">
+                                        <div class="col-2 cancel-buttonedit me-4">
                                             <button type="button" class="btn btn-danger">Cancel</button>
                                         </div>
-                                        <div class="col-2 ms-3 save-buttonedit">
+                                        <div class="col-2 ms-3 me-4 save-buttonedit">
                                             <button type="submit" class="btn btn-primary">Save</button>
                                         </div>
                                     </div>

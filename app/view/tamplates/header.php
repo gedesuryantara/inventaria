@@ -17,7 +17,7 @@
 
                 <!-- Sidebar Design -->
                 <div class="col-2">
-                    <div class="sidebar-design">
+                    <div class="sidebar-design" id="side_bar">
                         <div class="logo d-flex justify-content-center">
                             <img src="<?= BASEURL ?>/img/Logo_inventaria.svg" alt="Inventaria Logo" srcset="">
                         </div>
@@ -31,7 +31,7 @@
                                     </a>
                                     <?php if( $_SESSION['level'] == "admin" ) : ?>
                                     <hr class="line-fill">
-                                    <a href="<?= BASEURL ?>/manageuser" class="manage-user">
+                                    <a href="<?= BASEURL ?>/Admindashboard" class="manage-user">
                                         <i class="fa-solid fa-circle-user"></i>
                                         Manage Users
                                     </a>

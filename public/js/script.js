@@ -130,3 +130,48 @@ if( selectRak != null ) {
     
 }
 // end select bertingkat tambah data
+
+
+// Sidebar Script Start
+
+const menu = document.querySelector(".menu");
+const sidebar = document.querySelector("#sidebar");
+var nilai = 0;
+
+menu.addEventListener("click", function(){
+    if(nilai == 0){
+        sidebar.style.left = "0%";
+        sidebar.style.boxShadow = "20px 0px 20px rgba(0, 0, 0, 0.3)";
+        sidebar.style.transition = "all ease 1s";
+        nilai = 1;
+    }
+    else{
+        sidebar.style.left = "-50%";
+        sidebar.style.boxShadow = "0px 0px 0px";
+        nilai = 0;
+    }
+});
+window.addEventListener("load", function(){
+    loading.style.display = "none";
+});
+
+$('.open-btn').on('click', function(){
+    $('sidebar-design').addClass('active');
+});
+
+$('.close-btn').on('click', function(){
+    $('sidebar-design').removeClass('active');
+});
+
+// Menambahkan event listener untuk menutup sidebar saat klik di luar sidebar
+window.addEventListener("click", function(event) {
+    if (nilai === 1 && !sidebar.contains(event.target) && event.target != menu) {
+        closeSidebar();
+    }
+});
+
+function closeSidebar() {
+    sidebar.style.left = "-50%";
+    sidebar.style.boxShadow = "0px 0px 0px";
+    nilai = 0;
+}
