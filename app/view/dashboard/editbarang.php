@@ -24,6 +24,7 @@
                                         <i class="fa-solid fa-camera"></i>
                                     </label>
                                     <input class="form-control form-control-sm" type="file" id="choose" accept="image/*" name="gambar">
+                                    <input type="hidden" name="gambarLama" value="<?= $dataBarang["gambar"]; ?>"> 
                                 </div>
                             </div>
                             <div class="col-md-7">

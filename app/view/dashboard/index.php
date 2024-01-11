@@ -136,15 +136,25 @@
                     }
                     ?>
 
-
-                    <?php if(!isset($_GET['keyword'])) : ?>
                     <!-- pagination start-->
+                    <?php 
+
+                    if ( isset($_POST['keyword']) ) {
+                      $_SESSION['keyword'] = $_POST['keyword'];
+                    }
+                    if ( $data['cari'] == 'cariItem' ) {
+                      $direction = 'cariPage';
+                    } else {
+                      $direction = 'page';
+                    }
+                    
+                    ?>
                     <div class="pagination d-flex justify-content-center">
                         <nav aria-label="Page navigation example">
                             <ul class="pagination">
                             <?php if ( $data['halaman_aktif'] > 1) : ?>
                               <li class="page-item">
-                                  <a class="page-link" href="<?= BASEURL ?>/dashboard/page/<?= $data['halaman_aktif'] - 1 ?>" aria-label="Previous">
+                                  <a class="page-link" href="<?= BASEURL ?>/dashboard/<?= $direction ?>/<?= $data['halaman_aktif'] - 1 ?>" aria-label="Previous">
                                   <span aria-hidden="true">&laquo;</span>
                                   </a>
                               </li>
@@ -153,16 +163,16 @@
                             <?php for ( $i = $start_number; $i <= $end_number ; $i++ ) : ?>
                               <?php if( $i == $data['halaman_aktif'] ) : ?>
                                 <?php if( $i >= $data['halaman_aktif'] - 2 ) : ?>
-                                <li class="page-item"><a class="page-link active" href="<?= BASEURL ?>/dashboard/page/<?= $i ?>"><?= $i ?></a></li>
+                                <li class="page-item"><a class="page-link active" href="<?= BASEURL ?>/dashboard/<?= $direction ?>/<?= $i ?>"><?= $i ?></a></li>
                                 <?php endif; ?>
                               <?php else : ?>
-                                <li class="page-item"><a class="page-link" href="<?= BASEURL ?>/dashboard/page/<?= $i ?>"><?= $i ?></a></li>
+                                <li class="page-item"><a class="page-link" href="<?= BASEURL ?>/dashboard/<?= $direction ?>/<?= $i ?>"><?= $i ?></a></li>
                               <?php endif; ?>
                             <?php endfor; ?>
 
                             <?php if( $data['halaman_aktif'] < $data['jumlah_halaman']) : ?>
                             <li class="page-item">
-                                <a class="page-link" href="<?= BASEURL ?>/dashboard/page/<?= $data['halaman_aktif'] + 1 ?>" aria-label="Next">
+                                <a class="page-link" href="<?= BASEURL ?>/dashboard/<?= $direction ?>/<?= $data['halaman_aktif'] + 1 ?>" aria-label="Next">
                                 <span aria-hidden="true">&raquo;</span>
                                 </a>
                             </li>
@@ -171,42 +181,6 @@
                         </nav>
                     </div>
                     <!-- Pagination End -->
-                    <?php else : ?>
-
-                    <!-- pagination start-->
-                    <div class="pagination d-flex justify-content-center">
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination">
-                            <?php if ( $data['halaman_aktif'] > 1) : ?>
-                              <li class="page-item">
-                                  <a class="page-link" href="<?= BASEURL ?>/dashboard/page/<?= $data['halaman_aktif'] - 1 ?>" aria-label="Previous">
-                                  <span aria-hidden="true">&laquo;</span>
-                                  </a>
-                              </li>
-                            <?php endif; ?>
-
-                            <?php for ( $i = $start_number; $i <= $end_number ; $i++ ) : ?>
-                              <?php if( $i == $data['halaman_aktif'] ) : ?>
-                                <?php if( $i >= $data['halaman_aktif'] - 2 ) : ?>
-                                <li class="page-item"><a class="page-link active" href="<?= BASEURL ?>/dashboard/page/<?= $i ?>"><?= $i ?></a></li>
-                                <?php endif; ?>
-                              <?php else : ?>
-                                <li class="page-item"><a class="page-link" href="<?= BASEURL ?>/dashboard/page/<?= $i ?>"><?= $i ?></a></li>
-                              <?php endif; ?>
-                            <?php endfor; ?>
-
-                            <?php if( $data['halaman_aktif'] < $data['jumlah_halaman']) : ?>
-                            <li class="page-item">
-                                <a class="page-link" href="<?= BASEURL ?>/dashboard/page/<?= $data['halaman_aktif'] + 1 ?>" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                                </a>
-                            </li>
-                            <?php endif; ?>
-                            </ul>
-                        </nav>
-                    </div>
-                    <!-- Pagination End -->
-                    <?php endif; ?>
 
                     <!-- Button trigger modal -->
                     <?php if( $_SESSION['level'] == "admin" ) : ?>

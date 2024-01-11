@@ -132,8 +132,13 @@ class Barang_model {
 
     public function editDataBarang($dataBarang)
     {
+        $gambarLama = $dataBarang['gambarLama'];
 
-        $gambar = $this->uploadGambar();
+        if( $_FILES['gambar']['error'] == 4 ) {
+            $gambar = $gambarLama;
+        } else {
+            $gambar = $this->uploadGambar();
+        }
 
         $this->db->query(" UPDATE " . $this->tabel . " SET 
                             nama_barang =:namaBarang, 
