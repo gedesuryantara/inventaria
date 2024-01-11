@@ -7,19 +7,20 @@
 
 
                     <div class="col-md-6 right">
-                        
+
                         
                         <div class="input-box">
                             <div class="text-center">
                                 <img src="<?= BASEURL ?>/img/Logo.svg" alt="">
                             </div>
-                            <h1>Inventaria App</h1>
-
+                            <h1 class="m-0 mb-4">Inventaria App</h1>
+                            
+                            <?php Flasher::setMassage() ?>
                             <!-- Input Username dan Password -->
                             <form action="<?= BASEURL ?>/login/user" method="post">
 
                                 <input class="form-control shadow p-3 mb-4 bg-body-tertiary rounded-3"type="text" name="username" placeholder="Username">
-                                <input class="form-control shadow p-3 mb-5 bg-body-tertiary rounded-3"type="password" name="password" placeholder="Password">
+                                <input class="form-control shadow p-3 mb-4 bg-body-tertiary rounded-3"type="password" name="password" placeholder="Password">
                                 
                                 <div class="input-field">
                                     <button type="submit" class="submit">Login</button>

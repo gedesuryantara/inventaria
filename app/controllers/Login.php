@@ -4,12 +4,23 @@ class Login extends Controller{
     
     public function index()
     {
+
         $data['judul'] = 'Login';
 
-        $this->view('tamplates/header', $data);
+        $this->view('tamplates/headerlogin', $data);
         $this->view('login/index', $data);
         $this->view('tamplates/footer');
+
     }
+
+    public function logout(){
+        session_start();
+        $_SESSION = [];
+        session_unset();
+        session_destroy();
+
+        header('location: '. BASEURL . '/login');
+    }   
 
     public function user()
     {
@@ -23,22 +34,36 @@ class Login extends Controller{
 
                 $data = $this->model('Login_model')->ambilDataUser($username);
                 $passwordDb = $data['password'];
+                $_SESSION['status'] = $data['status'];
+                $_SESSION['userLogin'] = "login";
 
                 if( password_verify($password, $passwordDb) ) {
+                    session_start();
 
-                    header('Location: ' . BASEURL . '/dashboard');
-
+                    if($_SESSION['status'] != 0){
+                        $location = 'manageuser';
+                        $_SESSION['level'] = "admin";
+                    }else{
+                        $location = 'dashboard';
+                        $_SESSION['level'] = "user";
+                    }
+                    
                 } else {
-                    echo 'password salah';
+                    $location = 'login';
+                    Flasher::setFlasherMassage('masuk', 'Gagal', 'danger', 'password salah');
                 }
 
             } else {
-                echo 'gagal menemukan user';
+                $location = 'login';
+                Flasher::setFlasherMassage('masuk', 'Gagal', 'danger', 'account user tidak ditemukan');
             }
 
         } else {
-            echo 'isikan data terlebih dahulu';
+            $location = 'login';
+            Flasher::setFlasherMassage('masuk', 'Gagal', 'danger', 'lengkapi data terlebih dahulu');
         }
+
+        header('location: '. BASEURL . '/' . $location);
         
     }
 
