@@ -52,12 +52,8 @@
                     <!-- Sidebar Responsive Design -->
                     <div id="sidebar">
                       <div class="d-flex flex-column">
-                        <div class="logo ">
+                          <div class="logo">
                               <img src="<?= BASEURL ?>/img/Logo_inventaria.svg" alt="Inventaria Logo" srcset="">
-                          </div>
-                          <div class="profile-layout d-flex">
-                            <i class="fa-solid fa-circle-user"></i>
-                            <p><?php // $_SESSION['username']; ?> Admin</p>
                           </div>
                           <ul>
                               <li>
@@ -79,6 +75,10 @@
                                   </a>
                               </li>
                           </ul>
+                          <div class="profile-layout d-flex">
+                            <i class="fa-solid fa-circle-user"></i>
+                            <p><?php // $_SESSION['username']; ?> Admin</p>
+                          </div>
                         </div>
                     </div>
                     <!-- Sidebar Responsive Design End -->
