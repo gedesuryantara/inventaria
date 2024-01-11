@@ -4,42 +4,86 @@
                     <!-- Navbar Design -->
                     <div class="navbar-design shadow">
                         <div class="d-flex justify-content-between">
-                            <div class="col-6">
-                            <div class="searchbar">
+
+                            <div class="col-6 ds-none">
+                              <div class="searchbar">
                                     <Form class="input-group search-layout" action="<?= BASEURL ?>/dashboard/cari" method="post">
                                         <input type="text" class="form-control" placeholder="Search..." aria-label="Recipient's username" name="keyword" aria-describedby="button-addon2">
-                                        <button class=" btn-search btn btn-warning" type="submit" id="button-addon2">
+                                        <button class=" btn-search btn btn-primary" type="submit" id="button-addon2">
                                             <i class="fa-solid fa-magnifying-glass"></i>
                                         </button>
                                     </Form>
                                 </div>
                             </div>
-                            <div class="col-6">
+
+                            <div class="col-8 dnr">
+                              <!-- Searchbar Responsive Design -->
+                              <div class="searchbar-responsive">
+                                  <Form class="input-group search-layout" action="<?= BASEURL ?>/dashboard/cari" method="post">
+                                      <input type="text" class="form-control" placeholder="Search..." aria-label="Recipient's username" name="keyword" aria-describedby="button-addon2">
+                                      <button class=" btn-search btn btn-primary" type="submit" id="button-addon2">
+                                          <i class="fa-solid fa-magnifying-glass"></i>
+                                      </button>
+                                  </Form>
+                              </div>
+                              <!-- Searchbar Responsive End -->
+                            </div>
+
+                            <div class="col-6 ds-none">
                                 <div class="d-flex justify-content-end profile-layout">
                                     <p><?php // $_SESSION['username']; ?></p>
                                     <i class="fa-solid fa-circle-user"></i>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="menu"><i class="fa-solid fa-bars"></i></div>
+                            <div class="col-4">
+                              <div class="menu-responsive">
+                                <div class="menu">
+                                  <i class="fa-solid fa-bars"></i>
+                                </div>
+                              </div>
+                            </div>
+
+                        </div>
 
                     </div>
                     <!-- End Navbar Design -->
 
-                    <!-- Searchbar Responsive Design -->
-                    <div class="searchbar-responsive">
-                        <Form class="input-group search-layout" action="<?= BASEURL ?>/multipage/cari" method="post">
-                            <input type="text" class="form-control" placeholder="Search..." aria-label="Recipient's username" name="keyword" aria-describedby="button-addon2">
-                            <button class=" btn-search btn btn-warning" type="submit" id="button-addon2">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </button>
-                        </Form>
+                    <!-- Sidebar Responsive Design -->
+                    <div id="sidebar">
+                      <div class="d-flex flex-column">
+                        <div class="logo ">
+                              <img src="<?= BASEURL ?>/img/Logo_inventaria.svg" alt="Inventaria Logo" srcset="">
+                          </div>
+                          <div class="profile-layout d-flex">
+                            <i class="fa-solid fa-circle-user"></i>
+                            <p><?php // $_SESSION['username']; ?> Admin</p>
+                          </div>
+                          <ul>
+                              <li>
+                                  <a href="<?= BASEURL ?>/dashboard/admin" class="dasboard <?= $data['activeItem'] ?>">
+                                      <i class="fa-solid fa-gauge"></i>
+                                      Dashboard
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="<?= BASEURL ?>/dashboard/manageuser" class="manage-user <?= $data['activeItem'] ?>">
+                                      <i class="fa-solid fa-circle-user"></i>
+                                      Manage Users
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="<?= BASEURL ?>/login/logout" class="manage-user <?= $data['activeItem'] ?>">
+                                      <i class="fa-solid fa-circle-user"></i>
+                                      Logout
+                                  </a>
+                              </li>
+                          </ul>
+                        </div>
                     </div>
-                    <!-- Searchbar Responsive End -->
+                    <!-- Sidebar Responsive Design End -->
 
                     <!-- Item Card Design -->
-                    
                     <div class="item-barang ">
 
                       <?php Flasher::setMassage(); ?>
@@ -128,6 +172,7 @@
                     </div>
                     <!-- Pagination End -->
                     <?php else : ?>
+
                     <!-- pagination start-->
                     <div class="pagination d-flex justify-content-center">
                         <nav aria-label="Page navigation example">
@@ -165,8 +210,8 @@
 
                     <!-- Button trigger modal -->
                     <?php if( $_SESSION['level'] == "admin" ) : ?>
-                    <div class="d-flex justify-content-end btn-add position-absolute bottom-0 end-0">
-                        <button type="button" class="btn btn-add btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <div class="btn-add fixed-bottom">
+                        <button type="button" class="btn btn-add btn-primary justify-content-end" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             <i class="fa-solid fa-plus"></i>
                         </button>
                     </div>

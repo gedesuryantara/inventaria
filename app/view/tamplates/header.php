@@ -16,7 +16,7 @@
             <div class="row">
 
                 <!-- Sidebar Design -->
-                <div class="col-2 none">
+                <div class="col-2 ds-none">
                     <div class="sidebar-design">
                         <div class="logo d-flex justify-content-center">
                             <img src="<?= BASEURL ?>/img/Logo_inventaria.svg" alt="Inventaria Logo" srcset="">
