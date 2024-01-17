@@ -111,6 +111,7 @@
     margin-top: 10%;
     margin-bottom: 4%;
     margin-right: 6%;
+    z-index: 1;
 }
 
 .btn-add button {
@@ -413,7 +414,7 @@ input[type='file'] {
     position: fixed;
     bottom: 0;
     top: 0;
-    left: -90%;
+    left: -10   0%;
     background-color: #002ea3c1;
     display: none;
 }
