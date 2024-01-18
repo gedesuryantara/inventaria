@@ -99,10 +99,14 @@
 
 /* CSS Rama & Putra */
 
+.fixed-bottom {
+    left: 80%;
+}
+
 .btn-add {
     border-radius: 50%;
-    width: 70px;
-    height: 60px;
+    width: 65px;
+    height: 65px;
     margin-left: 10%;
     margin-top: 10%;
     margin-bottom: 4%;
@@ -379,6 +383,23 @@ input[type='file'] {
     text-align: center;
 }
 
+.searchbar-responsive {
+    display: none;
+}
+
+.menu-responsive {
+    display: none;
+}
+
+.page-item {
+    z-index: 1;
+}
+
+.dnr {
+    display: none;
+}
+
+
 /* Sidebar Start */
 .menu{
     display: none;
@@ -390,50 +411,57 @@ input[type='file'] {
 #sidebar{
     z-index: 2;
     position: fixed;
-    align-items: center;
     bottom: 0;
     top: 0;
-    width: 50%;
-    left: -50%;
-    background-color: rgba(0, 0, 0, 0.8);
+    left: -90%;
+    background-color: #002ea3c1;
     display: none;
 }
 
 #sidebar ul{
     list-style: none;
     margin: 0;
-    padding:0;
+    padding: 0;
     width : 100%;
+    margin-top: 6%;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 #sidebar li{
+    width: 100%;
     display: flex;
     padding: 0px;
     transition: all 0.5s ease;
 }
 
+#sidebar .logo img{
+    width: 75%;
+    height: auto;
+   padding-left: 65px;
+    margin-bottom: 40%;
+}
+
 #sidebar li a{
     text-decoration: none;
-    font-size: 16px;
+    font-size: 20px;
     color: white;
     width: 100%;
     text-align: left;
-    padding: 50px;
+    padding: 10px;
+    padding-left: 50px;
     transition: all 0.5s linear;
 }
 
 #sidebar li:hover{
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.648);
 }
 
 #sidebar li a:hover{
-    color: black;
+    color: #010094;
 }
 /* Sidebar End */
 
-
-/* responsive code */
+/* Responsive Style */
 
 @media (max-width : 1380px) {
 
@@ -465,7 +493,7 @@ input[type='file'] {
 
 @media (max-width : 1050px) {
 
-    /* .searchbar form {
+    .searchbar form {
         display: none;
     }
 
@@ -480,15 +508,30 @@ input[type='file'] {
         margin-left: 30px;
     }
 
+    .profile-layout .fa-circle-user {
+        width: 35px;
+        height: 35px;
+        color: #00C2FF;
+        padding-left: 40px;
+        margin-top: 59vh;
+    }
+
+    .profile-layout p {
+        font-size: 20px;
+        color: white;
+        margin-top: 59vh;
+    }
+
     .menu-responsive {
         width: 100%;
         display: grid;
-    } */
+    }
 
     .menu{
         display: flex;
-        width: 50%;
+        width: 80%;
         margin-top: 30px;
+
     }
 
     #sidebar{

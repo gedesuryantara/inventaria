@@ -4,29 +4,86 @@
                     <!-- Navbar Design -->
                     <div class="navbar-design shadow">
                         <div class="d-flex justify-content-between">
-                            <div class="col-6">
-                              <form action="<?= BASEURL; ?>/dashboard/cari" method="post">
-                                <div class="input-group search-layout">
-                                    <input type="text" class="form-control" placeholder="Search..." aria-label="Recipient's username" aria-describedby="button-addon2" name="keyword">
-                                    <button class="btn-search btn btn-primary" type="submit" id="button-addon2">
-                                        <i class="fa-solid fa-magnifying-glass"></i>
-                                    </button>
+
+                            <div class="col-6 ds-none">
+                              <div class="searchbar">
+                                    <Form class="input-group search-layout" action="<?= BASEURL ?>/dashboard/cari" method="post">
+                                        <input type="text" class="form-control" placeholder="Search..." aria-label="Recipient's username" name="keyword" aria-describedby="button-addon2">
+                                        <button class=" btn-search btn btn-primary" type="submit" id="button-addon2">
+                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                        </button>
+                                    </Form>
                                 </div>
-                              </form>
                             </div>
-                            <div class="col-6">
+
+                            <div class="col-8 dnr">
+                              <!-- Searchbar Responsive Design -->
+                              <div class="searchbar-responsive">
+                                  <Form class="input-group search-layout" action="<?= BASEURL ?>/dashboard/cari" method="post">
+                                      <input type="text" class="form-control" placeholder="Search..." aria-label="Recipient's username" name="keyword" aria-describedby="button-addon2">
+                                      <button class=" btn-search btn btn-primary" type="submit" id="button-addon2">
+                                          <i class="fa-solid fa-magnifying-glass"></i>
+                                      </button>
+                                  </Form>
+                              </div>
+                              <!-- Searchbar Responsive End -->
+                            </div>
+
+                            <div class="col-6 ds-none">
                                 <div class="d-flex justify-content-end profile-layout">
                                     <p><?php // $_SESSION['username']; ?></p>
                                     <i class="fa-solid fa-circle-user"></i>
                                 </div>
                             </div>
+
+                            <div class="col-4">
+                              <div class="menu-responsive">
+                                <div class="menu">
+                                  <i class="fa-solid fa-bars"></i>
+                                </div>
+                              </div>
+                            </div>
+
                         </div>
+
                     </div>
                     <!-- End Navbar Design -->
 
+                    <!-- Sidebar Responsive Design -->
+                    <div id="sidebar">
+                      <div class="d-flex flex-column">
+                          <div class="logo">
+                              <img src="<?= BASEURL ?>/img/Logo_inventaria.svg" alt="Inventaria Logo" srcset="">
+                          </div>
+                          <ul>
+                              <li>
+                                  <a href="<?= BASEURL ?>/dashboard/admin" class="dasboard <?= $data['activeItem'] ?>">
+                                      <i class="fa-solid fa-gauge"></i>
+                                      Dashboard
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="<?= BASEURL ?>/dashboard/manageuser" class="manage-user <?= $data['activeItem'] ?>">
+                                      <i class="fa-solid fa-circle-user"></i>
+                                      Manage Users
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="<?= BASEURL ?>/login/logout" class="manage-user <?= $data['activeItem'] ?>">
+                                      <i class="fa-solid fa-circle-user"></i>
+                                      Logout
+                                  </a>
+                              </li>
+                          </ul>
+                          <div class="profile-layout d-flex">
+                            <i class="fa-solid fa-circle-user"></i>
+                            <p><?php // $_SESSION['username']; ?> Admin</p>
+                          </div>
+                        </div>
+                    </div>
+                    <!-- Sidebar Responsive Design End -->
 
                     <!-- Item Card Design -->
-                    
                     <div class="item-barang ">
 
                       <?php Flasher::setMassage(); ?>
@@ -79,15 +136,25 @@
                     }
                     ?>
 
-
-                    <?php if(!isset($_GET['keyword'])) : ?>
                     <!-- pagination start-->
+                    <?php 
+
+                    if ( isset($_POST['keyword']) ) {
+                      $_SESSION['keyword'] = $_POST['keyword'];
+                    }
+                    if ( $data['cari'] == 'cariItem' ) {
+                      $direction = 'cariPage';
+                    } else {
+                      $direction = 'page';
+                    }
+                    
+                    ?>
                     <div class="pagination d-flex justify-content-center">
                         <nav aria-label="Page navigation example">
                             <ul class="pagination">
                             <?php if ( $data['halaman_aktif'] > 1) : ?>
                               <li class="page-item">
-                                  <a class="page-link" href="<?= BASEURL ?>/dashboard/page/<?= $data['halaman_aktif'] - 1 ?>" aria-label="Previous">
+                                  <a class="page-link" href="<?= BASEURL ?>/dashboard/<?= $direction ?>/<?= $data['halaman_aktif'] - 1 ?>" aria-label="Previous">
                                   <span aria-hidden="true">&laquo;</span>
                                   </a>
                               </li>
@@ -96,16 +163,16 @@
                             <?php for ( $i = $start_number; $i <= $end_number ; $i++ ) : ?>
                               <?php if( $i == $data['halaman_aktif'] ) : ?>
                                 <?php if( $i >= $data['halaman_aktif'] - 2 ) : ?>
-                                <li class="page-item"><a class="page-link active" href="<?= BASEURL ?>/dashboard/page/<?= $i ?>"><?= $i ?></a></li>
+                                <li class="page-item"><a class="page-link active" href="<?= BASEURL ?>/dashboard/<?= $direction ?>/<?= $i ?>"><?= $i ?></a></li>
                                 <?php endif; ?>
                               <?php else : ?>
-                                <li class="page-item"><a class="page-link" href="<?= BASEURL ?>/dashboard/page/<?= $i ?>"><?= $i ?></a></li>
+                                <li class="page-item"><a class="page-link" href="<?= BASEURL ?>/dashboard/<?= $direction ?>/<?= $i ?>"><?= $i ?></a></li>
                               <?php endif; ?>
                             <?php endfor; ?>
 
                             <?php if( $data['halaman_aktif'] < $data['jumlah_halaman']) : ?>
                             <li class="page-item">
-                                <a class="page-link" href="<?= BASEURL ?>/dashboard/page/<?= $data['halaman_aktif'] + 1 ?>" aria-label="Next">
+                                <a class="page-link" href="<?= BASEURL ?>/dashboard/<?= $direction ?>/<?= $data['halaman_aktif'] + 1 ?>" aria-label="Next">
                                 <span aria-hidden="true">&raquo;</span>
                                 </a>
                             </li>
@@ -114,46 +181,11 @@
                         </nav>
                     </div>
                     <!-- Pagination End -->
-                    <?php else : ?>
-                    <!-- pagination start-->
-                    <div class="pagination d-flex justify-content-center">
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination">
-                            <?php if ( $data['halaman_aktif'] > 1) : ?>
-                              <li class="page-item">
-                                  <a class="page-link" href="<?= BASEURL ?>/dashboard/page/<?= $data['halaman_aktif'] - 1 ?>" aria-label="Previous">
-                                  <span aria-hidden="true">&laquo;</span>
-                                  </a>
-                              </li>
-                            <?php endif; ?>
-
-                            <?php for ( $i = $start_number; $i <= $end_number ; $i++ ) : ?>
-                              <?php if( $i == $data['halaman_aktif'] ) : ?>
-                                <?php if( $i >= $data['halaman_aktif'] - 2 ) : ?>
-                                <li class="page-item"><a class="page-link active" href="<?= BASEURL ?>/dashboard/page/<?= $i ?>"><?= $i ?></a></li>
-                                <?php endif; ?>
-                              <?php else : ?>
-                                <li class="page-item"><a class="page-link" href="<?= BASEURL ?>/dashboard/page/<?= $i ?>"><?= $i ?></a></li>
-                              <?php endif; ?>
-                            <?php endfor; ?>
-
-                            <?php if( $data['halaman_aktif'] < $data['jumlah_halaman']) : ?>
-                            <li class="page-item">
-                                <a class="page-link" href="<?= BASEURL ?>/dashboard/page/<?= $data['halaman_aktif'] + 1 ?>" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                                </a>
-                            </li>
-                            <?php endif; ?>
-                            </ul>
-                        </nav>
-                    </div>
-                    <!-- Pagination End -->
-                    <?php endif; ?>
 
                     <!-- Button trigger modal -->
                     <?php if( $_SESSION['level'] == "admin" ) : ?>
-                    <div class="d-flex justify-content-end btn-add position-absolute bottom-0 end-0">
-                        <button type="button" class="btn btn-add btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <div class="btn-add fixed-bottom">
+                        <button type="button" class="btn btn-add btn-primary justify-content-end" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             <i class="fa-solid fa-plus"></i>
                         </button>
                     </div>

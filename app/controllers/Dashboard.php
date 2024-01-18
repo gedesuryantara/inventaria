@@ -13,6 +13,7 @@ class Dashboard extends Controller{
         $data['jumlah_halaman'] = ceil($jumlah_data / $batasHalaman);
         
         $data['judul'] = 'Dashboard';
+        $data['cari'] = null;
         $data['barang'] = $this->model('Barang_model')->getAllBarang();
         $data['rakData'] = $this->model('Rak_model')->queryRak();
 
@@ -31,8 +32,6 @@ class Dashboard extends Controller{
     public function cari()
     {
         $keyword = $_POST['keyword'];
-        var_dump($keyword);
-        die;
         $batasHalaman = 3;
         $jumlah_data = count($this->model('Barang_model')->queryCariData($keyword));
         $data['halaman_aktif'] = (isset($idPages)) ? (int)$idPages : 1 ;
@@ -40,7 +39,27 @@ class Dashboard extends Controller{
         $data['jumlah_halaman'] = ceil($jumlah_data / $batasHalaman);
 
         $data['judul'] = 'Dashboard';
-        $data['barang'] = $this->model('Barang_model')->getAllBarangPage( $keyword, $halamanAwal, $batasHalaman );
+        $data['barang'] = $this->model('Barang_model')->getAllBarangCari( $keyword, $halamanAwal, $batasHalaman );
+        $data['rakData'] = $this->model('Rak_model')->queryRak();
+        $data['cari'] = 'cariItem';
+
+        $this->view('tamplates/header', $data);
+        $this->view('dashboard/index', $data);
+        $this->view('tamplates/footer');
+    }
+
+    public function cariPage($idPages)
+    {
+        $keyword = $_SESSION['keyword'];
+        $batasHalaman = 3;
+        $jumlah_data = count($this->model('Barang_model')->queryCariData($keyword));
+        $data['halaman_aktif'] = (isset($idPages)) ? (int)$idPages : 1 ;
+        $halamanAwal = ( $batasHalaman * $data['halaman_aktif'] ) - $batasHalaman ;
+        $data['jumlah_halaman'] = ceil($jumlah_data / $batasHalaman);
+
+        $data['judul'] = 'Dashboard';
+        $data['cari'] = 'cariItem';
+        $data['barang'] = $this->model('Barang_model')->getAllBarangCari( $keyword, $halamanAwal, $batasHalaman );
         $data['rakData'] = $this->model('Rak_model')->queryRak();
         $data['activeItem'] = 'active-item';
 
@@ -90,6 +109,7 @@ class Dashboard extends Controller{
         $data['jumlah_halaman'] = ceil($jumlah_data / $batasHalaman);
 
         $data['judul'] = 'Dashboard';
+        $data['cari'] = null;
         $data['barang'] = $this->model('Barang_model')->getAllBarangPage( $halamanAwal, $batasHalaman );
         $data['rakData'] = $this->model('Rak_model')->queryRak();
         $data['activeItem'] = 'active-item';
@@ -122,6 +142,7 @@ class Dashboard extends Controller{
 
     public function barangEdit()
     {
+
         if( $this->model('Barang_model')->editDataBarang($_POST) > 0 ) {
             header('Location: ' . BASEURL . '/dashboard');
             Flasher::setFlasherMassage('berhasil', 'diubah', 'success');
