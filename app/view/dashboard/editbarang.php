@@ -1,40 +1,49 @@
 
-            <div class="col-9">
+            <div class="col-9 col-9-edit">
 
                 <!-- Navbar Design -->
-                <div class="navbar-design shadow d-flex">
-                    <div class="menu">
-                        <i class="fa-solid fa-bars"></i>
-                     </div>
+                <div class="navbar-design shadow d-flex sticky-top">
                     <div class="manage d-flex">
                         <i class="fa-solid fa-box"></i>
                         <h3 class="manage-text align-self-center">Kelola Barang</h3>
-                    </div>    
+                    </div>
+                    <div class="menu menu-edit">
+                        <i class="fa-solid fa-bars"></i>
+                     </div>    
                 </div>
                 <!-- End Navbar Design -->
 
                 <!-- Sidebar Responsive Design -->
                 <div id="sidebar">
-                    <ul>
-                        <li>
-                            <a href="<?= BASEURL ?>/dashboard/admin" class="dasboard <?= $data['activeItem'] ?>">
-                                <i class="fa-solid fa-gauge"></i>
-                                    Dashboard
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?= BASEURL ?>/dashboard/manageuser" class="manage-user <?= $data['activeItem'] ?>">
-                                <i class="fa-solid fa-circle-user"></i>
-                                    Manage Users
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?= BASEURL ?>/login/logout" class="manage-user <?= $data['activeItem'] ?>">
-                                <i class="fa-solid fa-circle-user"></i>
-                                    Logout
-                            </a>
-                        </li>
-                    </ul>
+                    <div class="d-flex flex-column">
+                        <div class="logo">
+                              <img src="<?= BASEURL ?>/img/Logo_inventaria.svg" alt="Inventaria Logo" srcset="">
+                        </div>
+                        <ul>
+                            <li>
+                                <a href="<?= BASEURL ?>/dashboard/admin" class="dasboard <?= $data['activeItem'] ?>">
+                                    <i class="fa-solid fa-gauge"></i>
+                                        Dashboard
+                                </a>
+                            </li>
+                            <li>
+                                <a href="<?= BASEURL ?>/dashboard/manageuser" class="manage-user <?= $data['activeItem'] ?>">
+                                    <i class="fa-solid fa-circle-user"></i>
+                                        Manage Users
+                                </a>
+                            </li>
+                            <li>
+                                <a href="<?= BASEURL ?>/login/logout" class="manage-user <?= $data['activeItem'] ?>">
+                                    <i class="fa-solid fa-circle-user"></i>
+                                        Logout
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="profile-layout profile-layout-edit d-flex">
+                            <i class="fa-solid fa-circle-user"></i>
+                            <p><?php // $_SESSION['username']; ?> Admin</p>
+                        </div>
+                    </div>
                 </div>
                 <!-- Sidebar Responsive Design End -->
 
@@ -43,11 +52,11 @@
                 <div class="container-brg container-sm shadow-lg">
                     <form action="<?= BASEURL; ?>/dashboard/barangEdit" method="post" enctype="multipart/form-data">
                         <div class="row edit-body">
-                            <div class="col-md-5 card-edit">
+                            <div class="col-md-5 card-edit pic-edit">
                                 <div id="imagePreview">
                                     <img class="img-brg rounded" src="<?= BASEURL ?>/img/image_upload/<?= $dataBarang['gambar'];?>" alt="">
                                 </div>
-                                <div class="file-form mb-3">
+                                <div class="file-form pic-choose mb-3">
                                     <label for="choose" class="btn btn-primary">
                                         <i class="fa-solid fa-camera"></i>
                                     </label>
@@ -55,7 +64,7 @@
                                     <input type="hidden" name="gambarLama" value="<?= $dataBarang["gambar"]; ?>"> 
                                 </div>
                             </div>
-                            <div class="col-md-7 form-view">
+                            <div class="col-md-7 form-view form-view-edit">
                                 <div class="container-sm form-edit">
                                     <div class="mb-3">
                                         <input type="hidden" class="form-control" id="id_barang" name="id_barang" value="<?= $dataBarang['id_barang']; ?>">

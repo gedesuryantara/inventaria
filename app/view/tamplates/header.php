@@ -17,7 +17,7 @@
 
                 <!-- Sidebar Design -->
                 <div class="col-2">
-                    <div class="sidebar-design" id="side_bar">
+                    <div class="sidebar-design open-btn" id="side_bar">
                         <div class="logo d-flex justify-content-center">
                             <img src="<?= BASEURL ?>/img/Logo_inventaria.svg" alt="Inventaria Logo" srcset="">
                         </div>
