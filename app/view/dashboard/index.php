@@ -63,7 +63,7 @@
                                   </a>
                               </li>
                               <li>
-                                  <a href="<?= BASEURL ?>/dashboard/manageuser" class="manage-user <?= $data['activeItem'] ?>">
+                                  <a href="<?= BASEURL ?>/Admindashboard/index" class="manage-user <?= $data['activeItem'] ?>">
                                       <i class="fa-solid fa-circle-user"></i>
                                       Manage Users
                                   </a>
