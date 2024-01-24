@@ -43,6 +43,12 @@
     transition: ease 0.5s;
 }
 
+
+.manage h3 {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
 .manage-user:hover {
     color: #00C2FF;
 }
@@ -202,7 +208,10 @@ input[type='file'] {
     width: 50px;
     height: 50px;
     background-image: linear-gradient(145deg, #00C2FF, blue);
+    margin-top: 20px;
+    margin-left: 10px;
 }
+
 .fa-camera {
     width: 20px;
     height: 20px;
@@ -467,6 +476,13 @@ input[type='file'] {
 #sidebar li a:hover{
     color: #010094;
 }
+
+
+.btn-cancel a {
+    color: #ffff;
+    text-decoration: none;
+}
+
 /* Sidebar End */
 
 
@@ -565,10 +581,6 @@ input[type='file'] {
         width: 100%;
     }
 
-    #sidebar li a{
-        font-size: 18px;
-    }
-
     .user-card-design {
         margin-right: 50px;
     }
@@ -589,6 +601,33 @@ input[type='file'] {
 
     .nav-layout {
         margin-top: 1%;
+    }
+    .menu-edit {
+        display: none;
+    }
+
+    .col-edit {
+        height: 100vh;
+    }
+
+    .container-brg {
+        height: 43%;
+    }
+
+    .cancel-buttonedit {
+        margin-top: 30px;
+    }
+    .save-buttonedit {
+        margin-top: 30px;
+    }
+
+    .manage .fa-box {
+        margin-top: 20px;
+    }
+
+    .file-form label {
+        margin-top: 5px;
+        margin-left: 0px;
     }
 }
 
@@ -617,14 +656,97 @@ input[type='file'] {
 
 }
 
-@media (max-width : 850px) {
-    .fixed-bottom {
-        left: 75%;
-        bottom: 2%;
+
+/* edit barang responsive */
+
+@media (max-width : 770px) {
+
+    .sidebar-design {
+        display: none;
+    }
+
+    /* #sidebar {
+        padding-top: 110px;
+    } */
+
+    #sidebar ul {
+        margin-top: -10px;
+    }
+
+    #sidebar ul li {
+        margin-left: -20px;
+        margin-right: 50px;
+    }
+
+    .profile-layout-edit {
+        margin-top: -5%;
+    } 
+
+
+    .col-9-edit {
+        width: 100%;
+    }
+
+    .navbar-design {
+        width: 100%;
+        z-index: 1;
+    }
+
+    .manage h3 {
+        font-size: 22px;
+        margin-left: 5rem;
+        margin-bottom: 30px;
+        position: absolute;
+
+
+    }
+
+
+    #imagePreview {
+        margin-top: 50px;
+    }
+
+    .container-brg {
+        width: 72vw;
+        margin-left: auto;
+        height: 40vh;
+    }
+
+    .form-edit input {
+        height: 35px;
+        width: 32vw;
+    }
+    .form-edit2 {
+        width: 35vw;
+    }
+
+    .form-edit2 input {
+        height: 35px;
+    }
+    .form-edit2 select {
+        height: 35px;
+    }
+
+    .save-buttonedit button {
+        width: 60px;
+        font-size: 15px;
+    }
+    .cancel-buttonedit button {
+        width: 70px;
+        font-size: 15px;
+        margin-left: -20px;
     }
 
     .img-user img {
         height: 14vh;
+    }
+
+    .manage .fa-box {
+        margin-top: 20px;
+    }
+
+    .manage h3{
+        margin-top: 30px;
     }
 
 }
@@ -682,7 +804,118 @@ input[type='file'] {
     }
     
 
+@media (max-width : 427px) {
+    #side_bar{
+        margin-left: -250px;
+        position: fixed;
+        min-height: 100vh;
+        z-index: 1;
+    }
+
+    #side_bar.active {
+        margin-left: 0;
+    }
+
+    #sidebar ul {
+        margin-top: -10px;
+    }
+
+    #sidebar ul li {
+        margin-left: -20px;
+        margin-right: 50px;
+    }
+
+
+    .menu-edit {
+        margin-right: 40px;
+    }
+
+    .manage h3 {
+        font-size: 22px;
+        margin-left: 5rem;
+        margin-bottom: 30px;
+        position: absolute;
+    }
+
+    .navbar-design {
+        margin-right: -40px;
+        /* width: 100vw; */
+    }
+
+    .container-brg {
+        height: 60vh;
+        width: 85vw;
+        /* margin-left: 30px; */
+    }
+
+    .card-edit {
+        width: 55vw;
+        margin-left: 110px;
+        /* margin-top: -10px; */
+    }
+
+    .form-view {
+        margin-top: -10px;
+        margin-left: 40px;
+    }
+
+    .form-edit input {
+        height: 35px;
+        width: 64vw;
+    }
+    .form-edit2 {
+        width: 70vw;
+    }
+
+    .form-edit2 input {
+        height: 35px;
+    }
+    .form-edit2 select {
+        height: 35px;
+    }
+
+    .save-buttonedit button {
+        width: 60px;
+        font-size: 15px;
+    }
+    .cancel-buttonedit button {
+        width: 70px;
+        font-size: 15px;
+    }
+
+    #imagePreview {
+        margin-right: 80px;
+    }
+    .img-brg {
+        width: 95%;
+        justify-content: center;
+    }
+    .pic-choose {
+        margin-left: 25%;
+    }
+
+    .pic-edit {
+        margin-top: -50px;
+        margin-left: 100px;
+    }
+
+    .form-view-edit {
+        margin-left: 5px;
+        width: 70vw;
+        margin-top: -40px;
+    }
+
+    .profile-layout-edit {
+        margin-top: 5%;
+    }
+
+    .img-brg {
+        width: 50vw;
+        height: 10vh;
+        margin-left: -28.5%;
+    }
 }
+
 /*  */
 
 /*  */
@@ -698,5 +931,5 @@ input[type='file'] {
 }
 /*  */
 
-
-/* Responsive Manage User */
+}
+/* Responsive Manage User */ 

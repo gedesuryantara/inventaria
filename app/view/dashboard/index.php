@@ -62,22 +62,28 @@
                                       Dashboard
                                   </a>
                               </li>
+                              <?php if( $_SESSION['level'] == "admin" ) : ?>
                               <li>
                                   <a href="<?= BASEURL ?>/Admindashboard/index" class="manage-user <?= $data['activeItem'] ?>">
                                       <i class="fa-solid fa-circle-user"></i>
                                       Manage Users
                                   </a>
                               </li>
+                              <?php endif; ?>
                               <li>
                                   <a href="<?= BASEURL ?>/login/logout" class="manage-user <?= $data['activeItem'] ?>">
-                                      <i class="fa-solid fa-circle-user"></i>
+                                      <i class="fa-solid fa-right-from-bracket"></i>
                                       Logout
                                   </a>
                               </li>
                           </ul>
                           <div class="profile-layout d-flex">
                             <i class="fa-solid fa-circle-user"></i>
-                            <p><?php // $_SESSION['username']; ?> Admin</p>
+                            <?php if( $_SESSION['level'] == "admin" ) : ?>
+                              <p>Admin</p>
+                            <?php else : ?>
+                              <p>User</p>
+                            <?php endif; ?>
                           </div>
                         </div>
                     </div>

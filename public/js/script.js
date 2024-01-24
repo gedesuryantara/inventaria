@@ -131,8 +131,7 @@ if( selectRak != null ) {
 }
 // end select bertingkat tambah data
 
-// Sidebar Script Start
-
+// SideBar JS
 const menu = document.querySelector(".menu");
 const sidebar = document.querySelector("#sidebar");
 var nilai = 0;
@@ -152,4 +151,11 @@ menu.addEventListener("click", function(){
 });
 window.addEventListener("load", function(){
     loading.style.display = "none";
+});
+$('.open-btn').on('click', function(){
+    $('sidebar-design').addClass('active');
+});
+
+$('.close-btn').on('click', function(){
+    $('sidebar-design').removeClass('active');
 });

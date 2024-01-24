@@ -13,19 +13,20 @@
                 </Form>
         </div>
 
-        <div class="col-4">
-                              <div class="menu-responsive">
-                                <div class="menu">
-                                  <i class="fa-solid fa-bars"></i>
-                                </div>
-                              </div>
-                            </div>
-        <!-- <div class="col-6">
+        <div class="col-6 ds-none">
             <div class="d-flex justify-content-end profile-layout">
-                <p>User</p>
-                <i class="fa-solid fa-circle-user"></i>
+                <p><?php // $_SESSION['username']; ?></p>
+                    <i class="fa-solid fa-circle-user"></i>
             </div>
-        </div> -->
+        </div>
+
+        <div class="col-4">
+            <div class="menu-responsive">
+                <div class="menu">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <!-- End Navbar Design -->
@@ -57,14 +58,14 @@
                                   </a>
                               </li>
                               <li>
-                                  <a href="<?= BASEURL ?>/dashboard/manageuser" class="manage-user <?= $data['activeItem'] ?>">
+                                  <a href="<?= BASEURL ?>/admindashboard" class="manage-user <?= $data['activeItem'] ?>">
                                       <i class="fa-solid fa-circle-user"></i>
                                       Manage Users
                                   </a>
                               </li>
                               <li>
                                   <a href="<?= BASEURL ?>/login/logout" class="manage-user <?= $data['activeItem'] ?>">
-                                      <i class="fa-solid fa-circle-user"></i>
+                                      <i class="fa-solid fa-right-from-bracket"></i>
                                       Logout
                                   </a>
                               </li>
