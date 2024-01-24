@@ -13,7 +13,13 @@
                                 <button class=" btn-search btn btn-primary" type="submit" id="button-addon2">
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </button>
-                            </Form>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex justify-content-end profile-layout">
+                                <p></p>
+                                <i class="fa-solid fa-circle-user"></i>
+                            </div>
                         </div>
                     </div>
 

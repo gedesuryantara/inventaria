@@ -40,8 +40,8 @@ class Login extends Controller{
                 if( password_verify($password, $passwordDb) ) {
                     session_start();
 
-                    if($_SESSION['status'] != 0){
-                        $location = 'manageuser';
+                    if($_SESSION['status'] == 1){
+                        $location = 'Admindashboard';
                         $_SESSION['level'] = "admin";
                     }else{
                         $location = 'dashboard';

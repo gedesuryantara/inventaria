@@ -145,7 +145,7 @@ menu.addEventListener("click", function(){
         nilai = 1;
     }
     else{
-        sidebar.style.left = "-50%";
+        sidebar.style.left = "-90%";
         sidebar.style.boxShadow = "0px 0px 0px";
         nilai = 0;
     }
