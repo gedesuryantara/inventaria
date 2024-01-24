@@ -3,25 +3,19 @@
             <div class="col-10">
 
             <!-- Navbar Design -->
-            <div class="navbar-design shadow">
+            <div class="navbar-design shadow d-flex sticky-top">
                 <div class="d-flex justify-content-between">
 
-                    <div class="col-6 ds-none">
-                    <div class="searchbar">
-                            <Form class="input-group search-layout" action="<?= BASEURL ?>/dashboard/cari" method="post">
-                                <input type="text" class="form-control" placeholder="Search..." aria-label="Recipient's username" name="keyword" aria-describedby="button-addon2">
-                                <button class=" btn-search btn btn-primary" type="submit" id="button-addon2">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                </button>
+                            <div class="col-6 ds-none">
+                              <div class="searchbar">
+                                    <Form class="input-group search-layout" action="<?= BASEURL ?>/dashboard/cari" method="post">
+                                        <input type="text" class="form-control" placeholder="Search..." aria-label="Recipient's username" name="keyword" aria-describedby="button-addon2">
+                                        <button class=" btn-search btn btn-primary" type="submit" id="button-addon2">
+                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                        </button>
+                                    </Form>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="d-flex justify-content-end profile-layout">
-                                <p></p>
-                                <i class="fa-solid fa-circle-user"></i>
-                            </div>
-                        </div>
-                    </div>
 
                     <div class="col-8 dnr">
                     <!-- Searchbar Responsive Design -->
@@ -44,17 +38,39 @@
                     </div>
 
                     <div class="col-4">
-                    <div class="menu-responsive">
-                        <div class="menu">
-                        <i class="fa-solid fa-bars"></i>
+                        <div class="menu-responsive">
+                            <div class="menu">
+                             <i class="fa-solid fa-bars"></i>
+                            </div>
                         </div>
-                    </div>
                     </div>
 
                 </div>
 
             </div>
             <!-- End Navbar Design -->
+
+
+            <div class="col-8 dnr">
+                              <!-- Searchbar Responsive Design -->
+                              <div class="searchbar-responsive">
+                                  <Form class="input-group search-layout" action="<?= BASEURL ?>/dashboard/cari" method="post">
+                                      <input type="text" class="form-control" placeholder="Search..." aria-label="Recipient's username" name="keyword" aria-describedby="button-addon2">
+                                      <button class=" btn-search btn btn-primary" type="submit" id="button-addon2">
+                                          <i class="fa-solid fa-magnifying-glass"></i>
+                                      </button>
+                                  </Form>
+                              </div>
+                              <!-- Searchbar Responsive End -->
+                            </div>
+
+                            <div class="col-6 ds-none">
+                                <div class="d-flex justify-content-end profile-layout">
+                                    <p><?php // $_SESSION['username']; ?></p>
+                                    <i class="fa-solid fa-circle-user"></i>
+                                </div>
+                            </div>
+
 
             <!-- Sidebar Responsive Design -->
             <div id="sidebar">

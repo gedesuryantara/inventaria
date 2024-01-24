@@ -1,12 +1,12 @@
 
 
-<div class="col-10">
+<div class="col-10 padding">
 
 <!-- Navbar Design -->
 <div class="navbar-design shadow">
     <div class="d-flex justify-content-start">
         <div class="col-12">
-            <div class=" d-flex justify-content-start nav-layout">
+            <div class=" d-flex justify-content-start nav-layout align-items-center">
                 <i class="fa-regular fa-user"></i>
                 <h1 class="header-text">Manage Users</h1>
             </div>
@@ -19,7 +19,7 @@
 ?>
 
 <!-- Form Edit User Design -->
-<div class="edit-container container-sm shadow-lg">
+<div class="edit-container container-sm sm-responsive shadow-lg">
     <h2 class="header-text text-center mb-5">Edit User</h2>
     <form action="<?= BASEURL ?>/admindashboard/useredit/<?= $tostr['id_user'];?>" method="post">
         <div class="mb-3 row">

@@ -245,11 +245,6 @@ input[type='file'] {
 
 /* Design Gde Adi */
 
-.user-card-design {
-    margin-left: 5%;
-    margin-top: 7%;
-}
-
 .card {
     max-width: 540px;
 }
@@ -355,6 +350,12 @@ input[type='file'] {
     height: 30px;
 }
 
+.user-card-design {
+    /* left: 100%; */
+    margin-left: 50px;
+    margin-right: auto;
+    margin-top: 7%;
+}
 
 /*  */
 
@@ -400,6 +401,11 @@ input[type='file'] {
     display: none;
 }
 
+.fix-button {
+    left: 90%;
+    bottom: 5%;
+}
+
 
 /* Sidebar Start */
 .menu{
@@ -409,12 +415,13 @@ input[type='file'] {
     font-size: 22px;
 }
 
+
 #sidebar{
     z-index: 2;
     position: fixed;
     bottom: 0;
     top: 0;
-    left: -10   0%;
+    left: -100%;
     background-color: #002ea3c1;
     display: none;
 }
@@ -462,7 +469,6 @@ input[type='file'] {
 }
 /* Sidebar End */
 
-/* Responsive Style */
 
 @media (max-width : 1380px) {
 
@@ -488,6 +494,10 @@ input[type='file'] {
 
     .navbar-design {
         height: 80px;
+    }
+
+    .user-padding {
+        padding: 5%;
     }
 
 }
@@ -543,6 +553,10 @@ input[type='file'] {
         display: none;
     }
 
+    .img-user img {
+        height: 15vh;
+    }
+
     .dnr {
         display: grid;
     }
@@ -555,6 +569,27 @@ input[type='file'] {
         font-size: 18px;
     }
 
+    .user-card-design {
+        margin-right: 50px;
+    }
+
+    .padding {
+        margin-bottom: 20px;
+        height: 100vh;
+    }
+
+    .header-text {
+        font-size: 30px;
+    }
+
+    .col-12 .fa-user {
+        width: 40px;
+        margin-left: 35px;
+    }
+
+    .nav-layout {
+        margin-top: 1%;
+    }
 }
 
 @media (max-width : 1000px) {
@@ -587,6 +622,11 @@ input[type='file'] {
         left: 75%;
         bottom: 2%;
     }
+
+    .img-user img {
+        height: 14vh;
+    }
+
 }
 
 
@@ -596,6 +636,21 @@ input[type='file'] {
         left: 70%;
         bottom: 3%;
     }
+
+    .ds-g-sm {
+        display: grid;
+    }
+
+}
+
+@media (max-width : 770px) {
+
+    .fix-button {
+        left: 85%;
+        bottom: 4%;
+    }
+
+    
 }
 
 @media (max-width : 500px) {
@@ -603,6 +658,29 @@ input[type='file'] {
     .fixed-bottom {
         left: 65%;
     }
+
+    .fix-button {
+        left: 80%;
+        bottom: 4%;
+    }
+
+    .img-user img {
+        height: 20vh;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+
+    .ds-g-sm {
+        display: none;
+    }
+
+    .sm-responsive {
+        width: 85%;
+        padding: 8%;
+    }
+    
 
 }
 /*  */
@@ -619,3 +697,6 @@ input[type='file'] {
 
 }
 /*  */
+
+
+/* Responsive Manage User */
