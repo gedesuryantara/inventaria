@@ -52,12 +52,8 @@
                     <!-- Sidebar Responsive Design -->
                     <div id="sidebar">
                       <div class="d-flex flex-column">
-                        <div class="logo">
+                          <div class="logo">
                               <img src="<?= BASEURL ?>/img/Logo_inventaria.svg" alt="Inventaria Logo" srcset="">
-                          </div>
-                          <div class="profile-layout d-flex">
-                            <i class="fa-solid fa-circle-user"></i>
-                            <p><?php // $_SESSION['username']; ?> Admin</p>
                           </div>
                           <ul>
                               <li>
@@ -66,19 +62,29 @@
                                       Dashboard
                                   </a>
                               </li>
+                              <?php if( $_SESSION['level'] == "admin" ) : ?>
                               <li>
-                                  <a href="<?= BASEURL ?>/dashboard/manageuser" class="manage-user <?= $data['activeItem'] ?>">
+                                  <a href="<?= BASEURL ?>/Admindashboard/index" class="manage-user <?= $data['activeItem'] ?>">
                                       <i class="fa-solid fa-circle-user"></i>
                                       Manage Users
                                   </a>
                               </li>
+                              <?php endif; ?>
                               <li>
                                   <a href="<?= BASEURL ?>/login/logout" class="manage-user <?= $data['activeItem'] ?>">
-                                      <i class="fa-solid fa-circle-user"></i>
+                                      <i class="fa-solid fa-right-from-bracket"></i>
                                       Logout
                                   </a>
                               </li>
                           </ul>
+                          <div class="profile-layout d-flex">
+                            <i class="fa-solid fa-circle-user"></i>
+                            <?php if( $_SESSION['level'] == "admin" ) : ?>
+                              <p>Admin</p>
+                            <?php else : ?>
+                              <p>User</p>
+                            <?php endif; ?>
+                          </div>
                         </div>
                     </div>
                     <!-- Sidebar Responsive Design End -->

@@ -160,7 +160,9 @@ class Admindashboard extends Controller{
             header('Location: /inventaria/public/Admindashboard/');
         }
     
-
+        // Gunakan nilai dari properti kelas
+        $data['activepage'] = $this->activePage ?? 1;
+        $data['jumlahHalaman'] = $this->jumlahHalaman ?? 1;
     
         $this->view('tamplates/header', $data);
         $this->view('Admindashboard/index', $data);

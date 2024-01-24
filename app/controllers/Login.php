@@ -40,7 +40,7 @@ class Login extends Controller{
                 if( password_verify($password, $passwordDb) ) {
                     session_start();
 
-                    if($_SESSION['status'] == 1){
+                    if($_SESSION['status'] != 0){
                         $location = 'Admindashboard';
                         $_SESSION['level'] = "admin";
                     }else{
@@ -50,17 +50,17 @@ class Login extends Controller{
                     
                 } else {
                     $location = 'login';
-                    Flasher::setFlasherMassage('masuk', 'Gagal', 'danger', 'password salah');
+                    Flasher::setFlasherMassage('Gagal', 'Masuk, password salah', 'danger');
                 }
 
             } else {
                 $location = 'login';
-                Flasher::setFlasherMassage('masuk', 'Gagal', 'danger', 'account user tidak ditemukan');
+                Flasher::setFlasherMassage('Gagal', 'Masuk, account user tidak ditemukan', 'danger');
             }
 
         } else {
             $location = 'login';
-            Flasher::setFlasherMassage('masuk', 'Gagal', 'danger', 'lengkapi data terlebih dahulu');
+            Flasher::setFlasherMassage('Gagal','Masuk, lengkapi data terlebih dahulu','danger');
         }
 
         header('location: '. BASEURL . '/' . $location);

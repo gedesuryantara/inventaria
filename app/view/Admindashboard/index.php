@@ -12,24 +12,82 @@
                     </button>
                 </Form>
         </div>
-        <div class="col-6">
+
+        <div class="col-6 ds-none">
             <div class="d-flex justify-content-end profile-layout">
-                <p>User</p>
-                <i class="fa-solid fa-circle-user"></i>
+                <p><?php // $_SESSION['username']; ?></p>
+                    <i class="fa-solid fa-circle-user"></i>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="menu-responsive">
+                <div class="menu">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
             </div>
         </div>
     </div>
 </div>
 <!-- End Navbar Design -->
 
+
+                            <div class="col-6 ds-none">
+                                <div class="d-flex justify-content-end profile-layout">
+                                    <p><?php // $_SESSION['username']; ?></p>
+                                    <!-- <i class="fa-solid fa-circle-user"></i> -->
+                                </div>
+                            </div>
+
+                           
+
+
+                    <!-- End Navbar Design -->
+
+                    <!-- Sidebar Responsive Design -->
+                    <div id="sidebar">
+                      <div class="d-flex flex-column">
+                          <div class="logo">
+                              <img src="<?= BASEURL ?>/img/Logo_inventaria.svg" alt="Inventaria Logo" srcset="">
+                          </div>
+                          <ul>
+                              <li>
+                                  <a href="<?= BASEURL ?>/dashboard/admin" class="dasboard <?= $data['activeItem'] ?>">
+                                      <i class="fa-solid fa-gauge"></i>
+                                      Dashboard
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="<?= BASEURL ?>/admindashboard" class="manage-user <?= $data['activeItem'] ?>">
+                                      <i class="fa-solid fa-circle-user"></i>
+                                      Manage Users
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="<?= BASEURL ?>/login/logout" class="manage-user <?= $data['activeItem'] ?>">
+                                      <i class="fa-solid fa-right-from-bracket"></i>
+                                      Logout
+                                  </a>
+                              </li>
+                          </ul>
+                          <div class="profile-layout d-flex">
+                            <i class="fa-solid fa-circle-user"></i>
+                            <p><?php // $_SESSION['username']; ?> Admin</p>
+                          </div>
+                        </div>
+                    </div>
+                    <!-- Sidebar Responsive Design End -->
+
+
+
 <!-- Users Card Design -->
 <div class="user-card-design">
     <div class="row row-cols-1 row-cols-md-2 g-4">
         <?php foreach( $data['UserName'] as $usr ) : ?>
-        <div class="col">
+        <div class="col user-padding">
             <div class="card mb-3 shadow">
                 <div class="row g-0">
-                    <div class="col-md-4">
+                    <div class="col-md-4 img-user">
                         <img src="<?= BASEURL ?>/img/user_icon.png" class="img-fluid rounded-start" alt="...">
                     </div>
                     <div class="col-md-8">
@@ -39,11 +97,11 @@
                             <div class="d-flex card-btn justify-content-center mt-4">
                                 <a class="btn btn-warning me-2 text-center" href="<?= BASEURL ?>/admindashboard/useredit/<?= $usr['id_user']?>" role="button">
                                     <i class="fa-solid fa-pen-to-square"></i>
-                                    Edit
+                                    <span class="ds-none ds-g-sm"> Edit </span>
                                 </a>
                                 <a class="btn btn-danger ms-2 text-center" onclick="return confirm('Apakah user akan di hapus')" href="<?= BASEURL ?>/admindashboard/deleteuser/<?= $usr['id_user']?>" role="button">
                                     <i class="fa-solid fa-trash-can"></i>
-                                    Hapus
+                                    <span class="ds-none ds-g-sm"> Hapus </span>
                                 </a>
                             </div>
                         </div>
@@ -71,7 +129,7 @@
             <?php for( $i = 1; $i <= $data['jumlahHalaman']; $i++ ) : ?>
                 <?php if( $i == $data['activepage'] ) : ?>
                 <li class="page-item">
-                    <a class="page-link" href="/inventaria/public/Admindashboard/<?= $i; ?>"><?= $i; ?></a>
+                    <a class="page-link active" href="/inventaria/public/Admindashboard/<?= $i; ?>"><?= $i; ?></a>
                     <li class="page-item">
                 </li>
                 <?php else : ?>
@@ -94,7 +152,7 @@
 
 <!-- Button Add Users Design -->
 <!-- Button Trigger Modal -->
-<div class="d-flex justify-content-end position-absolute bottom-0 end-0">
+<div class="d-flex fixed-bottom fix-button">
     <button type="button" class="user-add-btn btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
         <i class="fa-solid fa-plus"></i>
     </button>
@@ -139,6 +197,8 @@
 </div>
 </div>
 </div>
+</div>
+
 <!-- End Body Design -->
 
 <!-- JAVA SCRIPT LINK -->

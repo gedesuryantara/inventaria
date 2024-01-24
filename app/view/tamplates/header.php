@@ -38,7 +38,7 @@
                                     <?php endif; ?>
                                     <hr class="line-fill">
                                     <a href="<?= BASEURL ?>/login/logout" class="manage-user">
-                                        <i class="fa-solid fa-circle-user"></i>
+                                        <i class="fa-solid fa-right-from-bracket"></i>
                                         Logout
                                     </a>
                                 </div>

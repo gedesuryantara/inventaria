@@ -92,7 +92,7 @@ class Dashboard extends Controller{
     {
         if( $this->model('Barang_model')->tambahDataBarang($_POST) > 0 ) {
             header('Location: ' . BASEURL . '/dashboard');
-            Flasher::setFlasherMassage('berhasil', 'ditambahkan', 'success');
+            Flasher::setFlasherMassage('Data Barang Berhasil', 'ditambahkan', 'success');
             exit;
         } else {
             header('Location: ' . BASEURL . '/dashboard');
@@ -145,7 +145,7 @@ class Dashboard extends Controller{
 
         if( $this->model('Barang_model')->editDataBarang($_POST) > 0 ) {
             header('Location: ' . BASEURL . '/dashboard');
-            Flasher::setFlasherMassage('berhasil', 'diubah', 'success');
+            Flasher::setFlasherMassage('Data Barang berhasil', 'diubah', 'success');
             exit;
         } else {
             header('Location: ' . BASEURL . '/dashboard');

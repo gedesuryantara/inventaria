@@ -67,7 +67,7 @@ class Barang_model {
 
         // cek apakah gambar diupload atau tidak 
         if ( $errorFile === 4 ){
-            Flasher::setFlasherMassage('gagal', 'ditambahkan, masukan gambar terlebih dahulu', 'danger');
+            Flasher::setFlasherMassage('Barang Gagal ditambahkan', ', masukan gambar terlebih dahulu', 'danger');
         } else {
 
             // cek apakah yang diupload adalah gambar
@@ -76,12 +76,12 @@ class Barang_model {
             $ekstensiGambar = strtolower(end($ekstensiGambar));
 
             if( !in_array($ekstensiGambar, $ekstensiGambarValid) ) {
-                Flasher::setFlasherMassage('gagal', 'ditambahkan, yang anda input bukan gambar', 'danger');
+                Flasher::setFlasherMassage('Barang Gagal ditambahkan', ', yang anda input bukan gambar', 'danger');
             }
 
             // cek ukuran gambar 
             if( $ukuranFile > 100000000 ) {
-                Flasher::setFlasherMassage('gagal', 'ditambahkan, file gambar terlalu besar', 'danger');
+                Flasher::setFlasherMassage('Barang Gagal ditambahkan', ', file gambar terlalu besar', 'danger');
             }
 
             // lolos pengechekan, generate nama baru, gambar siap di upload

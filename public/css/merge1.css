@@ -43,6 +43,12 @@
     transition: ease 0.5s;
 }
 
+
+.manage h3 {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
 .manage-user:hover {
     color: #00C2FF;
 }
@@ -111,6 +117,7 @@
     margin-top: 10%;
     margin-bottom: 4%;
     margin-right: 6%;
+    z-index: 1;
 }
 
 .btn-add button {
@@ -201,7 +208,10 @@ input[type='file'] {
     width: 50px;
     height: 50px;
     background-image: linear-gradient(145deg, #00C2FF, blue);
+    margin-top: 20px;
+    margin-left: 10px;
 }
+
 .fa-camera {
     width: 20px;
     height: 20px;
@@ -243,11 +253,6 @@ input[type='file'] {
 
 
 /* Design Gde Adi */
-
-.user-card-design {
-    margin-left: 5%;
-    margin-top: 7%;
-}
 
 .card {
     max-width: 540px;
@@ -354,6 +359,12 @@ input[type='file'] {
     height: 30px;
 }
 
+.user-card-design {
+    /* left: 100%; */
+    margin-left: 50px;
+    margin-right: auto;
+    margin-top: 7%;
+}
 
 /*  */
 
@@ -399,6 +410,11 @@ input[type='file'] {
     display: none;
 }
 
+.fix-button {
+    left: 90%;
+    bottom: 5%;
+}
+
 
 /* Sidebar Start */
 .menu{
@@ -408,34 +424,37 @@ input[type='file'] {
     font-size: 22px;
 }
 
+
 #sidebar{
     z-index: 2;
     position: fixed;
     bottom: 0;
     top: 0;
-    width: 50%;
-    left: -50%;
-    background-color: rgba(0, 0, 0, 0.8);
+    left: -100%;
+    background-color: #002ea3c1;
     display: none;
 }
 
 #sidebar ul{
     list-style: none;
+    margin: 0;
+    padding: 0;
     width : 100%;
     margin-top: 6%;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 #sidebar li{
+    width: 100%;
     display: flex;
     padding: 0px;
     transition: all 0.5s ease;
 }
 
 #sidebar .logo img{
-    width: 90%;
+    width: 75%;
     height: auto;
-    margin-left: 47%;
+   padding-left: 65px;
     margin-bottom: 40%;
 }
 
@@ -445,20 +464,27 @@ input[type='file'] {
     color: white;
     width: 100%;
     text-align: left;
-    padding: 50px;
+    padding: 10px;
+    padding-left: 50px;
     transition: all 0.5s linear;
 }
 
 #sidebar li:hover{
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.648);
 }
 
 #sidebar li a:hover{
-    color: black;
+    color: #010094;
 }
+
+
+.btn-cancel a {
+    color: #ffff;
+    text-decoration: none;
+}
+
 /* Sidebar End */
 
-/* Responsive Style */
 
 @media (max-width : 1380px) {
 
@@ -486,6 +512,10 @@ input[type='file'] {
         height: 80px;
     }
 
+    .user-padding {
+        padding: 5%;
+    }
+
 }
 
 @media (max-width : 1050px) {
@@ -506,15 +536,17 @@ input[type='file'] {
     }
 
     .profile-layout .fa-circle-user {
-        width: 55px;
-        height: 55px;
+        width: 35px;
+        height: 35px;
         color: #00C2FF;
-        margin-left: 25%;
+        padding-left: 40px;
+        margin-top: 59vh;
     }
 
     .profile-layout p {
-        font-size: 30px;
+        font-size: 20px;
         color: white;
+        margin-top: 59vh;
     }
 
     .menu-responsive {
@@ -537,6 +569,10 @@ input[type='file'] {
         display: none;
     }
 
+    .img-user img {
+        height: 15vh;
+    }
+
     .dnr {
         display: grid;
     }
@@ -545,6 +581,54 @@ input[type='file'] {
         width: 100%;
     }
 
+    .user-card-design {
+        margin-right: 50px;
+    }
+
+    .padding {
+        margin-bottom: 20px;
+        height: 100vh;
+    }
+
+    .header-text {
+        font-size: 30px;
+    }
+
+    .col-12 .fa-user {
+        width: 40px;
+        margin-left: 35px;
+    }
+
+    .nav-layout {
+        margin-top: 1%;
+    }
+    .menu-edit {
+        display: none;
+    }
+
+    .col-edit {
+        height: 100vh;
+    }
+
+    .container-brg {
+        height: 43%;
+    }
+
+    .cancel-buttonedit {
+        margin-top: 30px;
+    }
+    .save-buttonedit {
+        margin-top: 30px;
+    }
+
+    .manage .fa-box {
+        margin-top: 20px;
+    }
+
+    .file-form label {
+        margin-top: 5px;
+        margin-left: 0px;
+    }
 }
 
 @media (max-width : 1000px) {
@@ -572,110 +656,266 @@ input[type='file'] {
 
 }
 
-@media (max-width : 980px) {
-    #sidebar .logo img{
-        margin-left: 40%;
-    }
-}
 
-@media (max-width : 920px) {
+/* edit barang responsive */
 
-    #sidebar .logo img{
-        width: 80%;
-        margin-left: 40%;
+@media (max-width : 770px) {
+
+    .sidebar-design {
+        display: none;
     }
 
-    .profile-layout .fa-circle-user {
-        width: 45px;
-        height: 45px;
+    /* #sidebar {
+        padding-top: 110px;
+    } */
+
+    #sidebar ul {
+        margin-top: -10px;
     }
 
-    .profile-layout p {
+    #sidebar ul li {
+        margin-left: -20px;
+        margin-right: 50px;
+    }
+
+    .profile-layout-edit {
+        margin-top: -5%;
+    } 
+
+
+    .col-9-edit {
+        width: 100%;
+    }
+
+    .navbar-design {
+        width: 100%;
+        z-index: 1;
+    }
+
+    .manage h3 {
         font-size: 22px;
+        margin-left: 5rem;
+        margin-bottom: 30px;
+        position: absolute;
+
+
     }
 
-    #sidebar li a{
-        font-size: 18px;
+
+    #imagePreview {
+        margin-top: 50px;
     }
 
-}
-
-@media (max-width : 850px) {
-    .fixed-bottom {
-        left: 75%;
-        bottom: 2%;
+    .container-brg {
+        width: 72vw;
+        margin-left: auto;
+        height: 40vh;
     }
-}
 
-@media (max-width : 800px) {
-    #sidebar .logo img{
-        margin-left: 35%;
+    .form-edit input {
+        height: 35px;
+        width: 32vw;
     }
-}
+    .form-edit2 {
+        width: 35vw;
+    }
 
-@media (max-width : 740px) {
-    #sidebar .logo img{
-        margin-left: 30%;
+    .form-edit2 input {
+        height: 35px;
     }
+    .form-edit2 select {
+        height: 35px;
+    }
+
+    .save-buttonedit button {
+        width: 60px;
+        font-size: 15px;
+    }
+    .cancel-buttonedit button {
+        width: 70px;
+        font-size: 15px;
+        margin-left: -20px;
+    }
+
+    .img-user img {
+        height: 14vh;
+    }
+
+    .manage .fa-box {
+        margin-top: 20px;
+    }
+
+    .manage h3{
+        margin-top: 30px;
+    }
+
 }
 
 
 @media (max-width : 680px) {
-    #sidebar .logo img{
-        margin-left: 20%;
-    }
 
     .fixed-bottom {
         left: 70%;
         bottom: 3%;
     }
+
+    .ds-g-sm {
+        display: grid;
+    }
+
 }
 
-@media (max-width : 600px) {
-    #sidebar .logo img{
-        margin-left: 15%;
+@media (max-width : 770px) {
+
+    .fix-button {
+        left: 85%;
+        bottom: 4%;
     }
 
-    #sidebar ul{
-        margin: 5px;
-        padding: 5px;
-    }
-    .profile-layout .fa-circle-user {
-        width: 40px;
-        height: 40px;
-        margin-left: 20%;
-    }
-}
-
-@media (max-width : 545px) {
-    #sidebar .logo img{
-        width: 70%;
-    }
+    
 }
 
 @media (max-width : 500px) {
-    #sidebar ul{
-        margin: 0;
-        padding: 0;
-    }
-
-    .profile-layout .fa-circle-user {
-        width: 32px;
-        height: 32px;
-    }
-
-    .profile-layout p {
-        font-size: 18px;
-    }
-
-    #sidebar li a{
-        font-size: 14px;
-    }
 
     .fixed-bottom {
         left: 65%;
     }
+
+    .fix-button {
+        left: 80%;
+        bottom: 4%;
+    }
+
+    .img-user img {
+        height: 20vh;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+
+    .ds-g-sm {
+        display: none;
+    }
+
+    .sm-responsive {
+        width: 85%;
+        padding: 8%;
+    }
+    
+
+@media (max-width : 427px) {
+    #side_bar{
+        margin-left: -250px;
+        position: fixed;
+        min-height: 100vh;
+        z-index: 1;
+    }
+
+    #side_bar.active {
+        margin-left: 0;
+    }
+
+    #sidebar ul {
+        margin-top: -10px;
+    }
+
+    #sidebar ul li {
+        margin-left: -20px;
+        margin-right: 50px;
+    }
+
+
+    .menu-edit {
+        margin-right: 40px;
+    }
+
+    .manage h3 {
+        font-size: 22px;
+        margin-left: 5rem;
+        margin-bottom: 30px;
+        position: absolute;
+    }
+
+    .navbar-design {
+        margin-right: -40px;
+        /* width: 100vw; */
+    }
+
+    .container-brg {
+        height: 60vh;
+        width: 85vw;
+        /* margin-left: 30px; */
+    }
+
+    .card-edit {
+        width: 55vw;
+        margin-left: 110px;
+        /* margin-top: -10px; */
+    }
+
+    .form-view {
+        margin-top: -10px;
+        margin-left: 40px;
+    }
+
+    .form-edit input {
+        height: 35px;
+        width: 64vw;
+    }
+    .form-edit2 {
+        width: 70vw;
+    }
+
+    .form-edit2 input {
+        height: 35px;
+    }
+    .form-edit2 select {
+        height: 35px;
+    }
+
+    .save-buttonedit button {
+        width: 60px;
+        font-size: 15px;
+    }
+    .cancel-buttonedit button {
+        width: 70px;
+        font-size: 15px;
+    }
+
+    #imagePreview {
+        margin-right: 80px;
+    }
+    .img-brg {
+        width: 95%;
+        justify-content: center;
+    }
+    .pic-choose {
+        margin-left: 25%;
+    }
+
+    .pic-edit {
+        margin-top: -50px;
+        margin-left: 100px;
+    }
+
+    .form-view-edit {
+        margin-left: 5px;
+        width: 70vw;
+        margin-top: -40px;
+    }
+
+    .profile-layout-edit {
+        margin-top: 5%;
+    }
+
+    .img-brg {
+        width: 50vw;
+        height: 10vh;
+        margin-left: -28.5%;
+    }
 }
+
 /*  */
 
 /*  */
@@ -690,3 +930,6 @@ input[type='file'] {
 
 }
 /*  */
+
+}
+/* Responsive Manage User */ 
